@@ -2,6 +2,13 @@
 <Workspace
    version = "1.0">
    <Group
+      location = "group:Gateways"
+      name = "Gateways">
+      <FileRef
+         location = "group:WeatherDataSource/WeatherDataSource.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
       location = "group:Data"
       name = "Data">
       <FileRef
