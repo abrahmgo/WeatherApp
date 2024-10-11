@@ -2,6 +2,16 @@
 <Workspace
    version = "1.0">
    <Group
+      location = "group:Domain"
+      name = "Domain">
+      <FileRef
+         location = "group:WeatherEntities/WeatherEntities.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:WeatherUsecases/WeatherUsecases.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
       location = "group:Utils"
       name = "Utils">
       <FileRef
