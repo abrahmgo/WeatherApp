@@ -2,6 +2,16 @@
 <Workspace
    version = "1.0">
    <Group
+      location = "group:Data"
+      name = "Data">
+      <FileRef
+         location = "group:NetoworkCore/NetoworkCore.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:WeatherCore/WeatherCore.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
       location = "group:Domain"
       name = "Domain">
       <FileRef
