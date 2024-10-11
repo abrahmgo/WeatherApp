@@ -13,6 +13,7 @@
 		B6A5526C2CB9DB820085A38C /* WeatherEntities.h in Headers */ = {isa = PBXBuildFile; fileRef = B6A5525E2CB9DB820085A38C /* WeatherEntities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B6A552E22CB9DD650085A38C /* RequestLocationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A552E12CB9DD650085A38C /* RequestLocationType.swift */; };
 		B6A552E52CB9DD890085A38C /* LocationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A552E42CB9DD890085A38C /* LocationError.swift */; };
+		B6A553342CB9E75D0085A38C /* WeatherError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553332CB9E75D0085A38C /* WeatherError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,7 @@
 		B6A5526A2CB9DB820085A38C /* WeatherEntitiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherEntitiesTests.swift; sourceTree = "<group>"; };
 		B6A552E12CB9DD650085A38C /* RequestLocationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLocationType.swift; sourceTree = "<group>"; };
 		B6A552E42CB9DD890085A38C /* LocationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationError.swift; sourceTree = "<group>"; };
+		B6A553332CB9E75D0085A38C /* WeatherError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				B6A552E32CB9DD770085A38C /* Location */,
 				B6A5525E2CB9DB820085A38C /* WeatherEntities.h */,
 				B6A5525F2CB9DB820085A38C /* WeatherEntities.docc */,
+				B6A553332CB9E75D0085A38C /* WeatherError.swift */,
 			);
 			path = WeatherEntities;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				B6A552E52CB9DD890085A38C /* LocationError.swift in Sources */,
 				B6A552E22CB9DD650085A38C /* RequestLocationType.swift in Sources */,
 				B6A552602CB9DB820085A38C /* WeatherEntities.docc in Sources */,
+				B6A553342CB9E75D0085A38C /* WeatherError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,6 +17,14 @@
 		B6A551DB2CB9D7500085A38C /* CurrentLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6A551D92CB9D7500085A38C /* CurrentLocationViewController.xib */; };
 		B6A5522A2CB9D9B30085A38C /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A552292CB9D9B30085A38C /* Utils.framework */; };
 		B6A5522B2CB9D9B30085A38C /* Utils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B6A552292CB9D9B30085A38C /* Utils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B6A553382CB9E8060085A38C /* WeatherUsecases.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A553372CB9E8060085A38C /* WeatherUsecases.framework */; };
+		B6A553392CB9E8060085A38C /* WeatherUsecases.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B6A553372CB9E8060085A38C /* WeatherUsecases.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B6A5533B2CB9E80E0085A38C /* WeatherCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A5533A2CB9E80E0085A38C /* WeatherCore.framework */; };
+		B6A5533C2CB9E80E0085A38C /* WeatherCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B6A5533A2CB9E80E0085A38C /* WeatherCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B6A5533E2CB9E8120085A38C /* WeatherEntities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A5533D2CB9E8120085A38C /* WeatherEntities.framework */; };
+		B6A5533F2CB9E8120085A38C /* WeatherEntities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B6A5533D2CB9E8120085A38C /* WeatherEntities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B6A553412CB9E8150085A38C /* WeatherDataSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A553402CB9E8150085A38C /* WeatherDataSource.framework */; };
+		B6A553422CB9E8160085A38C /* WeatherDataSource.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B6A553402CB9E8150085A38C /* WeatherDataSource.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +52,10 @@
 			dstSubfolderSpec = 10;
 			files = (
 				B6A5522B2CB9D9B30085A38C /* Utils.framework in Embed Frameworks */,
+				B6A553392CB9E8060085A38C /* WeatherUsecases.framework in Embed Frameworks */,
+				B6A5533F2CB9E8120085A38C /* WeatherEntities.framework in Embed Frameworks */,
+				B6A553422CB9E8160085A38C /* WeatherDataSource.framework in Embed Frameworks */,
+				B6A5533C2CB9E80E0085A38C /* WeatherCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,6 +76,10 @@
 		B6A551D82CB9D7500085A38C /* CurrentLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewController.swift; sourceTree = "<group>"; };
 		B6A551D92CB9D7500085A38C /* CurrentLocationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentLocationViewController.xib; sourceTree = "<group>"; };
 		B6A552292CB9D9B30085A38C /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6A553372CB9E8060085A38C /* WeatherUsecases.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WeatherUsecases.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6A5533A2CB9E80E0085A38C /* WeatherCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WeatherCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6A5533D2CB9E8120085A38C /* WeatherEntities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WeatherEntities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6A553402CB9E8150085A38C /* WeatherDataSource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WeatherDataSource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +88,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6A5522A2CB9D9B30085A38C /* Utils.framework in Frameworks */,
+				B6A553382CB9E8060085A38C /* WeatherUsecases.framework in Frameworks */,
+				B6A5533E2CB9E8120085A38C /* WeatherEntities.framework in Frameworks */,
+				B6A553412CB9E8150085A38C /* WeatherDataSource.framework in Frameworks */,
+				B6A5533B2CB9E80E0085A38C /* WeatherCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +182,10 @@
 		B6A552282CB9D9B30085A38C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B6A553402CB9E8150085A38C /* WeatherDataSource.framework */,
+				B6A5533D2CB9E8120085A38C /* WeatherEntities.framework */,
+				B6A5533A2CB9E80E0085A38C /* WeatherCore.framework */,
+				B6A553372CB9E8060085A38C /* WeatherUsecases.framework */,
 				B6A552292CB9D9B30085A38C /* Utils.framework */,
 			);
 			name = Frameworks;

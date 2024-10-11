@@ -11,6 +11,8 @@
 		B6A552FB2CB9DDD00085A38C /* WeatherDataSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A552F02CB9DDD00085A38C /* WeatherDataSource.framework */; };
 		B6A553002CB9DDD00085A38C /* WeatherDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A552FF2CB9DDD00085A38C /* WeatherDataSourceTests.swift */; };
 		B6A553012CB9DDD00085A38C /* WeatherDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = B6A552F32CB9DDD00085A38C /* WeatherDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B6A5530C2CB9DE1A0085A38C /* LocationRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5530B2CB9DE1A0085A38C /* LocationRemoteDataSource.swift */; };
+		B6A5530F2CB9DE3D0085A38C /* WeatherEntities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A5530E2CB9DE3D0085A38C /* WeatherEntities.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		B6A552F42CB9DDD00085A38C /* WeatherDataSource.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = WeatherDataSource.docc; sourceTree = "<group>"; };
 		B6A552FA2CB9DDD00085A38C /* WeatherDataSourceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherDataSourceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6A552FF2CB9DDD00085A38C /* WeatherDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataSourceTests.swift; sourceTree = "<group>"; };
+		B6A5530B2CB9DE1A0085A38C /* LocationRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRemoteDataSource.swift; sourceTree = "<group>"; };
+		B6A5530E2CB9DE3D0085A38C /* WeatherEntities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WeatherEntities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6A5530F2CB9DE3D0085A38C /* WeatherEntities.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +61,7 @@
 				B6A552F22CB9DDD00085A38C /* WeatherDataSource */,
 				B6A552FE2CB9DDD00085A38C /* WeatherDataSourceTests */,
 				B6A552F12CB9DDD00085A38C /* Products */,
+				B6A5530D2CB9DE3D0085A38C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +77,7 @@
 		B6A552F22CB9DDD00085A38C /* WeatherDataSource */ = {
 			isa = PBXGroup;
 			children = (
+				B6A5530A2CB9DE080085A38C /* Location */,
 				B6A552F32CB9DDD00085A38C /* WeatherDataSource.h */,
 				B6A552F42CB9DDD00085A38C /* WeatherDataSource.docc */,
 			);
@@ -83,6 +90,22 @@
 				B6A552FF2CB9DDD00085A38C /* WeatherDataSourceTests.swift */,
 			);
 			path = WeatherDataSourceTests;
+			sourceTree = "<group>";
+		};
+		B6A5530A2CB9DE080085A38C /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				B6A5530B2CB9DE1A0085A38C /* LocationRemoteDataSource.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		B6A5530D2CB9DE3D0085A38C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B6A5530E2CB9DE3D0085A38C /* WeatherEntities.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6A552F52CB9DDD00085A38C /* WeatherDataSource.docc in Sources */,
+				B6A5530C2CB9DE1A0085A38C /* LocationRemoteDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +433,7 @@
 		B6A553082CB9DDD00085A38C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -424,6 +449,7 @@
 		B6A553092CB9DDD00085A38C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;

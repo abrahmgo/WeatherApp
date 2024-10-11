@@ -11,6 +11,12 @@
 		B6A552422CB9DB650085A38C /* WeatherUsecases.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A552372CB9DB650085A38C /* WeatherUsecases.framework */; };
 		B6A552472CB9DB650085A38C /* WeatherUsecasesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A552462CB9DB650085A38C /* WeatherUsecasesTests.swift */; };
 		B6A552482CB9DB650085A38C /* WeatherUsecases.h in Headers */ = {isa = PBXBuildFile; fileRef = B6A5523A2CB9DB650085A38C /* WeatherUsecases.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B6A553242CB9E4800085A38C /* WeatherDataSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A553232CB9E4800085A38C /* WeatherDataSource.framework */; };
+		B6A553282CB9E4860085A38C /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A553272CB9E4860085A38C /* Utils.framework */; };
+		B6A5532B2CB9E48B0085A38C /* WeatherEntities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A5532A2CB9E48B0085A38C /* WeatherEntities.framework */; };
+		B6A5532E2CB9E4950085A38C /* WeatherCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A5532D2CB9E4950085A38C /* WeatherCore.framework */; };
+		B6A553322CB9E5DF0085A38C /* StarLocationUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553312CB9E5DF0085A38C /* StarLocationUsecase.swift */; };
+		B6A553362CB9E7980085A38C /* GetCurrentLocationUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553352CB9E7980085A38C /* GetCurrentLocationUsecase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +35,12 @@
 		B6A5523B2CB9DB650085A38C /* WeatherUsecases.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = WeatherUsecases.docc; sourceTree = "<group>"; };
 		B6A552412CB9DB650085A38C /* WeatherUsecasesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherUsecasesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6A552462CB9DB650085A38C /* WeatherUsecasesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherUsecasesTests.swift; sourceTree = "<group>"; };
+		B6A553232CB9E4800085A38C /* WeatherDataSource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WeatherDataSource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6A553272CB9E4860085A38C /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6A5532A2CB9E48B0085A38C /* WeatherEntities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WeatherEntities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6A5532D2CB9E4950085A38C /* WeatherCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WeatherCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6A553312CB9E5DF0085A38C /* StarLocationUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarLocationUsecase.swift; sourceTree = "<group>"; };
+		B6A553352CB9E7980085A38C /* GetCurrentLocationUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentLocationUsecase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +48,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6A5532B2CB9E48B0085A38C /* WeatherEntities.framework in Frameworks */,
+				B6A553282CB9E4860085A38C /* Utils.framework in Frameworks */,
+				B6A5532E2CB9E4950085A38C /* WeatherCore.framework in Frameworks */,
+				B6A553242CB9E4800085A38C /* WeatherDataSource.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +72,7 @@
 				B6A552392CB9DB650085A38C /* WeatherUsecases */,
 				B6A552452CB9DB650085A38C /* WeatherUsecasesTests */,
 				B6A552382CB9DB650085A38C /* Products */,
+				B6A553222CB9E4800085A38C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +88,7 @@
 		B6A552392CB9DB650085A38C /* WeatherUsecases */ = {
 			isa = PBXGroup;
 			children = (
+				B6A553302CB9E4A70085A38C /* Location */,
 				B6A5523A2CB9DB650085A38C /* WeatherUsecases.h */,
 				B6A5523B2CB9DB650085A38C /* WeatherUsecases.docc */,
 			);
@@ -83,6 +101,26 @@
 				B6A552462CB9DB650085A38C /* WeatherUsecasesTests.swift */,
 			);
 			path = WeatherUsecasesTests;
+			sourceTree = "<group>";
+		};
+		B6A553222CB9E4800085A38C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B6A5532D2CB9E4950085A38C /* WeatherCore.framework */,
+				B6A5532A2CB9E48B0085A38C /* WeatherEntities.framework */,
+				B6A553272CB9E4860085A38C /* Utils.framework */,
+				B6A553232CB9E4800085A38C /* WeatherDataSource.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B6A553302CB9E4A70085A38C /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				B6A553312CB9E5DF0085A38C /* StarLocationUsecase.swift */,
+				B6A553352CB9E7980085A38C /* GetCurrentLocationUsecase.swift */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,7 +232,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6A553322CB9E5DF0085A38C /* StarLocationUsecase.swift in Sources */,
 				B6A5523C2CB9DB650085A38C /* WeatherUsecases.docc in Sources */,
+				B6A553362CB9E7980085A38C /* GetCurrentLocationUsecase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +449,7 @@
 		B6A5524F2CB9DB650085A38C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -424,6 +465,7 @@
 		B6A552502CB9DB650085A38C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;

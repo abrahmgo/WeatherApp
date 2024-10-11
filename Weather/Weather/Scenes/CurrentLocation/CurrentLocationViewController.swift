@@ -7,12 +7,24 @@
 
 import UIKit
 import Utils
+import WeatherUsecases
+import WeatherCore
+import Combine
 
 class CurrentLocationViewController: UIViewController {
 
+    private let startLocation: StarLocalizationUseCaseType
+    private let getCurrentLocation: GetCurrentLocationUseCaseType
+    private var cancellable: Set<AnyCancellable> = Set<AnyCancellable>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        binds()
+        Task {
+            try await Task.sleep(for: .seconds(2))
+            try await startLocation.execute(type: .always)
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -22,7 +34,18 @@ class CurrentLocationViewController: UIViewController {
     }
     
     public init() {
+        let locationService = WeatherLocalDataSource.location
+        startLocation = StarLocalizationUseCase(locationService: locationService)
+        getCurrentLocation = GetCurrentLocationUseCase(locationService: locationService)
         super.init(nibName: CurrentLocationViewController.typeName, bundle: Bundle(for: type(of: self)))
     }
     
+    private func binds() {
+        getCurrentLocation.execute()
+            .sink(receiveCompletion: { result in
+                dump(result)
+            }) { location in
+                dump(location.coordinate)
+            }.store(in: &cancellable)
+    }
 }
