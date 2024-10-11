@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Utils
 
 class CurrentLocationViewController: UIViewController {
 
@@ -21,7 +22,7 @@ class CurrentLocationViewController: UIViewController {
     }
     
     public init() {
-        super.init(nibName: "CurrentLocationViewController", bundle: Bundle(for: type(of: self)))
+        super.init(nibName: CurrentLocationViewController.typeName, bundle: Bundle(for: type(of: self)))
     }
     
 }
