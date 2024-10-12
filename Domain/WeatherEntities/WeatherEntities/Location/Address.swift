@@ -19,8 +19,6 @@ public struct Address {
     public var number: String
     public var interior: String
     public let zipCode: String
-    public var idUser: String
-    public var id: String
     
     public init(coordinates: CLLocationCoordinate2D = .init(latitude: .zero, longitude: .zero),
                 country: String = "",
@@ -30,9 +28,7 @@ public struct Address {
                 street: String = "",
                 number: String = "",
                 interior: String = "",
-                zipCode: String = "",
-                idUser: String = "",
-                id: String = "") {
+                zipCode: String = "") {
         self.coordinates = coordinates
         self.country = country
         self.state = state
@@ -42,8 +38,6 @@ public struct Address {
         self.number = number
         self.interior = interior
         self.zipCode = zipCode
-        self.idUser = idUser
-        self.id = id
     }
     
     public init(place: MKPlacemark) {
@@ -56,8 +50,6 @@ public struct Address {
         self.number = Address.getNumber(name: place.name ?? "") ?? ""
         self.interior = ""
         self.zipCode = place.postalCode ?? "0"
-        self.idUser = ""
-        self.id = ""
     }
     
     public init(place: CLPlacemark) {
@@ -70,8 +62,6 @@ public struct Address {
         self.number = Address.getNumber(name: place.name ?? "") ?? ""
         self.interior = ""
         self.zipCode = place.postalCode ?? "0"
-        self.idUser = ""
-        self.id = ""
     }
     
     public func getFullAddress() -> String {

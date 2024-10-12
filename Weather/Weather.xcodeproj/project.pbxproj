@@ -32,6 +32,9 @@
 		B6A553A32CBA2C170085A38C /* CurrentLocationComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553A22CBA2C170085A38C /* CurrentLocationComponents.swift */; };
 		B6A553A72CBA2CED0085A38C /* WeatherUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A553A62CBA2CED0085A38C /* WeatherUI.framework */; };
 		B6A553A82CBA2CED0085A38C /* WeatherUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B6A553A62CBA2CED0085A38C /* WeatherUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B6A553AE2CBADE350085A38C /* CurrentLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553AD2CBADE350085A38C /* CurrentLocationViewModel.swift */; };
+		B6A553B02CBADEB60085A38C /* CurrentLocationViewModel+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553AF2CBADEB60085A38C /* CurrentLocationViewModel+Dependencies.swift */; };
+		B6A553B22CBAE0FD0085A38C /* CurrentLocationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553B12CBAE0FD0085A38C /* CurrentLocationFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +97,9 @@
 		B6A553562CBA066C0085A38C /* APIBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBundle.swift; sourceTree = "<group>"; };
 		B6A553A22CBA2C170085A38C /* CurrentLocationComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationComponents.swift; sourceTree = "<group>"; };
 		B6A553A62CBA2CED0085A38C /* WeatherUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WeatherUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6A553AD2CBADE350085A38C /* CurrentLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewModel.swift; sourceTree = "<group>"; };
+		B6A553AF2CBADEB60085A38C /* CurrentLocationViewModel+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrentLocationViewModel+Dependencies.swift"; sourceTree = "<group>"; };
+		B6A553B12CBAE0FD0085A38C /* CurrentLocationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +199,9 @@
 				B6A551D82CB9D7500085A38C /* CurrentLocationViewController.swift */,
 				B6A551D92CB9D7500085A38C /* CurrentLocationViewController.xib */,
 				B6A553A22CBA2C170085A38C /* CurrentLocationComponents.swift */,
+				B6A553AD2CBADE350085A38C /* CurrentLocationViewModel.swift */,
+				B6A553AF2CBADEB60085A38C /* CurrentLocationViewModel+Dependencies.swift */,
+				B6A553B12CBAE0FD0085A38C /* CurrentLocationFactory.swift */,
 			);
 			path = CurrentLocation;
 			sourceTree = "<group>";
@@ -352,11 +361,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6A553B02CBADEB60085A38C /* CurrentLocationViewModel+Dependencies.swift in Sources */,
 				B6A551A82CB9CFA50085A38C /* AppDelegate.swift in Sources */,
 				B6A551DA2CB9D7500085A38C /* CurrentLocationViewController.swift in Sources */,
+				B6A553B22CBAE0FD0085A38C /* CurrentLocationFactory.swift in Sources */,
 				B6A553A32CBA2C170085A38C /* CurrentLocationComponents.swift in Sources */,
 				B6A553572CBA066C0085A38C /* APIBundle.swift in Sources */,
 				B6A553552CBA06280085A38C /* APIConfig.swift in Sources */,
+				B6A553AE2CBADE350085A38C /* CurrentLocationViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
