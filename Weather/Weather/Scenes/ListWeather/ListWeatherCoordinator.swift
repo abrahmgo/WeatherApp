@@ -7,6 +7,7 @@
 
 import UIKit
 import Utils
+import CoreLocation
 
 class ListWeatherCoordinator {
     
@@ -34,5 +35,13 @@ class ListWeatherCoordinator {
         
         window.rootViewController = viewController
         window.makeKeyAndVisible()
+    }
+    
+    func presentWeather(coordinates: CLLocation) {
+        
+        guard let navigation = listWeatherViewController?.navigationController else {
+            return
+        }
+        ShowWeatherCoordinator(navigatonController: navigation, coordinates: coordinates).present()
     }
 }

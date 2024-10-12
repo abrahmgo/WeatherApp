@@ -6,19 +6,21 @@
 //
 
 import UIKit
+import WeatherUsecases
 import Combine
 
-public protocol ListWeatherViewModelOutputs {
+ protocol ListWeatherViewModelOutputs {
     var components: CurrentValueSubject<[ListWeatherComponent], Never> { get }
     var isLoading: CurrentValueSubject<Bool, Never> { get }
     var error: PassthroughSubject<Error, Never> { get }
 }
 
-public protocol ListWeatherViewModelInputs { }
+ protocol ListWeatherViewModelInputs { }
 
-public protocol ListWeatherViewModelType {
+ protocol ListWeatherViewModelType {
     var outputs: ListWeatherViewModelOutputs { get }
     var inputs: ListWeatherViewModelInputs { get }
 }
 
-public struct ListWeatherDependencies { }
+ struct ListWeatherDependencies { 
+}

@@ -7,8 +7,12 @@
 
 import UIKit
 import Combine
+import Utils
+import CoreLocation
 
 class ListWeatherViewController: UIViewController {
+    
+    var resultSearchController: UISearchController? = nil
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {
@@ -48,8 +52,20 @@ class ListWeatherViewController: UIViewController {
         localize()
     }
     
-    private func setup() { 
+    private func setup() {
         title = "Clima"
+        let locationSearchTable = AddressSearchTableViewController()
+        locationSearchTable.delegate = self
+        resultSearchController = UISearchController(searchResultsController: locationSearchTable)
+        resultSearchController?.searchResultsUpdater = locationSearchTable
+        let searchBar = resultSearchController!.searchBar
+        searchBar.sizeToFit()
+        searchBar.placeholder = "Buscar Ciudad"
+        searchBar.searchBarStyle = .minimal
+        navigationItem.searchController = resultSearchController
+        resultSearchController?.hidesNavigationBarDuringPresentation = false
+        resultSearchController?.obscuresBackgroundDuringPresentation = true
+        definesPresentationContext = true
     }
     
     private func setupBindings() {
@@ -84,5 +100,15 @@ extension ListWeatherViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+extension ListWeatherViewController: AddressSearchTableViewDelegate {
+    
+    func selectLocation(location: CLLocationCoordinate2D) {
+        resultSearchController?.dismiss(animated: true)
+        resultSearchController?.searchBar.text = nil
+        let coordinates =  CLLocation(latitude: location.latitude, longitude: location.longitude)
+        coordinator.presentWeather(coordinates: coordinates)
     }
 }
