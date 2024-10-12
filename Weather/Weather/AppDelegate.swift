@@ -7,6 +7,7 @@
 
 import UIKit
 import NetoworkCore
+import CoreLocation
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,7 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         doNetwork()
         window = UIWindow()
-        window?.rootViewController = CurrentLocationFactory.build()
+//        let coordinates = WeatherCoordinates(latitude: 19.617107, longitude: -99.086664)
+        let coordinates = CLLocation(latitude: 19.617107, longitude: -99.086664)
+        window?.rootViewController = ShowWeatherFactory.build(coordinates: coordinates)
         window?.makeKeyAndVisible()
         
         return true

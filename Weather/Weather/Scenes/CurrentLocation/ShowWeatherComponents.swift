@@ -7,7 +7,7 @@
 
 import WeatherUI
 
-enum CurrentLocationComponents {
+enum ShowWeatherComponents {
     case headerTitle(data: TitleTableViewCellDataType)
     case temperature(data: TitleNumberViewCellDataType)
     case information(data: InformationViewCellDataType)

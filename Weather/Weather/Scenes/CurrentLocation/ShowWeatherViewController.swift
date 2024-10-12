@@ -10,7 +10,7 @@ import Utils
 import WeatherUI
 import Combine
 
-class CurrentLocationViewController: UIViewController {
+class ShowWeatherViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView! {
         didSet {
@@ -21,9 +21,9 @@ class CurrentLocationViewController: UIViewController {
         }
     }
     
-    private let viewModel: CurrentLocationViewModelType
+    private let viewModel: ShowWeatherViewModelType
     private var cancellable: Set<AnyCancellable> = Set<AnyCancellable>()
-    private var components: [CurrentLocationComponents] = []
+    private var components: [ShowWeatherComponents] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,9 +36,9 @@ class CurrentLocationViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public init(viewModel: CurrentLocationViewModelType) {
+    public init(viewModel: ShowWeatherViewModelType) {
         self.viewModel = viewModel
-        super.init(nibName: CurrentLocationViewController.typeName, bundle: Bundle(for: type(of: self)))
+        super.init(nibName: ShowWeatherViewController.typeName, bundle: Bundle(for: type(of: self)))
     }
     
     public func setup() {
@@ -56,7 +56,7 @@ class CurrentLocationViewController: UIViewController {
     }
 }
 
-extension CurrentLocationViewController: UITableViewDataSource {
+extension ShowWeatherViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         components.count

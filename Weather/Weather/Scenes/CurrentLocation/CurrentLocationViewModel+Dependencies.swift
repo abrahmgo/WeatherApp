@@ -7,24 +7,24 @@
 
 import Combine
 import WeatherUsecases
-import WeatherEntities
+import CoreLocation
 
-protocol CurrentLocationViewModelOutputs {
-    var components: CurrentValueSubject<[CurrentLocationComponents], Never> { get }
+protocol ShowWeatherViewModelOutputs {
+    var components: CurrentValueSubject<[ShowWeatherComponents], Never> { get }
     var isLoading: CurrentValueSubject<Bool, Never> { get }
     var error: PassthroughSubject<Error, Never> { get }
 }
 
-protocol CurrentLocationViewModelInputs { }
+protocol ShowWeatherViewModelInputs { }
 
-protocol CurrentLocationViewModelType {
-    var outputs: CurrentLocationViewModelOutputs { get }
-    var inputs: CurrentLocationViewModelInputs { get }
+protocol ShowWeatherViewModelType {
+    var outputs: ShowWeatherViewModelOutputs { get }
+    var inputs: ShowWeatherViewModelInputs { get }
 }
 
-struct CurrentLocationDependencies {
-    let startLocation: StarLocalizationUseCaseType
-    let getCurrentLocation: GetCurrentLocationUseCaseType
+struct ShowWeatherDependencies {
+    
+    let coordinates: CLLocation
     let getAddressByCoordinates: GetAddressByCoordinatesUseCaseType
     let getWeather: GetWeatherUsecaseType
 }
