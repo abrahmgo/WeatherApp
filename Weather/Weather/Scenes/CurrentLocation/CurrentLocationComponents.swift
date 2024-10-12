@@ -9,4 +9,5 @@ import WeatherUI
 
 enum CurrentLocationComponents {
     case headerTitle(data: TitleTableViewCellDataType)
+    case temperature(data: TitleNumberViewCellDataType)
 }

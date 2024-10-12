@@ -7,6 +7,7 @@
 
 import Combine
 import WeatherUI
+import WeatherEntities
 
 class CurrentLocationViewModel: CurrentLocationViewModelType, CurrentLocationViewModelInputs, CurrentLocationViewModelOutputs {
 
@@ -51,10 +52,20 @@ class CurrentLocationViewModel: CurrentLocationViewModelType, CurrentLocationVie
                 Task {
                     do {
                         let address = try await self.dependencies.getAddressByCoordinates.execute(coordinates: location.coordinate)
-                        let titleData = TitleTableViewCellData(title: "Mi Ubicacion", 
+                        
+                        let weatherCoordinates = WeatherCoordinates(latitude: location.coordinate.latitude.magnitude,
+                                                                    longitude: location.coordinate.longitude.magnitude)
+                        let weather = try await self.dependencies.getWeather.execute(coordinates: weatherCoordinates)
+                        
+                        let titleData = TitleTableViewCellData(title: "Mi Ubicacion",
                                                                subtitle: address.city + " " + address.state)
-                        let component = CurrentLocationComponents.headerTitle(data: titleData)
-                        self.components.send([component])
+                        let titleComponent = CurrentLocationComponents.headerTitle(data: titleData)
+                        
+                        let temperatureData = TitleNumberViewCellData(number: "\(weather.temperature.temp)",
+                                                                      title: weather.information.first!.description,
+                                                                      subtitle: "min: \(weather.temperature.tempMin) max \(weather.temperature.tempMax)")
+                        let weatherComponent = CurrentLocationComponents.temperature(data: temperatureData)
+                        self.components.send([titleComponent, weatherComponent])
                     } catch {
                         
                     }

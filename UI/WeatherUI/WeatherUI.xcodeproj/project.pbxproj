@@ -13,6 +13,8 @@
 		B6A553942CBA294D0085A38C /* WeatherUI.h in Headers */ = {isa = PBXBuildFile; fileRef = B6A553862CBA294D0085A38C /* WeatherUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B6A553A02CBA29F90085A38C /* TitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6A5539F2CBA29F90085A38C /* TitleTableViewCell.xib */; };
 		B6A553A12CBA29F90085A38C /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5539E2CBA29F90085A38C /* TitleTableViewCell.swift */; };
+		B6A553B52CBAE5900085A38C /* TitleNumberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6A553B42CBAE5900085A38C /* TitleNumberTableViewCell.xib */; };
+		B6A553B62CBAE5900085A38C /* TitleNumberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553B32CBAE5900085A38C /* TitleNumberTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,8 @@
 		B6A553922CBA294D0085A38C /* WeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherUITests.swift; sourceTree = "<group>"; };
 		B6A5539E2CBA29F90085A38C /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 		B6A5539F2CBA29F90085A38C /* TitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleTableViewCell.xib; sourceTree = "<group>"; };
+		B6A553B32CBAE5900085A38C /* TitleNumberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleNumberTableViewCell.swift; sourceTree = "<group>"; };
+		B6A553B42CBAE5900085A38C /* TitleNumberTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleNumberTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,8 @@
 			children = (
 				B6A5539E2CBA29F90085A38C /* TitleTableViewCell.swift */,
 				B6A5539F2CBA29F90085A38C /* TitleTableViewCell.xib */,
+				B6A553B32CBAE5900085A38C /* TitleNumberTableViewCell.swift */,
+				B6A553B42CBAE5900085A38C /* TitleNumberTableViewCell.xib */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -192,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6A553A02CBA29F90085A38C /* TitleTableViewCell.xib in Resources */,
+				B6A553B52CBAE5900085A38C /* TitleNumberTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +218,7 @@
 			files = (
 				B6A553A12CBA29F90085A38C /* TitleTableViewCell.swift in Sources */,
 				B6A553882CBA294D0085A38C /* WeatherUI.docc in Sources */,
+				B6A553B62CBAE5900085A38C /* TitleNumberTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

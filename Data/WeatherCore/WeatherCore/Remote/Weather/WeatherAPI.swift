@@ -19,7 +19,8 @@ struct WeatherAPI: WeatherDataSource.WeatherRemoteDataSource {
     
     func get(model: WeatherRequest) async throws -> Weather {
         let model = WeatherRequestModel(latitude: model.coordinates.latitude,
-                                        longitude: model.coordinates.longitude)
+                                        longitude: model.coordinates.longitude,
+                                        units: model.units)
         let endpoint = WeatherEndpoint(model: model)
         let request: WeatherResponseModel = try await service.request(target: endpoint)
         return request.mapToWeather()

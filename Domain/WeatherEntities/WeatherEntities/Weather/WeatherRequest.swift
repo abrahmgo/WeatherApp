@@ -10,8 +10,11 @@ import Foundation
 public struct WeatherRequest {
     
     public let coordinates: WeatherCoordinates
+    public let units: WeatherUnits
     
-    public init(coordinates: WeatherCoordinates) {
+    public init(coordinates: WeatherCoordinates,
+                units: WeatherUnits = .metric) {
         self.coordinates = coordinates
+        self.units = units
     }
 }

@@ -31,7 +31,8 @@ struct WeatherEndpoint: NetworkTargetType {
     
     var queryParams: [String : Any]? {
         return ["lat": model.latitude,
-                "lon": model.longitude]
+                "lon": model.longitude,
+                "units": model.units.rawValue]
     }
     
     var headers: [String : String]?

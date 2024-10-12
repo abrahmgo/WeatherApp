@@ -15,6 +15,7 @@ class CurrentLocationViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.register(cellType: TitleTableViewCell.self, bundle: Bundle(for: TitleTableViewCell.self))
+            tableView.register(cellType: TitleNumberTableViewCell.self, bundle: Bundle(for: TitleNumberTableViewCell.self))
         }
     }
     
@@ -64,6 +65,10 @@ extension CurrentLocationViewController: UITableViewDataSource {
         switch component {
         case .headerTitle(let data):
             let cell = tableView.dequeueReusableCell(with: TitleTableViewCell.self, for: indexPath)
+            cell.update(model: data)
+            return cell
+        case .temperature(let data):
+            let cell = tableView.dequeueReusableCell(with: TitleNumberTableViewCell.self, for: indexPath)
             cell.update(model: data)
             return cell
         }

@@ -67,7 +67,8 @@ struct NetworkService: NetworkServiceType {
         }
         
         var urlComponents = URLComponents(string: newBaseURL)
-        let tokenQueryItem = [URLQueryItem(name: "appid", value: token)]
+        let tokenQueryItem = [URLQueryItem(name: "appid", value: token),
+                              URLQueryItem(name: "lang", value: "es")]
         let queryItems = target.queryParams?.map({ (key, value) in
             return URLQueryItem(name: key, value: String(describing: value) )
         })
