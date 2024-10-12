@@ -7,26 +7,20 @@
 
 import UIKit
 import Utils
-import WeatherUsecases
-import WeatherCore
-import Combine
-import WeatherEntities
+import WeatherUI
 
 class CurrentLocationViewController: UIViewController {
 
-    private let startLocation: StarLocalizationUseCaseType
-    private let getCurrentLocation: GetCurrentLocationUseCaseType
-    private var cancellable: Set<AnyCancellable> = Set<AnyCancellable>()
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            tableView.register(cellType: TitleTableViewCell.self, bundle: Bundle(for: TitleTableViewCell.self))
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        binds()
-        Task {
-            try await Task.sleep(for: .seconds(2))
-            try await startLocation.execute(type: .always)
-        }
-        // Do any additional setup after loading the view.
+
+        setup()
     }
     
     @available(*, unavailable)
@@ -35,26 +29,22 @@ class CurrentLocationViewController: UIViewController {
     }
     
     public init() {
-        let locationService = WeatherLocalDataSource.location
-        startLocation = StarLocalizationUseCase(locationService: locationService)
-        getCurrentLocation = GetCurrentLocationUseCase(locationService: locationService)
         super.init(nibName: CurrentLocationViewController.typeName, bundle: Bundle(for: type(of: self)))
     }
     
-    private func binds() {
-        getCurrentLocation.execute()
-            .sink(receiveCompletion: { result in
-                dump(result)
-            }) { location in
-                dump(location.coordinate)
-                Task {
-                    let remote = WeatherCore.WeatherRemoteDataSource.weather
-                    let usecase = GetWeatherUsecase(remoteDataSource: remote)
-                    let model = WeatherCoordinates(latitude: location.coordinate.latitude.magnitude,
-                                                   longitude: location.coordinate.longitude.magnitude)
-                    let info = try await usecase.execute(coordinates: model)
-                    dump(info)
-                }
-            }.store(in: &cancellable)
+    public func setup() {
+        tableView.dataSource = self
+    }
+}
+
+extension CurrentLocationViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(with: TitleTableViewCell.self, for: indexPath)
+        return cell
     }
 }

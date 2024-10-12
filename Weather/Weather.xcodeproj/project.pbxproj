@@ -29,6 +29,9 @@
 		B6A553502CBA05D60085A38C /* NetoworkCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B6A5534E2CBA05D60085A38C /* NetoworkCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B6A553552CBA06280085A38C /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553542CBA06280085A38C /* APIConfig.swift */; };
 		B6A553572CBA066C0085A38C /* APIBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553562CBA066C0085A38C /* APIBundle.swift */; };
+		B6A553A32CBA2C170085A38C /* CurrentLocationComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553A22CBA2C170085A38C /* CurrentLocationComponents.swift */; };
+		B6A553A72CBA2CED0085A38C /* WeatherUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A553A62CBA2CED0085A38C /* WeatherUI.framework */; };
+		B6A553A82CBA2CED0085A38C /* WeatherUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B6A553A62CBA2CED0085A38C /* WeatherUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,7 @@
 				B6A553502CBA05D60085A38C /* NetoworkCore.framework in Embed Frameworks */,
 				B6A5522B2CB9D9B30085A38C /* Utils.framework in Embed Frameworks */,
 				B6A553392CB9E8060085A38C /* WeatherUsecases.framework in Embed Frameworks */,
+				B6A553A82CBA2CED0085A38C /* WeatherUI.framework in Embed Frameworks */,
 				B6A5533F2CB9E8120085A38C /* WeatherEntities.framework in Embed Frameworks */,
 				B6A553422CB9E8160085A38C /* WeatherDataSource.framework in Embed Frameworks */,
 				B6A5533C2CB9E80E0085A38C /* WeatherCore.framework in Embed Frameworks */,
@@ -88,6 +92,8 @@
 		B6A5534E2CBA05D60085A38C /* NetoworkCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetoworkCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6A553542CBA06280085A38C /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
 		B6A553562CBA066C0085A38C /* APIBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBundle.swift; sourceTree = "<group>"; };
+		B6A553A22CBA2C170085A38C /* CurrentLocationComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationComponents.swift; sourceTree = "<group>"; };
+		B6A553A62CBA2CED0085A38C /* WeatherUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WeatherUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +104,7 @@
 				B6A5534F2CBA05D60085A38C /* NetoworkCore.framework in Frameworks */,
 				B6A5522A2CB9D9B30085A38C /* Utils.framework in Frameworks */,
 				B6A553382CB9E8060085A38C /* WeatherUsecases.framework in Frameworks */,
+				B6A553A72CBA2CED0085A38C /* WeatherUI.framework in Frameworks */,
 				B6A5533E2CB9E8120085A38C /* WeatherEntities.framework in Frameworks */,
 				B6A553412CB9E8150085A38C /* WeatherDataSource.framework in Frameworks */,
 				B6A5533B2CB9E80E0085A38C /* WeatherCore.framework in Frameworks */,
@@ -185,6 +192,7 @@
 			children = (
 				B6A551D82CB9D7500085A38C /* CurrentLocationViewController.swift */,
 				B6A551D92CB9D7500085A38C /* CurrentLocationViewController.xib */,
+				B6A553A22CBA2C170085A38C /* CurrentLocationComponents.swift */,
 			);
 			path = CurrentLocation;
 			sourceTree = "<group>";
@@ -192,6 +200,7 @@
 		B6A552282CB9D9B30085A38C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B6A553A62CBA2CED0085A38C /* WeatherUI.framework */,
 				B6A5534E2CBA05D60085A38C /* NetoworkCore.framework */,
 				B6A553402CB9E8150085A38C /* WeatherDataSource.framework */,
 				B6A5533D2CB9E8120085A38C /* WeatherEntities.framework */,
@@ -345,6 +354,7 @@
 			files = (
 				B6A551A82CB9CFA50085A38C /* AppDelegate.swift in Sources */,
 				B6A551DA2CB9D7500085A38C /* CurrentLocationViewController.swift in Sources */,
+				B6A553A32CBA2C170085A38C /* CurrentLocationComponents.swift in Sources */,
 				B6A553572CBA066C0085A38C /* APIBundle.swift in Sources */,
 				B6A553552CBA06280085A38C /* APIConfig.swift in Sources */,
 			);

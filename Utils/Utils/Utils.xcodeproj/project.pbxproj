@@ -12,6 +12,7 @@
 		B6A5521B2CB9D95F0085A38C /* UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5521A2CB9D95F0085A38C /* UtilsTests.swift */; };
 		B6A5521C2CB9D95F0085A38C /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = B6A5520E2CB9D95F0085A38C /* Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B6A552272CB9D9910085A38C /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A552262CB9D9910085A38C /* UIViewController+Extension.swift */; };
+		B6A553A52CBA2C7A0085A38C /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553A42CBA2C7A0085A38C /* UITableView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		B6A552152CB9D95F0085A38C /* UtilsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UtilsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6A5521A2CB9D95F0085A38C /* UtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsTests.swift; sourceTree = "<group>"; };
 		B6A552262CB9D9910085A38C /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		B6A553A42CBA2C7A0085A38C /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				B6A552262CB9D9910085A38C /* UIViewController+Extension.swift */,
+				B6A553A42CBA2C7A0085A38C /* UITableView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 			files = (
 				B6A552272CB9D9910085A38C /* UIViewController+Extension.swift in Sources */,
 				B6A552102CB9D95F0085A38C /* Utils.docc in Sources */,
+				B6A553A52CBA2C7A0085A38C /* UITableView+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

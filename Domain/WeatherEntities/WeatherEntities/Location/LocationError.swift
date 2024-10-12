@@ -10,5 +10,6 @@ import Foundation
 public enum LocationError: Error {
     case unavailableLocation
     case checkCLAAuthorization
+    case notAddressFound
     case unknown
 }
