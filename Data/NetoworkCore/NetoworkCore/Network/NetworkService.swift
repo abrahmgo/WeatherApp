@@ -1,0 +1,67 @@
+//
+//  NetworkService.swift
+//  NetoworkCore
+//
+//  Created by Andrés Bonilla Gómez on 11/10/24.
+//
+
+import Foundation
+
+public protocol NetworkServiceType {
+    func request<T: Decodable>(target: NetworkTargetType) async throws -> T
+}
+
+struct NetworkService: NetworkServiceType {
+    
+    private let configuration: URLSessionConfiguration
+    private let session: URLSession
+    private let token: String
+    
+    init(timeoutForRequest: TimeInterval = 20.0,
+         headers: [String: String] = [:],
+         token: String) {
+        self.token = token
+        self.configuration = URLSessionConfiguration.default
+        self.configuration.timeoutIntervalForRequest = timeoutForRequest
+        self.configuration.httpAdditionalHeaders = headers
+        self.session = URLSession(configuration: self.configuration)
+    }
+    
+    func request<T>(target: NetworkTargetType) async throws -> T where T : Decodable {
+        
+        guard let url = prepareURL(target: target) else {
+            throw NetworkError.invalidURL
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = target.method.rawValue
+        request.allHTTPHeaderFields = target.headers
+        request.httpBody = target.body
+        
+        return try await  withCheckedThrowingContinuation { continuation in
+            self.session.dataTask(with: request) { data, response, error in
+                if let error = error {
+                    continuation.resume(throwing: error)
+                } else if let data = data {
+                    if let decoded = try? JSONDecoder().decode(T.self, from: data) {
+                        continuation.resume(returning: decoded)
+                    } else {
+                        continuation.resume(throwing: NetworkError.notDacodedData)
+                    }
+                } else {
+                    continuation.resume(throwing: NetworkError.checkRequest)
+                }
+            }
+        }
+    }
+    
+    private func prepareURL(target: NetworkTargetType) -> URL? {
+        var urlComponents = URLComponents(string: target.url())
+        var tokenQueryItem = [URLQueryItem(name: "appid", value: token)]
+        let queryItems = target.queryParams?.map({ (key, value) in
+            return URLQueryItem(name: key, value: String(describing: value) )
+        })
+        urlComponents?.queryItems = tokenQueryItem + (queryItems ?? [])
+        return urlComponents?.url
+    }
+}

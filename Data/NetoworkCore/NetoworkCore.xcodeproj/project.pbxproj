@@ -11,6 +11,12 @@
 		B6A552AE2CB9DC6A0085A38C /* NetoworkCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A552A32CB9DC6A0085A38C /* NetoworkCore.framework */; };
 		B6A552B32CB9DC6A0085A38C /* NetoworkCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A552B22CB9DC6A0085A38C /* NetoworkCoreTests.swift */; };
 		B6A552B42CB9DC6A0085A38C /* NetoworkCore.h in Headers */ = {isa = PBXBuildFile; fileRef = B6A552A62CB9DC6A0085A38C /* NetoworkCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B6A553452CB9FE3D0085A38C /* NetworkCoreConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553442CB9FE3D0085A38C /* NetworkCoreConfig.swift */; };
+		B6A553472CB9FE820085A38C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553462CB9FE820085A38C /* NetworkService.swift */; };
+		B6A553492CB9FEAB0085A38C /* NetworkTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553482CB9FEAB0085A38C /* NetworkTargetType.swift */; };
+		B6A5534B2CBA017D0085A38C /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5534A2CBA017D0085A38C /* NetworkError.swift */; };
+		B6A5534D2CBA03A10085A38C /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5534C2CBA03A10085A38C /* MockNetworkService.swift */; };
+		B6A553522CBA05F70085A38C /* NetworkCoreAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553512CBA05F70085A38C /* NetworkCoreAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +35,12 @@
 		B6A552A72CB9DC6A0085A38C /* NetoworkCore.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = NetoworkCore.docc; sourceTree = "<group>"; };
 		B6A552AD2CB9DC6A0085A38C /* NetoworkCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetoworkCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6A552B22CB9DC6A0085A38C /* NetoworkCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetoworkCoreTests.swift; sourceTree = "<group>"; };
+		B6A553442CB9FE3D0085A38C /* NetworkCoreConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCoreConfig.swift; sourceTree = "<group>"; };
+		B6A553462CB9FE820085A38C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		B6A553482CB9FEAB0085A38C /* NetworkTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTargetType.swift; sourceTree = "<group>"; };
+		B6A5534A2CBA017D0085A38C /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		B6A5534C2CBA03A10085A38C /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
+		B6A553512CBA05F70085A38C /* NetworkCoreAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCoreAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +83,7 @@
 		B6A552A52CB9DC6A0085A38C /* NetoworkCore */ = {
 			isa = PBXGroup;
 			children = (
+				B6A553432CB9FE330085A38C /* Network */,
 				B6A552A62CB9DC6A0085A38C /* NetoworkCore.h */,
 				B6A552A72CB9DC6A0085A38C /* NetoworkCore.docc */,
 			);
@@ -83,6 +96,19 @@
 				B6A552B22CB9DC6A0085A38C /* NetoworkCoreTests.swift */,
 			);
 			path = NetoworkCoreTests;
+			sourceTree = "<group>";
+		};
+		B6A553432CB9FE330085A38C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B6A553442CB9FE3D0085A38C /* NetworkCoreConfig.swift */,
+				B6A553462CB9FE820085A38C /* NetworkService.swift */,
+				B6A553512CBA05F70085A38C /* NetworkCoreAPI.swift */,
+				B6A553482CB9FEAB0085A38C /* NetworkTargetType.swift */,
+				B6A5534A2CBA017D0085A38C /* NetworkError.swift */,
+				B6A5534C2CBA03A10085A38C /* MockNetworkService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,7 +220,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6A5534D2CBA03A10085A38C /* MockNetworkService.swift in Sources */,
 				B6A552A82CB9DC6A0085A38C /* NetoworkCore.docc in Sources */,
+				B6A553492CB9FEAB0085A38C /* NetworkTargetType.swift in Sources */,
+				B6A553472CB9FE820085A38C /* NetworkService.swift in Sources */,
+				B6A553452CB9FE3D0085A38C /* NetworkCoreConfig.swift in Sources */,
+				B6A5534B2CBA017D0085A38C /* NetworkError.swift in Sources */,
+				B6A553522CBA05F70085A38C /* NetworkCoreAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +441,7 @@
 		B6A552BB2CB9DC6A0085A38C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -424,6 +457,7 @@
 		B6A552BC2CB9DC6A0085A38C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import NetoworkCore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,8 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.rootViewController = CurrentLocationViewController()
         window?.makeKeyAndVisible()
+        doNetwork()
         
         return true
+    }
+    
+    func doNetwork() {
+        NetworkCoreAPI.setup(with: APIConfig.self)
     }
 }
 
