@@ -10,6 +10,7 @@ import Utils
 import WeatherUsecases
 import WeatherCore
 import Combine
+import WeatherEntities
 
 class CurrentLocationViewController: UIViewController {
 
@@ -46,6 +47,14 @@ class CurrentLocationViewController: UIViewController {
                 dump(result)
             }) { location in
                 dump(location.coordinate)
+                Task {
+                    let remote = WeatherCore.WeatherRemoteDataSource.weather
+                    let usecase = GetWeatherUsecase(remoteDataSource: remote)
+                    let model = WeatherCoordinates(latitude: location.coordinate.latitude.magnitude,
+                                                   longitude: location.coordinate.longitude.magnitude)
+                    let info = try await usecase.execute(coordinates: model)
+                    dump(info)
+                }
             }.store(in: &cancellable)
     }
 }

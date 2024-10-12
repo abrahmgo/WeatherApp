@@ -17,6 +17,7 @@
 		B6A5532E2CB9E4950085A38C /* WeatherCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A5532D2CB9E4950085A38C /* WeatherCore.framework */; };
 		B6A553322CB9E5DF0085A38C /* StarLocationUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553312CB9E5DF0085A38C /* StarLocationUsecase.swift */; };
 		B6A553362CB9E7980085A38C /* GetCurrentLocationUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553352CB9E7980085A38C /* GetCurrentLocationUsecase.swift */; };
+		B6A553762CBA15440085A38C /* GetWeatherUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553752CBA15440085A38C /* GetWeatherUsecase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		B6A5532D2CB9E4950085A38C /* WeatherCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WeatherCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6A553312CB9E5DF0085A38C /* StarLocationUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarLocationUsecase.swift; sourceTree = "<group>"; };
 		B6A553352CB9E7980085A38C /* GetCurrentLocationUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentLocationUsecase.swift; sourceTree = "<group>"; };
+		B6A553752CBA15440085A38C /* GetWeatherUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWeatherUsecase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		B6A552392CB9DB650085A38C /* WeatherUsecases */ = {
 			isa = PBXGroup;
 			children = (
+				B6A553742CBA15380085A38C /* Weather */,
 				B6A553302CB9E4A70085A38C /* Location */,
 				B6A5523A2CB9DB650085A38C /* WeatherUsecases.h */,
 				B6A5523B2CB9DB650085A38C /* WeatherUsecases.docc */,
@@ -121,6 +124,14 @@
 				B6A553352CB9E7980085A38C /* GetCurrentLocationUsecase.swift */,
 			);
 			path = Location;
+			sourceTree = "<group>";
+		};
+		B6A553742CBA15380085A38C /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				B6A553752CBA15440085A38C /* GetWeatherUsecase.swift */,
+			);
+			path = Weather;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +246,7 @@
 				B6A553322CB9E5DF0085A38C /* StarLocationUsecase.swift in Sources */,
 				B6A5523C2CB9DB650085A38C /* WeatherUsecases.docc in Sources */,
 				B6A553362CB9E7980085A38C /* GetCurrentLocationUsecase.swift in Sources */,
+				B6A553762CBA15440085A38C /* GetWeatherUsecase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

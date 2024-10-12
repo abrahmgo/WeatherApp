@@ -14,6 +14,9 @@
 		B6A552E22CB9DD650085A38C /* RequestLocationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A552E12CB9DD650085A38C /* RequestLocationType.swift */; };
 		B6A552E52CB9DD890085A38C /* LocationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A552E42CB9DD890085A38C /* LocationError.swift */; };
 		B6A553342CB9E75D0085A38C /* WeatherError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553332CB9E75D0085A38C /* WeatherError.swift */; };
+		B6A5536B2CBA0E860085A38C /* WeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5536A2CBA0E860085A38C /* WeatherRequest.swift */; };
+		B6A5536D2CBA0EB70085A38C /* WeatherCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5536C2CBA0EB70085A38C /* WeatherCoordinates.swift */; };
+		B6A5536F2CBA0EEC0085A38C /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5536E2CBA0EEC0085A38C /* Weather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,9 @@
 		B6A552E12CB9DD650085A38C /* RequestLocationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLocationType.swift; sourceTree = "<group>"; };
 		B6A552E42CB9DD890085A38C /* LocationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationError.swift; sourceTree = "<group>"; };
 		B6A553332CB9E75D0085A38C /* WeatherError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherError.swift; sourceTree = "<group>"; };
+		B6A5536A2CBA0E860085A38C /* WeatherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRequest.swift; sourceTree = "<group>"; };
+		B6A5536C2CBA0EB70085A38C /* WeatherCoordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCoordinates.swift; sourceTree = "<group>"; };
+		B6A5536E2CBA0EEC0085A38C /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,7 @@
 		B6A5525D2CB9DB820085A38C /* WeatherEntities */ = {
 			isa = PBXGroup;
 			children = (
+				B6A553692CBA0E750085A38C /* Weather */,
 				B6A552E32CB9DD770085A38C /* Location */,
 				B6A5525E2CB9DB820085A38C /* WeatherEntities.h */,
 				B6A5525F2CB9DB820085A38C /* WeatherEntities.docc */,
@@ -100,6 +107,16 @@
 				B6A552E42CB9DD890085A38C /* LocationError.swift */,
 			);
 			path = Location;
+			sourceTree = "<group>";
+		};
+		B6A553692CBA0E750085A38C /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				B6A5536A2CBA0E860085A38C /* WeatherRequest.swift */,
+				B6A5536C2CBA0EB70085A38C /* WeatherCoordinates.swift */,
+				B6A5536E2CBA0EEC0085A38C /* Weather.swift */,
+			);
+			path = Weather;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,7 +230,10 @@
 			files = (
 				B6A552E52CB9DD890085A38C /* LocationError.swift in Sources */,
 				B6A552E22CB9DD650085A38C /* RequestLocationType.swift in Sources */,
+				B6A5536F2CBA0EEC0085A38C /* Weather.swift in Sources */,
 				B6A552602CB9DB820085A38C /* WeatherEntities.docc in Sources */,
+				B6A5536B2CBA0E860085A38C /* WeatherRequest.swift in Sources */,
+				B6A5536D2CBA0EB70085A38C /* WeatherCoordinates.swift in Sources */,
 				B6A553342CB9E75D0085A38C /* WeatherError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

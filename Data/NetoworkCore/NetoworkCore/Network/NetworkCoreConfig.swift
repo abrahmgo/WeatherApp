@@ -37,7 +37,8 @@ public final class NetworkCoreAPIConfig {
         if config.useSampleData {
             self.networkService = MockNetworkService()
         } else {
-            self.networkService = NetworkService(headers: config.additionalHeaders,
+            self.networkService = NetworkService(baseURL: config.baseURL, 
+                                                 headers: config.additionalHeaders,
                                                  token: config.token)
         }
     }

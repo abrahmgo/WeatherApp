@@ -16,6 +16,13 @@
 		B6A5531B2CB9DFAE0085A38C /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A5531A2CB9DFAE0085A38C /* Utils.framework */; };
 		B6A5531E2CB9DFB70085A38C /* WeatherEntities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A5531D2CB9DFB70085A38C /* WeatherEntities.framework */; };
 		B6A553212CB9E4160085A38C /* WeatherLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553202CB9E4160085A38C /* WeatherLocalDataSource.swift */; };
+		B6A5535B2CBA0ABD0085A38C /* WeatherEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5535A2CBA0ABD0085A38C /* WeatherEndpoint.swift */; };
+		B6A5535D2CBA0ACD0085A38C /* NetoworkCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A5535C2CBA0ACD0085A38C /* NetoworkCore.framework */; };
+		B6A553612CBA0C210085A38C /* WeatherRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553602CBA0C210085A38C /* WeatherRequestModel.swift */; };
+		B6A553632CBA0C7E0085A38C /* WeatherResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553622CBA0C7E0085A38C /* WeatherResponseModel.swift */; };
+		B6A553652CBA0E0A0085A38C /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553642CBA0E0A0085A38C /* WeatherAPI.swift */; };
+		B6A553732CBA12D60085A38C /* WeatherResponseModel+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553722CBA12D60085A38C /* WeatherResponseModel+Mapper.swift */; };
+		B6A553782CBA18750085A38C /* WeatherRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553772CBA18750085A38C /* WeatherRemoteDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +46,13 @@
 		B6A5531A2CB9DFAE0085A38C /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6A5531D2CB9DFB70085A38C /* WeatherEntities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WeatherEntities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6A553202CB9E4160085A38C /* WeatherLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherLocalDataSource.swift; sourceTree = "<group>"; };
+		B6A5535A2CBA0ABD0085A38C /* WeatherEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherEndpoint.swift; sourceTree = "<group>"; };
+		B6A5535C2CBA0ACD0085A38C /* NetoworkCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetoworkCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6A553602CBA0C210085A38C /* WeatherRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRequestModel.swift; sourceTree = "<group>"; };
+		B6A553622CBA0C7E0085A38C /* WeatherResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponseModel.swift; sourceTree = "<group>"; };
+		B6A553642CBA0E0A0085A38C /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
+		B6A553722CBA12D60085A38C /* WeatherResponseModel+Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherResponseModel+Mapper.swift"; sourceTree = "<group>"; };
+		B6A553772CBA18750085A38C /* WeatherRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRemoteDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6A5535D2CBA0ACD0085A38C /* NetoworkCore.framework in Frameworks */,
 				B6A5531E2CB9DFB70085A38C /* WeatherEntities.framework in Frameworks */,
 				B6A5531B2CB9DFAE0085A38C /* Utils.framework in Frameworks */,
 				B6A553172CB9DFA90085A38C /* WeatherDataSource.framework in Frameworks */,
@@ -85,10 +100,12 @@
 		B6A552812CB9DC4D0085A38C /* WeatherCore */ = {
 			isa = PBXGroup;
 			children = (
+				B6A553592CBA0AA40085A38C /* Remote */,
 				B6A553122CB9DF640085A38C /* Location */,
 				B6A552822CB9DC4D0085A38C /* WeatherCore.h */,
 				B6A552832CB9DC4D0085A38C /* WeatherCore.docc */,
 				B6A553202CB9E4160085A38C /* WeatherLocalDataSource.swift */,
+				B6A553772CBA18750085A38C /* WeatherRemoteDataSource.swift */,
 			);
 			path = WeatherCore;
 			sourceTree = "<group>";
@@ -112,11 +129,32 @@
 		B6A553152CB9DFA90085A38C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B6A5535C2CBA0ACD0085A38C /* NetoworkCore.framework */,
 				B6A5531D2CB9DFB70085A38C /* WeatherEntities.framework */,
 				B6A5531A2CB9DFAE0085A38C /* Utils.framework */,
 				B6A553162CB9DFA90085A38C /* WeatherDataSource.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B6A553582CBA0A8B0085A38C /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				B6A5535A2CBA0ABD0085A38C /* WeatherEndpoint.swift */,
+				B6A553602CBA0C210085A38C /* WeatherRequestModel.swift */,
+				B6A553722CBA12D60085A38C /* WeatherResponseModel+Mapper.swift */,
+				B6A553622CBA0C7E0085A38C /* WeatherResponseModel.swift */,
+				B6A553642CBA0E0A0085A38C /* WeatherAPI.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		B6A553592CBA0AA40085A38C /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				B6A553582CBA0A8B0085A38C /* Weather */,
+			);
+			path = Remote;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,8 +267,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6A553142CB9DF760085A38C /* LocationService.swift in Sources */,
+				B6A553652CBA0E0A0085A38C /* WeatherAPI.swift in Sources */,
+				B6A553632CBA0C7E0085A38C /* WeatherResponseModel.swift in Sources */,
+				B6A5535B2CBA0ABD0085A38C /* WeatherEndpoint.swift in Sources */,
+				B6A553732CBA12D60085A38C /* WeatherResponseModel+Mapper.swift in Sources */,
 				B6A553212CB9E4160085A38C /* WeatherLocalDataSource.swift in Sources */,
+				B6A553782CBA18750085A38C /* WeatherRemoteDataSource.swift in Sources */,
 				B6A552842CB9DC4D0085A38C /* WeatherCore.docc in Sources */,
+				B6A553612CBA0C210085A38C /* WeatherRequestModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

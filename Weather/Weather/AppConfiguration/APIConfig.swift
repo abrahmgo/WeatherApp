@@ -29,7 +29,7 @@ struct APIConfig: NetworkCoreAPIConfigType {
     }
     
     static var additionalHeaders: [String: String] {
-        return ["":""]
+        return ["Content-Type": "application/x-www-form-urlencoded"]
     }
     
     static var token: String {

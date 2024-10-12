@@ -16,11 +16,14 @@ struct NetworkService: NetworkServiceType {
     private let configuration: URLSessionConfiguration
     private let session: URLSession
     private let token: String
+    private let baseURL: String
     
     init(timeoutForRequest: TimeInterval = 20.0,
+         baseURL: String,
          headers: [String: String] = [:],
          token: String) {
         self.token = token
+        self.baseURL = baseURL
         self.configuration = URLSessionConfiguration.default
         self.configuration.timeoutIntervalForRequest = timeoutForRequest
         self.configuration.httpAdditionalHeaders = headers
@@ -38,7 +41,7 @@ struct NetworkService: NetworkServiceType {
         request.allHTTPHeaderFields = target.headers
         request.httpBody = target.body
         
-        return try await  withCheckedThrowingContinuation { continuation in
+        return try await withCheckedThrowingContinuation { continuation in
             self.session.dataTask(with: request) { data, response, error in
                 if let error = error {
                     continuation.resume(throwing: error)
@@ -51,13 +54,20 @@ struct NetworkService: NetworkServiceType {
                 } else {
                     continuation.resume(throwing: NetworkError.checkRequest)
                 }
-            }
+            }.resume()
         }
     }
     
     private func prepareURL(target: NetworkTargetType) -> URL? {
-        var urlComponents = URLComponents(string: target.url())
-        var tokenQueryItem = [URLQueryItem(name: "appid", value: token)]
+        var newBaseURL = ""
+        if target.baseURL.isEmpty {
+            newBaseURL =  baseURL + target.path
+        } else {
+            newBaseURL = target.baseURL + target.path
+        }
+        
+        var urlComponents = URLComponents(string: newBaseURL)
+        let tokenQueryItem = [URLQueryItem(name: "appid", value: token)]
         let queryItems = target.queryParams?.map({ (key, value) in
             return URLQueryItem(name: key, value: String(describing: value) )
         })

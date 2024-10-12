@@ -15,9 +15,9 @@ enum APIBundle: String {
     var server: String {
         switch self {
         case .production:
-            return "https://api.openweathermap.org/data/2.5/weather"
+            return "https://api.openweathermap.org/"
         case .development:
-            return "https://api.openweathermap.org/data/2.5/weather"
+            return "https://api.openweathermap.org/"
         }
     }
 }
