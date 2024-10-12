@@ -61,11 +61,23 @@ class CurrentLocationViewModel: CurrentLocationViewModelType, CurrentLocationVie
                                                                subtitle: address.city + " " + address.state)
                         let titleComponent = CurrentLocationComponents.headerTitle(data: titleData)
                         
-                        let temperatureData = TitleNumberViewCellData(number: "\(weather.temperature.temp)",
+                        let spaceData = SpaceViewCellData(height: 15)
+                        let spaceComponent = CurrentLocationComponents.space(data: spaceData)
+                        
+                        let temperatureData = TitleNumberViewCellData(number: "\(weather.temperature.temp.toInt())º",
                                                                       title: weather.information.first!.description,
-                                                                      subtitle: "min: \(weather.temperature.tempMin) max \(weather.temperature.tempMax)")
+                                                                      subtitle: "min: \(weather.temperature.tempMin.toInt())º max \(weather.temperature.tempMax.toInt())º")
                         let weatherComponent = CurrentLocationComponents.temperature(data: temperatureData)
-                        self.components.send([titleComponent, weatherComponent])
+                        
+                        let informationData = InformationViewCellData(humidty: weather.temperature.humidity.toInt(),
+                                                                      pressure: weather.temperature.pressure.toInt(),
+                                                                      pressureSea: weather.temperature.seaLevel.toInt(),
+                                                                      pressureGround: weather.temperature.grndLevel.toInt())
+                        let informationComponent = CurrentLocationComponents.information(data: informationData)
+                        
+                        self.components.send([spaceComponent, titleComponent,
+                                              spaceComponent, weatherComponent,
+                                              spaceComponent, informationComponent])
                     } catch {
                         
                     }

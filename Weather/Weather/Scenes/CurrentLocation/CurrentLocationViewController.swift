@@ -16,6 +16,8 @@ class CurrentLocationViewController: UIViewController {
         didSet {
             tableView.register(cellType: TitleTableViewCell.self, bundle: Bundle(for: TitleTableViewCell.self))
             tableView.register(cellType: TitleNumberTableViewCell.self, bundle: Bundle(for: TitleNumberTableViewCell.self))
+            tableView.register(cellType: InformationTableViewCell.self, bundle: Bundle(for: InformationTableViewCell.self))
+            tableView.register(cellType: SpaceTableViewCell.self, bundle: Bundle(for: SpaceTableViewCell.self))
         }
     }
     
@@ -69,6 +71,14 @@ extension CurrentLocationViewController: UITableViewDataSource {
             return cell
         case .temperature(let data):
             let cell = tableView.dequeueReusableCell(with: TitleNumberTableViewCell.self, for: indexPath)
+            cell.update(model: data)
+            return cell
+        case .information(let data):
+            let cell = tableView.dequeueReusableCell(with: InformationTableViewCell.self, for: indexPath)
+            cell.update(model: data)
+            return cell
+        case .space(let data):
+            let cell = tableView.dequeueReusableCell(with: SpaceTableViewCell.self, for: indexPath)
             cell.update(model: data)
             return cell
         }

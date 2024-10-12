@@ -15,6 +15,10 @@
 		B6A553A12CBA29F90085A38C /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5539E2CBA29F90085A38C /* TitleTableViewCell.swift */; };
 		B6A553B52CBAE5900085A38C /* TitleNumberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6A553B42CBAE5900085A38C /* TitleNumberTableViewCell.xib */; };
 		B6A553B62CBAE5900085A38C /* TitleNumberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553B32CBAE5900085A38C /* TitleNumberTableViewCell.swift */; };
+		B6A553BB2CBB03030085A38C /* InformationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6A553BA2CBB03030085A38C /* InformationTableViewCell.xib */; };
+		B6A553BC2CBB03030085A38C /* InformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553B92CBB03030085A38C /* InformationTableViewCell.swift */; };
+		B6A553C12CBB0E810085A38C /* SpaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6A553C02CBB0E810085A38C /* SpaceTableViewCell.xib */; };
+		B6A553C22CBB0E810085A38C /* SpaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553BF2CBB0E810085A38C /* SpaceTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +41,10 @@
 		B6A5539F2CBA29F90085A38C /* TitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleTableViewCell.xib; sourceTree = "<group>"; };
 		B6A553B32CBAE5900085A38C /* TitleNumberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleNumberTableViewCell.swift; sourceTree = "<group>"; };
 		B6A553B42CBAE5900085A38C /* TitleNumberTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleNumberTableViewCell.xib; sourceTree = "<group>"; };
+		B6A553B92CBB03030085A38C /* InformationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationTableViewCell.swift; sourceTree = "<group>"; };
+		B6A553BA2CBB03030085A38C /* InformationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformationTableViewCell.xib; sourceTree = "<group>"; };
+		B6A553BF2CBB0E810085A38C /* SpaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceTableViewCell.swift; sourceTree = "<group>"; };
+		B6A553C02CBB0E810085A38C /* SpaceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpaceTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +109,10 @@
 				B6A5539F2CBA29F90085A38C /* TitleTableViewCell.xib */,
 				B6A553B32CBAE5900085A38C /* TitleNumberTableViewCell.swift */,
 				B6A553B42CBAE5900085A38C /* TitleNumberTableViewCell.xib */,
+				B6A553B92CBB03030085A38C /* InformationTableViewCell.swift */,
+				B6A553BA2CBB03030085A38C /* InformationTableViewCell.xib */,
+				B6A553BF2CBB0E810085A38C /* SpaceTableViewCell.swift */,
+				B6A553C02CBB0E810085A38C /* SpaceTableViewCell.xib */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -199,6 +211,8 @@
 			files = (
 				B6A553A02CBA29F90085A38C /* TitleTableViewCell.xib in Resources */,
 				B6A553B52CBAE5900085A38C /* TitleNumberTableViewCell.xib in Resources */,
+				B6A553C12CBB0E810085A38C /* SpaceTableViewCell.xib in Resources */,
+				B6A553BB2CBB03030085A38C /* InformationTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +232,8 @@
 			files = (
 				B6A553A12CBA29F90085A38C /* TitleTableViewCell.swift in Sources */,
 				B6A553882CBA294D0085A38C /* WeatherUI.docc in Sources */,
+				B6A553C22CBB0E810085A38C /* SpaceTableViewCell.swift in Sources */,
+				B6A553BC2CBB03030085A38C /* InformationTableViewCell.swift in Sources */,
 				B6A553B62CBAE5900085A38C /* TitleNumberTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
