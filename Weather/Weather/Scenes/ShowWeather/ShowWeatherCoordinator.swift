@@ -14,9 +14,10 @@ struct ShowWeatherCoordinator {
     private var showWeatherViewController: ShowWeatherViewController?
     
     init(navigatonController: UINavigationController,
-         coordinates: CLLocation) {
+         coordinates: CLLocation,
+         delegate: ShowWeatherDelegate? = nil) {
         self.navigatonController = navigatonController
-        self.showWeatherViewController = ShowWeatherFactory.build(coordinates: coordinates)
+        self.showWeatherViewController = ShowWeatherFactory.build(coordinates: coordinates, delegate: delegate)
     }
     
     func present() {
@@ -24,7 +25,7 @@ struct ShowWeatherCoordinator {
         guard let showWeatherViewController = showWeatherViewController else {
             return
         }
-        
-        navigatonController.present(showWeatherViewController, animated: true)
+        let viewController = UINavigationController(rootViewController: showWeatherViewController)
+        navigatonController.present(viewController, animated: true)
     }
 }

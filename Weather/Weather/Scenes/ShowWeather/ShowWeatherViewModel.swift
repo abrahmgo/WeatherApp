@@ -8,6 +8,7 @@
 import Combine
 import WeatherUI
 import WeatherEntities
+import CoreLocation
 
 class ShowWeatherViewModel: ShowWeatherViewModelType, ShowWeatherViewModelInputs, ShowWeatherViewModelOutputs {
 
@@ -69,5 +70,9 @@ class ShowWeatherViewModel: ShowWeatherViewModelType, ShowWeatherViewModelInputs
                 
             }
         }
+    }
+    
+    func getCoordinates() -> CLLocation {
+        return dependencies.coordinates
     }
 }

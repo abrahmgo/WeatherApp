@@ -39,9 +39,12 @@ class ListWeatherCoordinator {
     
     func presentWeather(coordinates: CLLocation) {
         
-        guard let navigation = listWeatherViewController?.navigationController else {
+        guard let navigation = listWeatherViewController?.navigationController,
+              let listWeatherViewController = listWeatherViewController else {
             return
         }
-        ShowWeatherCoordinator(navigatonController: navigation, coordinates: coordinates).present()
+        ShowWeatherCoordinator(navigatonController: navigation,
+                               coordinates: coordinates,
+                               delegate: listWeatherViewController).present()
     }
 }

@@ -9,6 +9,12 @@ import UIKit
 import Utils
 import WeatherUI
 import Combine
+import CoreLocation
+
+protocol ShowWeatherDelegate: AnyObject {
+    func add(coordinates: CLLocation)
+    func cancel()
+}
 
 class ShowWeatherViewController: UIViewController {
 
@@ -24,6 +30,7 @@ class ShowWeatherViewController: UIViewController {
     private let viewModel: ShowWeatherViewModelType
     private var cancellable: Set<AnyCancellable> = Set<AnyCancellable>()
     private var components: [ShowWeatherComponents] = []
+    private weak var delegate: ShowWeatherDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,14 +43,35 @@ class ShowWeatherViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public init(viewModel: ShowWeatherViewModelType) {
+    public init(viewModel: ShowWeatherViewModelType,
+                delegate: ShowWeatherDelegate? = nil) {
         self.viewModel = viewModel
+        self.delegate = delegate
         super.init(nibName: ShowWeatherViewController.typeName, bundle: Bundle(for: type(of: self)))
     }
     
     public func setup() {
         tableView.dataSource = self
         setBind()
+        
+        let rightButton = UIBarButtonItem(title: "Agregar", image: nil,
+                                          target: self, action: #selector(addFavorite))
+        navigationItem.setRightBarButton(rightButton, animated: true)
+        
+        let leftButton = UIBarButtonItem(title: "Cancelar", image: nil,
+                                          target: self, action: #selector(cancel))
+        navigationItem.setLeftBarButton(leftButton, animated: true)
+    }
+    
+    @objc func addFavorite() {
+        let coordinates = viewModel.outputs.getCoordinates()
+        delegate?.add(coordinates: coordinates)
+        dismiss(animated: true)
+    }
+    
+    @objc func cancel() {
+        delegate?.cancel()
+        dismiss(animated: true)
     }
     
     func setBind() {

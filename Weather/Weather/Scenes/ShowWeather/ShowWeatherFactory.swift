@@ -12,7 +12,8 @@ import CoreLocation
 
 struct ShowWeatherFactory {
     
-    static func build(coordinates: CLLocation) -> ShowWeatherViewController {
+    static func build(coordinates: CLLocation,
+                      delegate: ShowWeatherDelegate? = nil) -> ShowWeatherViewController {
         
         let weatherService = WeatherRemoteDataSource.weather
         
@@ -23,7 +24,7 @@ struct ShowWeatherFactory {
                                                    getAddressByCoordinates: getAddressByCoordinates,
                                                    getWeather: getWeather)
         let viewModel = ShowWeatherViewModel(dependencies: dependencies)
-        let view = ShowWeatherViewController(viewModel: viewModel)
+        let view = ShowWeatherViewController(viewModel: viewModel, delegate: delegate)
         return view
     }
 }

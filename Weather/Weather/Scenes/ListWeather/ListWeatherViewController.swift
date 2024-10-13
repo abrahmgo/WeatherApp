@@ -9,6 +9,7 @@ import UIKit
 import Combine
 import Utils
 import CoreLocation
+import WeatherUI
 
 class ListWeatherViewController: UIViewController {
     
@@ -16,7 +17,7 @@ class ListWeatherViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {
-            tableView.tableFooterView = UIView()
+            tableView.register(cellType: CityWeatherTableViewCell.self, bundle: Bundle(for: CityWeatherTableViewCell.self))
             tableView.dataSource = self
             tableView.delegate = self
         }
@@ -71,6 +72,7 @@ class ListWeatherViewController: UIViewController {
     private func setupBindings() {
         
         viewModel.outputs.components
+            .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] components in
                 self?.components = components
                 self?.tableView.reloadData()
@@ -89,8 +91,13 @@ extension ListWeatherViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // TODO: Should implement based on availabe components
-        return UITableViewCell()
+        let component = components[indexPath.row]
+        switch component {
+        case .city(let data):
+            let cell = tableView.dequeueReusableCell(with: CityWeatherTableViewCell.self, for: indexPath)
+            cell.update(model: data)
+            return cell
+        }
     }
 }
 
@@ -110,5 +117,16 @@ extension ListWeatherViewController: AddressSearchTableViewDelegate {
         resultSearchController?.searchBar.text = nil
         let coordinates =  CLLocation(latitude: location.latitude, longitude: location.longitude)
         coordinator.presentWeather(coordinates: coordinates)
+    }
+}
+
+extension ListWeatherViewController: ShowWeatherDelegate {
+    
+    func add(coordinates: CLLocation) {
+        viewModel.inputs.addNewCity(location: coordinates)
+    }
+    
+    func cancel() {
+        
     }
 }

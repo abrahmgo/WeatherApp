@@ -6,6 +6,9 @@
 //
 
 import Combine
+import WeatherEntities
+import CoreLocation
+import WeatherUI
 
 class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs, ListWeatherViewModelOutputs {
 
@@ -27,5 +30,27 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
     
     init(dependencies: ListWeatherDependencies) {
         self.dependencies = dependencies
+    }
+    
+    func addNewCity(location: CLLocation) {
+        Task {
+            do {
+                let coordinates = WeatherCoordinates(latitude: location.coordinate.latitude,
+                                                     longitude: location.coordinate.longitude)
+                let weather = try await dependencies.getWeather.execute(coordinates: coordinates)
+                let address = try await dependencies.getAddress.execute(coordinates: location.coordinate)
+                
+                let data = CityWeatherViewCellData(title: address.city,
+                                                   subtitle: "",
+                                                   description: weather.information.first?.description ?? "",
+                                                   temperature: "\(weather.temperature.temp.toInt())º",
+                                                   minmax: "Maxima: \(weather.temperature.tempMax.toInt())º Minima: \(weather.temperature.tempMin.toInt())º")
+                let component = ListWeatherComponent.city(data: data)
+                let newComponents = components.value + [component]
+                components.send(newComponents)
+            } catch {
+                
+            }
+        }
     }
 }

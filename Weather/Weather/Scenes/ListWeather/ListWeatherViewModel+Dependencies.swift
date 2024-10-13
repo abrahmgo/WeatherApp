@@ -8,19 +8,25 @@
 import UIKit
 import WeatherUsecases
 import Combine
+import CoreLocation
 
- protocol ListWeatherViewModelOutputs {
+protocol ListWeatherViewModelOutputs {
     var components: CurrentValueSubject<[ListWeatherComponent], Never> { get }
     var isLoading: CurrentValueSubject<Bool, Never> { get }
     var error: PassthroughSubject<Error, Never> { get }
 }
 
- protocol ListWeatherViewModelInputs { }
+protocol ListWeatherViewModelInputs {
+    func addNewCity(location: CLLocation)
+}
 
- protocol ListWeatherViewModelType {
+protocol ListWeatherViewModelType {
     var outputs: ListWeatherViewModelOutputs { get }
     var inputs: ListWeatherViewModelInputs { get }
 }
 
- struct ListWeatherDependencies { 
+struct ListWeatherDependencies {
+    
+    let getWeather: GetWeatherUsecaseType
+    let getAddress: GetAddressByCoordinatesUseCaseType
 }

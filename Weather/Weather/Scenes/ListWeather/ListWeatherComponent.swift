@@ -5,6 +5,8 @@
 //  Created by Andrés Bonilla Gómez on 12/10/24.
 //
 
-import Foundation
+import WeatherUI
 
-public enum ListWeatherComponent { }
+public enum ListWeatherComponent { 
+    case city(data: CityWeatherViewCellDataType)
+}

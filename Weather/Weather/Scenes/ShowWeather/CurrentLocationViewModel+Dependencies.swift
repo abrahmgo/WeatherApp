@@ -13,6 +13,8 @@ protocol ShowWeatherViewModelOutputs {
     var components: CurrentValueSubject<[ShowWeatherComponents], Never> { get }
     var isLoading: CurrentValueSubject<Bool, Never> { get }
     var error: PassthroughSubject<Error, Never> { get }
+    
+    func getCoordinates() -> CLLocation
 }
 
 protocol ShowWeatherViewModelInputs { }

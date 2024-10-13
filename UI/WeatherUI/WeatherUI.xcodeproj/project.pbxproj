@@ -19,6 +19,8 @@
 		B6A553BC2CBB03030085A38C /* InformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553B92CBB03030085A38C /* InformationTableViewCell.swift */; };
 		B6A553C12CBB0E810085A38C /* SpaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6A553C02CBB0E810085A38C /* SpaceTableViewCell.xib */; };
 		B6A553C22CBB0E810085A38C /* SpaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553BF2CBB0E810085A38C /* SpaceTableViewCell.swift */; };
+		B6A553DD2CBB387F0085A38C /* CityWeatherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6A553DC2CBB387F0085A38C /* CityWeatherTableViewCell.xib */; };
+		B6A553DE2CBB387F0085A38C /* CityWeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553DB2CBB387F0085A38C /* CityWeatherTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		B6A553BA2CBB03030085A38C /* InformationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformationTableViewCell.xib; sourceTree = "<group>"; };
 		B6A553BF2CBB0E810085A38C /* SpaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceTableViewCell.swift; sourceTree = "<group>"; };
 		B6A553C02CBB0E810085A38C /* SpaceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpaceTableViewCell.xib; sourceTree = "<group>"; };
+		B6A553DB2CBB387F0085A38C /* CityWeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherTableViewCell.swift; sourceTree = "<group>"; };
+		B6A553DC2CBB387F0085A38C /* CityWeatherTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityWeatherTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,8 @@
 				B6A553BA2CBB03030085A38C /* InformationTableViewCell.xib */,
 				B6A553BF2CBB0E810085A38C /* SpaceTableViewCell.swift */,
 				B6A553C02CBB0E810085A38C /* SpaceTableViewCell.xib */,
+				B6A553DB2CBB387F0085A38C /* CityWeatherTableViewCell.swift */,
+				B6A553DC2CBB387F0085A38C /* CityWeatherTableViewCell.xib */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -210,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6A553A02CBA29F90085A38C /* TitleTableViewCell.xib in Resources */,
+				B6A553DD2CBB387F0085A38C /* CityWeatherTableViewCell.xib in Resources */,
 				B6A553B52CBAE5900085A38C /* TitleNumberTableViewCell.xib in Resources */,
 				B6A553C12CBB0E810085A38C /* SpaceTableViewCell.xib in Resources */,
 				B6A553BB2CBB03030085A38C /* InformationTableViewCell.xib in Resources */,
@@ -231,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6A553A12CBA29F90085A38C /* TitleTableViewCell.swift in Sources */,
+				B6A553DE2CBB387F0085A38C /* CityWeatherTableViewCell.swift in Sources */,
 				B6A553882CBA294D0085A38C /* WeatherUI.docc in Sources */,
 				B6A553C22CBB0E810085A38C /* SpaceTableViewCell.swift in Sources */,
 				B6A553BC2CBB03030085A38C /* InformationTableViewCell.swift in Sources */,
