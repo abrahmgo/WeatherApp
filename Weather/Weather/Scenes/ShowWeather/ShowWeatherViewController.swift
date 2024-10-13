@@ -54,6 +54,10 @@ class ShowWeatherViewController: UIViewController {
         tableView.dataSource = self
         setBind()
         
+        guard !viewModel.outputs.isCurrentLocation() else {
+            return
+        }
+        
         let rightButton = UIBarButtonItem(title: "Agregar", image: nil,
                                           target: self, action: #selector(addFavorite))
         navigationItem.setRightBarButton(rightButton, animated: true)

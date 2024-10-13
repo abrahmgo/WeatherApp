@@ -26,6 +26,8 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
     
     // MARK: Private
     private let dependencies: ListWeatherDependencies
+    private var locations: [CLLocation] = []
+    private var currentLocation: CLLocation?
     private var cancellable: Set<AnyCancellable> = Set<AnyCancellable>()
     
     init(dependencies: ListWeatherDependencies) {
@@ -41,6 +43,7 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
                 guard let self = self else { return }
                 Task {
                     do {
+                        self.currentLocation = location
                         let component = try await self.getComponent(location: location, local: true)
                         self.components.send([component])
                     } catch {
@@ -77,6 +80,7 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
                                              longitude: location.coordinate.longitude)
         let weather = try await dependencies.getWeather.execute(coordinates: coordinates)
         let address = try await dependencies.getAddress.execute(coordinates: location.coordinate)
+        locations.append(location)
         
         let data = CityWeatherViewCellData(title: address.city,
                                            subtitle: local ? "Mi ubicación" : "",
@@ -85,5 +89,16 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
                                            minmax: "Maxima: \(weather.temperature.tempMax.toInt())º Minima: \(weather.temperature.tempMin.toInt())º")
         let component = ListWeatherComponent.city(data: data)
         return component
+    }
+    
+    func getLocation(index: Int) -> CLLocation {
+        return locations[index]
+    }
+    
+    func isCurrentLocation(index: Int) -> Bool {
+        guard let currentLocation = currentLocation else {
+            return false
+        }
+        return locations[index] == currentLocation
     }
 }

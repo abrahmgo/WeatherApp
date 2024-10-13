@@ -65,6 +65,9 @@ class ListWeatherViewController: UIViewController {
         searchBar.sizeToFit()
         searchBar.placeholder = "Buscar Ciudad"
         searchBar.searchBarStyle = .minimal
+        searchBar.setValue("Cancelar", forKey: "cancelButtonText")
+        let textfield = searchBar.searchTextField
+        textfield.backgroundColor = .white
         navigationItem.searchController = resultSearchController
         resultSearchController?.hidesNavigationBarDuringPresentation = false
         resultSearchController?.obscuresBackgroundDuringPresentation = true
@@ -108,7 +111,11 @@ extension ListWeatherViewController: UITableViewDataSource {
 extension ListWeatherViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         tableView.deselectRow(at: indexPath, animated: true)
+        let location = viewModel.outputs.getLocation(index: indexPath.row)
+        let isCurrentLocation = viewModel.outputs.isCurrentLocation(index: indexPath.row)
+        coordinator.presentWeather(coordinates: location, isCurrentLocation: isCurrentLocation)
     }
 }
 
