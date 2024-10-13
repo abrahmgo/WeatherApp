@@ -45,6 +45,7 @@ public protocol CityWeatherViewCellDataType {
 
 public struct CityWeatherViewCellData: CityWeatherViewCellDataType {
     
+    public let id: Int
     public let title: String
     public let subtitle: String
     public let description: String
@@ -52,11 +53,13 @@ public struct CityWeatherViewCellData: CityWeatherViewCellDataType {
     public let minmax: String
     public let image: UIImage?
     
-    public init(title: String, subtitle: String, 
+    public init(id: Int,
+                title: String, subtitle: String,
                 description: String,
                 temperature: String,
                 minmax: String,
                 image: UIImage?) {
+        self.id = id
         self.title = title
         self.subtitle = subtitle
         self.description = description

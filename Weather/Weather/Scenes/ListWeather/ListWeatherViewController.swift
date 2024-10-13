@@ -116,6 +116,26 @@ extension ListWeatherViewController: UITableViewDelegate {
         let location = viewModel.outputs.getLocation(index: indexPath.row)
         coordinator.presentWeather(coordinates: location, isCurrentLocation: true)
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle,
+                   forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            viewModel.inputs.deleteCity(index: indexPath.row)
+        }
+    }
+    
+    public func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        let isLocal = viewModel.outputs.isCurrentLocation(index: indexPath.row)
+        if isLocal {
+            return .none
+        } else {
+            return .delete
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "Eliminar"
+    }
 }
 
 extension ListWeatherViewController: AddressSearchTableViewDelegate {

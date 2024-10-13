@@ -21,6 +21,7 @@ protocol ListWeatherViewModelOutputs {
 
 protocol ListWeatherViewModelInputs {
     func addNewCity(location: CLLocation)
+    func deleteCity(index: Int)
 }
 
 protocol ListWeatherViewModelType {

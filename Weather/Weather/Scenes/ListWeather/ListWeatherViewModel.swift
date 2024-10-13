@@ -88,26 +88,13 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
         let imageData = try await dependencies.downloadIcon.execute(imageName: weather.information.first!.icon)
         let image = UIImage(data: imageData)
         
-//        
-        let object = LocalWeather(id: weather.id, latitude: coordinates.latitude,
-                                  longitude: coordinates.longitude)
-        try await dependencies.saveLocalWeather.execute(object: object)
-        
-        let data = CityWeatherViewCellData(title: address.city,
+        let data = CityWeatherViewCellData(id: weather.id, title: address.city,
                                            subtitle: local ? "Mi ubicación" : "",
                                            description: weather.information.first?.description ?? "",
                                            temperature: "\(weather.temperature.temp.toInt())º",
                                            minmax: "Maxima: \(weather.temperature.tempMax.toInt())º Minima: \(weather.temperature.tempMin.toInt())º", 
                                            image: image)
         let component = ListWeatherComponent.city(data: data)
-        
-        let localData2: [LocalWeather] = try await dependencies.getLocalWeather.execute()
-        dump(localData2)
-        
-        try await dependencies.deleteLocalWeather.execute(object: object)
-        
-        let localData: [LocalWeather] = try await dependencies.getLocalWeather.execute()
-        dump(localData)
         
         return component
     }
@@ -121,5 +108,28 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
             return false
         }
         return locations[index] == currentLocation
+    }
+    
+    func deleteCity(index: Int) {
+        let object = components.value[index]
+        guard case(.city(let data)) = object,
+           let dataObject = data as? CityWeatherViewCellData else {
+            return
+        }
+        
+        let id = dataObject.id
+        let newComponents = components.value.filter({ element in
+            if case(.city(let data)) = element {
+                if let dataObject = data as? CityWeatherViewCellData {
+                    return id != dataObject.id
+                } else {
+                    return false
+                }
+            } else {
+                return false
+            }
+        })
+        
+        components.send(newComponents)
     }
 }
