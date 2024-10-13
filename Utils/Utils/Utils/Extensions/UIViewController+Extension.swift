@@ -13,3 +13,9 @@ public extension UIViewController {
         return String(describing: self)
     }
 }
+
+public extension Decodable {
+    static var typeName: String {
+        return String(describing: self)
+    }
+}

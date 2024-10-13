@@ -114,8 +114,7 @@ extension ListWeatherViewController: UITableViewDelegate {
         
         tableView.deselectRow(at: indexPath, animated: true)
         let location = viewModel.outputs.getLocation(index: indexPath.row)
-        let isCurrentLocation = viewModel.outputs.isCurrentLocation(index: indexPath.row)
-        coordinator.presentWeather(coordinates: location, isCurrentLocation: isCurrentLocation)
+        coordinator.presentWeather(coordinates: location, isCurrentLocation: true)
     }
 }
 

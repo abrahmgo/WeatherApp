@@ -16,6 +16,7 @@ struct ListWeatherFactory {
         let weatherService = WeatherRemoteDataSource.weather
         let locationService = WeatherLocalDataSource.location
         let iconService = WeatherRemoteDataSource.icon
+        let localDB = WeatherLocalDataSource.database
         
         // MARK: Usecases
         
@@ -24,13 +25,20 @@ struct ListWeatherFactory {
         let getWeather = GetWeatherUsecase(remoteDataSource: weatherService)
         let getAddress = GetAddressByCoordinatesUseCase()
         let downloadIcon = GetWeatherIconUsecase(remoteDataSource: iconService)
+        let saveLocalWeather = SaveLocalObjectUsecase(localDB: localDB)
+        let getLocalWeather = GetLocalObjectUsecase(localDB: localDB)
+        let deleteLocalWeather = DeleteLocalObjectUsecase(localDB: localDB)
         
         // MARK: ViewModel
         let dependencies = ListWeatherDependencies(getWeather: getWeather, 
                                                    getAddress: getAddress,
                                                    startLocation: startLocation,
                                                    getCurrentLocation: getCurrentLocation, 
-                                                   downloadIcon: downloadIcon)
+                                                   downloadIcon: downloadIcon,
+                                                   saveLocalWeather: saveLocalWeather,
+                                                   getLocalWeather: getLocalWeather,
+                                                   deleteLocalWeather: deleteLocalWeather)
+        
         let viewModel = ListWeatherViewModel(dependencies: dependencies)
         
         // MARK: ViewController

@@ -19,6 +19,7 @@
 		B6A5536F2CBA0EEC0085A38C /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5536E2CBA0EEC0085A38C /* Weather.swift */; };
 		B6A553AA2CBA2F970085A38C /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553A92CBA2F970085A38C /* Address.swift */; };
 		B6A553B82CBAEF2D0085A38C /* WeatherUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553B72CBAEF2D0085A38C /* WeatherUnits.swift */; };
+		B6A553FD2CBC24900085A38C /* LocalWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553FC2CBC24900085A38C /* LocalWeather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		B6A5536E2CBA0EEC0085A38C /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		B6A553A92CBA2F970085A38C /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		B6A553B72CBAEF2D0085A38C /* WeatherUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherUnits.swift; sourceTree = "<group>"; };
+		B6A553FC2CBC24900085A38C /* LocalWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalWeather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				B6A5536C2CBA0EB70085A38C /* WeatherCoordinates.swift */,
 				B6A5536E2CBA0EEC0085A38C /* Weather.swift */,
 				B6A553B72CBAEF2D0085A38C /* WeatherUnits.swift */,
+				B6A553FC2CBC24900085A38C /* LocalWeather.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6A553FD2CBC24900085A38C /* LocalWeather.swift in Sources */,
 				B6A552E52CB9DD890085A38C /* LocationError.swift in Sources */,
 				B6A552E22CB9DD650085A38C /* RequestLocationType.swift in Sources */,
 				B6A5536F2CBA0EEC0085A38C /* Weather.swift in Sources */,

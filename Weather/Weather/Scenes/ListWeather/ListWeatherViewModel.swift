@@ -77,6 +77,8 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
     }
     
     func getComponent(location: CLLocation, local: Bool = false) async throws -> ListWeatherComponent {
+        
+        
         let coordinates = WeatherCoordinates(latitude: location.coordinate.latitude,
                                              longitude: location.coordinate.longitude)
         let weather = try await dependencies.getWeather.execute(coordinates: coordinates)
@@ -85,6 +87,12 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
         
         let imageData = try await dependencies.downloadIcon.execute(imageName: weather.information.first!.icon)
         let image = UIImage(data: imageData)
+        
+//        
+        let object = LocalWeather(id: weather.id, latitude: coordinates.latitude,
+                                  longitude: coordinates.longitude)
+        try await dependencies.saveLocalWeather.execute(object: object)
+        
         let data = CityWeatherViewCellData(title: address.city,
                                            subtitle: local ? "Mi ubicación" : "",
                                            description: weather.information.first?.description ?? "",
@@ -92,6 +100,15 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
                                            minmax: "Maxima: \(weather.temperature.tempMax.toInt())º Minima: \(weather.temperature.tempMin.toInt())º", 
                                            image: image)
         let component = ListWeatherComponent.city(data: data)
+        
+        let localData2: [LocalWeather] = try await dependencies.getLocalWeather.execute()
+        dump(localData2)
+        
+        try await dependencies.deleteLocalWeather.execute(object: object)
+        
+        let localData: [LocalWeather] = try await dependencies.getLocalWeather.execute()
+        dump(localData)
+        
         return component
     }
     

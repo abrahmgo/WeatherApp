@@ -35,4 +35,7 @@ struct ListWeatherDependencies {
     let startLocation: StarLocalizationUseCaseType
     let getCurrentLocation: GetCurrentLocationUseCaseType
     let downloadIcon: GetWeatherIconUsecaseType
+    let saveLocalWeather: SaveLocalObjectUsecaseType
+    let getLocalWeather: GetLocalObjectUsecaseType
+    let deleteLocalWeather: DeleteLocalObjectUsecaseType
 }

@@ -12,4 +12,8 @@ public struct WeatherLocalDataSource {
     public static var location: LocationServiceType {
         return LocationService()
     }
+    
+    public static var database: WeatherDBLocalDataSource {
+        return CoreDataManager.shared
+    }
 }
