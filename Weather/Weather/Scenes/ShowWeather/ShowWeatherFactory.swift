@@ -17,14 +17,17 @@ struct ShowWeatherFactory {
                       isCurrentLocation: Bool = false) -> ShowWeatherViewController {
         
         let weatherService = WeatherRemoteDataSource.weather
+        let iconService = WeatherRemoteDataSource.icon
         
         let getAddressByCoordinates = GetAddressByCoordinatesUseCase()
         let getWeather = GetWeatherUsecase(remoteDataSource: weatherService)
+        let downloadIcon = GetWeatherIconUsecase(remoteDataSource: iconService)
         
         let dependencies = ShowWeatherDependencies(coordinates: coordinates,
                                                    getAddressByCoordinates: getAddressByCoordinates,
                                                    getWeather: getWeather, 
-                                                   isCurrentLocation: isCurrentLocation)
+                                                   isCurrentLocation: isCurrentLocation,
+                                                   downloadIcon: downloadIcon)
         let viewModel = ShowWeatherViewModel(dependencies: dependencies)
         let view = ShowWeatherViewController(viewModel: viewModel, delegate: delegate)
         return view

@@ -13,6 +13,10 @@ public class TitleNumberTableViewCell: UITableViewCell {
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblSubtitle: UILabel!
     
+    override public func awakeFromNib() {
+        backgroundColor = .clear
+    }
+    
     public func update(model: TitleNumberViewCellDataType) {
         lblTop.text = model.number
         lblTitle.text = model.title

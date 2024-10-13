@@ -19,6 +19,7 @@
 		B6A553362CB9E7980085A38C /* GetCurrentLocationUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553352CB9E7980085A38C /* GetCurrentLocationUsecase.swift */; };
 		B6A553762CBA15440085A38C /* GetWeatherUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553752CBA15440085A38C /* GetWeatherUsecase.swift */; };
 		B6A553AC2CBA2FD60085A38C /* GetAddressByCoordinatesUseCaseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553AB2CBA2FD60085A38C /* GetAddressByCoordinatesUseCaseType.swift */; };
+		B6A553F42CBB67070085A38C /* GetWeatherIconUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553F32CBB67070085A38C /* GetWeatherIconUsecase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		B6A553352CB9E7980085A38C /* GetCurrentLocationUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentLocationUsecase.swift; sourceTree = "<group>"; };
 		B6A553752CBA15440085A38C /* GetWeatherUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWeatherUsecase.swift; sourceTree = "<group>"; };
 		B6A553AB2CBA2FD60085A38C /* GetAddressByCoordinatesUseCaseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAddressByCoordinatesUseCaseType.swift; sourceTree = "<group>"; };
+		B6A553F32CBB67070085A38C /* GetWeatherIconUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWeatherIconUsecase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				B6A553752CBA15440085A38C /* GetWeatherUsecase.swift */,
+				B6A553F32CBB67070085A38C /* GetWeatherIconUsecase.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 			files = (
 				B6A553322CB9E5DF0085A38C /* StarLocationUsecase.swift in Sources */,
 				B6A5523C2CB9DB650085A38C /* WeatherUsecases.docc in Sources */,
+				B6A553F42CBB67070085A38C /* GetWeatherIconUsecase.swift in Sources */,
 				B6A553362CB9E7980085A38C /* GetCurrentLocationUsecase.swift in Sources */,
 				B6A553AC2CBA2FD60085A38C /* GetAddressByCoordinatesUseCaseType.swift in Sources */,
 				B6A553762CBA15440085A38C /* GetWeatherUsecase.swift in Sources */,

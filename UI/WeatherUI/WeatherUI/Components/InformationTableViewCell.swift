@@ -14,6 +14,10 @@ public class InformationTableViewCell: UITableViewCell {
     @IBOutlet weak var lblPressureSea: UILabel!
     @IBOutlet weak var lblPressureGround: UILabel!
     
+    override public func awakeFromNib() {
+        backgroundColor = .clear
+    }
+    
     public func update(model: InformationViewCellDataType) {
         lblHumidity.text = "\(model.humidty)%"
         lblPressure.text = "\(model.pressure) hPa"

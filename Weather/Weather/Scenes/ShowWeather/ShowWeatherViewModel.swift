@@ -9,6 +9,7 @@ import Combine
 import WeatherUI
 import WeatherEntities
 import CoreLocation
+import UIKit
 
 class ShowWeatherViewModel: ShowWeatherViewModelType, ShowWeatherViewModelInputs, ShowWeatherViewModelOutputs {
 
@@ -41,8 +42,8 @@ class ShowWeatherViewModel: ShowWeatherViewModelType, ShowWeatherViewModelInputs
             do {
                 let address = try await self.dependencies.getAddressByCoordinates.execute(coordinates: dependencies.coordinates.coordinate)
                 
-                let weatherCoordinates = WeatherCoordinates(latitude: dependencies.coordinates.coordinate.latitude.magnitude,
-                                                            longitude: dependencies.coordinates.coordinate.longitude.magnitude)
+                let weatherCoordinates = WeatherCoordinates(latitude: dependencies.coordinates.coordinate.latitude,
+                                                            longitude: dependencies.coordinates.coordinate.longitude)
                 let weather = try await self.dependencies.getWeather.execute(coordinates: weatherCoordinates)
                 
                 let titleData = TitleTableViewCellData(title: dependencies.isCurrentLocation ? "Mi Ubicacion" : "",
@@ -63,7 +64,11 @@ class ShowWeatherViewModel: ShowWeatherViewModelType, ShowWeatherViewModelInputs
                                                               pressureGround: weather.temperature.grndLevel.toInt())
                 let informationComponent = ShowWeatherComponents.information(data: informationData)
                 
-                self.components.send([spaceComponent, titleComponent,
+                let icon = try await self.dependencies.downloadIcon.execute(imageName: weather.information.first!.icon)
+                let image = UIImage(data: icon)
+                let iconData = IconViewCellData(image: image)
+                let iconComponent = ShowWeatherComponents.icon(data: iconData)
+                self.components.send([iconComponent, spaceComponent, titleComponent,
                                       spaceComponent, weatherComponent,
                                       spaceComponent, informationComponent])
             } catch {

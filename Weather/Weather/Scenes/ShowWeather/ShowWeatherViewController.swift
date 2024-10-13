@@ -20,6 +20,7 @@ class ShowWeatherViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView! {
         didSet {
+            tableView.register(cellType: IconTableViewCell.self, bundle: Bundle(for: IconTableViewCell.self))
             tableView.register(cellType: TitleTableViewCell.self, bundle: Bundle(for: TitleTableViewCell.self))
             tableView.register(cellType: TitleNumberTableViewCell.self, bundle: Bundle(for: TitleNumberTableViewCell.self))
             tableView.register(cellType: InformationTableViewCell.self, bundle: Bundle(for: InformationTableViewCell.self))
@@ -53,7 +54,8 @@ class ShowWeatherViewController: UIViewController {
     public func setup() {
         tableView.dataSource = self
         setBind()
-        
+        tableView.backgroundColor = .clear
+        view.layer.contents = #imageLiteral(resourceName: "weatherBackground").cgImage
         guard !viewModel.outputs.isCurrentLocation() else {
             return
         }
@@ -111,6 +113,10 @@ extension ShowWeatherViewController: UITableViewDataSource {
             return cell
         case .space(let data):
             let cell = tableView.dequeueReusableCell(with: SpaceTableViewCell.self, for: indexPath)
+            cell.update(model: data)
+            return cell
+        case .icon(let data):
+            let cell = tableView.dequeueReusableCell(with: IconTableViewCell.self, for: indexPath)
             cell.update(model: data)
             return cell
         }

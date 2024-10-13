@@ -9,6 +9,7 @@ import Combine
 import WeatherEntities
 import CoreLocation
 import WeatherUI
+import UIKit
 
 class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs, ListWeatherViewModelOutputs {
 
@@ -82,11 +83,14 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
         let address = try await dependencies.getAddress.execute(coordinates: location.coordinate)
         locations.append(location)
         
+        let imageData = try await dependencies.downloadIcon.execute(imageName: weather.information.first!.icon)
+        let image = UIImage(data: imageData)
         let data = CityWeatherViewCellData(title: address.city,
                                            subtitle: local ? "Mi ubicación" : "",
                                            description: weather.information.first?.description ?? "",
                                            temperature: "\(weather.temperature.temp.toInt())º",
-                                           minmax: "Maxima: \(weather.temperature.tempMax.toInt())º Minima: \(weather.temperature.tempMin.toInt())º")
+                                           minmax: "Maxima: \(weather.temperature.tempMax.toInt())º Minima: \(weather.temperature.tempMin.toInt())º", 
+                                           image: image)
         let component = ListWeatherComponent.city(data: data)
         return component
     }

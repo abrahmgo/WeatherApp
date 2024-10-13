@@ -12,4 +12,5 @@ enum ShowWeatherComponents {
     case temperature(data: TitleNumberViewCellDataType)
     case information(data: InformationViewCellDataType)
     case space(data: SpaceViewCellDataType)
+    case icon(data: IconViewCellData)
 }

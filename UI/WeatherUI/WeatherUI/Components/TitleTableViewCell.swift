@@ -12,6 +12,10 @@ public class TitleTableViewCell: UITableViewCell {
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblSubtitle: UILabel!
 
+    override public func awakeFromNib() {
+        backgroundColor = .clear
+    }
+    
     public func update(model: TitleTableViewCellDataType) {
         lblTitle.text = model.title
         lblSubtitle.text = model.subtitle

@@ -14,6 +14,7 @@
 		B6A5530C2CB9DE1A0085A38C /* LocationRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5530B2CB9DE1A0085A38C /* LocationRemoteDataSource.swift */; };
 		B6A5530F2CB9DE3D0085A38C /* WeatherEntities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A5530E2CB9DE3D0085A38C /* WeatherEntities.framework */; };
 		B6A553682CBA0E3B0085A38C /* WeatherRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553672CBA0E3B0085A38C /* WeatherRemoteDataSource.swift */; };
+		B6A553F22CBB661B0085A38C /* WeatherIconRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553F12CBB661B0085A38C /* WeatherIconRemoteDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		B6A5530B2CB9DE1A0085A38C /* LocationRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRemoteDataSource.swift; sourceTree = "<group>"; };
 		B6A5530E2CB9DE3D0085A38C /* WeatherEntities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WeatherEntities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6A553672CBA0E3B0085A38C /* WeatherRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRemoteDataSource.swift; sourceTree = "<group>"; };
+		B6A553F12CBB661B0085A38C /* WeatherIconRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherIconRemoteDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				B6A553672CBA0E3B0085A38C /* WeatherRemoteDataSource.swift */,
+				B6A553F12CBB661B0085A38C /* WeatherIconRemoteDataSource.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6A553F22CBB661B0085A38C /* WeatherIconRemoteDataSource.swift in Sources */,
 				B6A553682CBA0E3B0085A38C /* WeatherRemoteDataSource.swift in Sources */,
 				B6A552F52CB9DDD00085A38C /* WeatherDataSource.docc in Sources */,
 				B6A5530C2CB9DE1A0085A38C /* LocationRemoteDataSource.swift in Sources */,

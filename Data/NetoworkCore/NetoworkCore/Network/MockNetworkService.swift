@@ -27,4 +27,8 @@ struct MockNetworkService: NetworkServiceType {
             throw NetworkError.checkFormatSampleData
         }
     }
+    
+    func request(target: NetworkTargetType) async throws -> Data {
+        return Data()
+    }
 }

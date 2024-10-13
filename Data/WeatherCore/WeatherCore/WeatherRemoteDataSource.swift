@@ -13,4 +13,8 @@ public struct WeatherRemoteDataSource {
     public static var weather: WeatherDataSource.WeatherRemoteDataSource {
         return WeatherAPI(service: NetworkCoreAPIConfig.shared.networkService)
     }
+    
+    public static var icon: WeatherDataSource.WeatherIconRemoteDataSource {
+        return WeatherIconAPI(service: NetworkCoreAPIConfig.shared.networkService)
+    }
 }

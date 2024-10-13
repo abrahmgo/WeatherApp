@@ -15,6 +15,7 @@ struct ListWeatherFactory {
         // MARK: RemoteDataSource
         let weatherService = WeatherRemoteDataSource.weather
         let locationService = WeatherLocalDataSource.location
+        let iconService = WeatherRemoteDataSource.icon
         
         // MARK: Usecases
         
@@ -22,12 +23,14 @@ struct ListWeatherFactory {
         let getCurrentLocation = GetCurrentLocationUseCase(locationService: locationService)
         let getWeather = GetWeatherUsecase(remoteDataSource: weatherService)
         let getAddress = GetAddressByCoordinatesUseCase()
+        let downloadIcon = GetWeatherIconUsecase(remoteDataSource: iconService)
         
         // MARK: ViewModel
         let dependencies = ListWeatherDependencies(getWeather: getWeather, 
                                                    getAddress: getAddress,
                                                    startLocation: startLocation,
-                                                   getCurrentLocation: getCurrentLocation)
+                                                   getCurrentLocation: getCurrentLocation, 
+                                                   downloadIcon: downloadIcon)
         let viewModel = ListWeatherViewModel(dependencies: dependencies)
         
         // MARK: ViewController

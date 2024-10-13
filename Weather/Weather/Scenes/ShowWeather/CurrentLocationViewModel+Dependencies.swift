@@ -31,4 +31,5 @@ struct ShowWeatherDependencies {
     let getAddressByCoordinates: GetAddressByCoordinatesUseCaseType
     let getWeather: GetWeatherUsecaseType
     let isCurrentLocation: Bool
+    let downloadIcon: GetWeatherIconUsecaseType
 }
