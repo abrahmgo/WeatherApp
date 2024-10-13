@@ -45,8 +45,12 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
                 Task {
                     do {
                         self.currentLocation = location
-                        let component = try await self.getComponent(location: location, local: true)
+                        let weather = try await self.getWeather(location: location)
+                        let component = try await self.getComponent(location: location,
+                                                                    weather: weather,
+                                                                    local: true)
                         self.components.send([component])
+                        try await self.setLocalWeather()
                     } catch {
                         
                     }
@@ -67,7 +71,9 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
     func addNewCity(location: CLLocation) {
         Task {
             do {
-                let component = try await getComponent(location: location)
+                let weather = try await getWeather(location: location)
+                let component = try await getComponent(location: location, weather: weather)
+                try await saveLocalWeather(coordinates: location, weather: weather)
                 let newComponents = components.value + [component]
                 components.send(newComponents)
             } catch {
@@ -76,12 +82,10 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
         }
     }
     
-    func getComponent(location: CLLocation, local: Bool = false) async throws -> ListWeatherComponent {
+    func getComponent(location: CLLocation,
+                      weather: Weather,
+                      local: Bool = false) async throws -> ListWeatherComponent {
         
-        
-        let coordinates = WeatherCoordinates(latitude: location.coordinate.latitude,
-                                             longitude: location.coordinate.longitude)
-        let weather = try await dependencies.getWeather.execute(coordinates: coordinates)
         let address = try await dependencies.getAddress.execute(coordinates: location.coordinate)
         locations.append(location)
         
@@ -131,5 +135,42 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
         })
         
         components.send(newComponents)
+        
+        Task {
+            try await deleteLocalWeather(id: id)
+        }
+    }
+    
+    private func saveLocalWeather(coordinates: CLLocation,
+                                  weather: Weather) async throws {
+        
+        let object = LocalWeather(id: weather.id, 
+                                  latitude: coordinates.coordinate.latitude,
+                                  longitude: coordinates.coordinate.longitude)
+        try await dependencies.saveLocalWeather.execute(object: object)
+    }
+    
+    private func deleteLocalWeather(id: Int) async throws {
+        
+        let object = LocalWeather(id: id, latitude: 0, longitude: 0)
+        try await dependencies.deleteLocalWeather.execute(object: object)
+    }
+    
+    private func setLocalWeather() async throws {
+        let objects = try await dependencies.getLocalWeather.execute()
+        let components = try await objects.asyncMap({ element in
+            let location = CLLocation(latitude: element.latitude, longitude: element.longitude)
+            let weather = try await getWeather(location: location)
+            return try await getComponent(location: location, weather: weather)
+        })
+        let newComponents = self.components.value + components
+        self.components.send(newComponents)
+    }
+    
+    private func getWeather(location: CLLocation) async throws -> Weather {
+        let coordinates = WeatherCoordinates(latitude: location.coordinate.latitude,
+                                             longitude: location.coordinate.longitude)
+        let weather = try await dependencies.getWeather.execute(coordinates: coordinates)
+        return weather
     }
 }
