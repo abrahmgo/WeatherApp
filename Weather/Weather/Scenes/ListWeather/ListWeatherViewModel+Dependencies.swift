@@ -29,4 +29,6 @@ struct ListWeatherDependencies {
     
     let getWeather: GetWeatherUsecaseType
     let getAddress: GetAddressByCoordinatesUseCaseType
+    let startLocation: StarLocalizationUseCaseType
+    let getCurrentLocation: GetCurrentLocationUseCaseType
 }
