@@ -21,31 +21,31 @@
                         <rect key="frame" x="10" y="5" width="408" height="107"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="20º" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7dM-df-saH">
-                                <rect key="frame" x="330" y="0.0" width="70" height="54"/>
+                                <rect key="frame" x="333" y="0.0" width="70" height="54"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Maxima: 21º Minima 5º" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bH1-iq-qsZ">
-                                <rect key="frame" x="236" y="83" width="172" height="21"/>
+                                <rect key="frame" x="231" y="83" width="172" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Nublado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i77-e9-pYO">
-                                <rect key="frame" x="0.0" y="83" width="64.333333333333329" height="21"/>
+                                <rect key="frame" x="5" y="83" width="64.333333333333329" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Pachuca de Soto" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wti-eX-J5g">
-                                <rect key="frame" x="0.0" y="0.0" width="181" height="42"/>
+                                <rect key="frame" x="5" y="0.0" width="181" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Coacalco" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQR-gy-cQK">
-                                <rect key="frame" x="0.0" y="52" width="71" height="21"/>
+                                <rect key="frame" x="5" y="52" width="71" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -53,20 +53,20 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="i77-e9-pYO" firstAttribute="leading" secondItem="yWE-Ej-sVX" secondAttribute="leading" id="1nl-D6-BZb"/>
+                            <constraint firstItem="i77-e9-pYO" firstAttribute="leading" secondItem="yWE-Ej-sVX" secondAttribute="leading" constant="5" id="1nl-D6-BZb"/>
                             <constraint firstItem="i77-e9-pYO" firstAttribute="top" secondItem="EQR-gy-cQK" secondAttribute="bottom" constant="10" id="4NP-vy-yG5"/>
-                            <constraint firstItem="Wti-eX-J5g" firstAttribute="leading" secondItem="yWE-Ej-sVX" secondAttribute="leading" id="ESQ-Yt-sUj"/>
+                            <constraint firstItem="Wti-eX-J5g" firstAttribute="leading" secondItem="yWE-Ej-sVX" secondAttribute="leading" constant="5" id="ESQ-Yt-sUj"/>
                             <constraint firstAttribute="bottom" secondItem="bH1-iq-qsZ" secondAttribute="bottom" constant="3" id="MqG-i0-z30"/>
                             <constraint firstItem="EQR-gy-cQK" firstAttribute="top" secondItem="Wti-eX-J5g" secondAttribute="bottom" constant="10" id="NLM-j4-ShT"/>
                             <constraint firstItem="7dM-df-saH" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Wti-eX-J5g" secondAttribute="trailing" constant="100" id="QiW-CV-NJA"/>
-                            <constraint firstAttribute="trailing" secondItem="bH1-iq-qsZ" secondAttribute="trailing" id="RnH-NK-h4h"/>
+                            <constraint firstAttribute="trailing" secondItem="bH1-iq-qsZ" secondAttribute="trailing" constant="5" id="RnH-NK-h4h"/>
                             <constraint firstItem="7dM-df-saH" firstAttribute="top" secondItem="yWE-Ej-sVX" secondAttribute="top" id="eaH-FF-ddi"/>
                             <constraint firstItem="Wti-eX-J5g" firstAttribute="top" secondItem="yWE-Ej-sVX" secondAttribute="top" id="iFh-qa-OP1"/>
                             <constraint firstItem="bH1-iq-qsZ" firstAttribute="leading" relation="lessThanOrEqual" secondItem="i77-e9-pYO" secondAttribute="trailing" constant="100" id="lLJ-Ks-W2O"/>
                             <constraint firstAttribute="bottom" secondItem="i77-e9-pYO" secondAttribute="bottom" constant="3" id="mk1-pK-Gu7"/>
                             <constraint firstItem="bH1-iq-qsZ" firstAttribute="top" secondItem="7dM-df-saH" secondAttribute="bottom" constant="29" id="pZh-Hy-HDR"/>
-                            <constraint firstItem="EQR-gy-cQK" firstAttribute="leading" secondItem="yWE-Ej-sVX" secondAttribute="leading" id="sWj-kU-QA1"/>
-                            <constraint firstAttribute="trailing" secondItem="7dM-df-saH" secondAttribute="trailing" constant="8" id="w5S-d3-Yaa"/>
+                            <constraint firstItem="EQR-gy-cQK" firstAttribute="leading" secondItem="yWE-Ej-sVX" secondAttribute="leading" constant="5" id="sWj-kU-QA1"/>
+                            <constraint firstAttribute="trailing" secondItem="7dM-df-saH" secondAttribute="trailing" constant="5" id="w5S-d3-Yaa"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -79,6 +79,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="background" destination="yWE-Ej-sVX" id="99U-cz-0Na"/>
                 <outlet property="lblDescription" destination="i77-e9-pYO" id="5FN-rN-0YI"/>
                 <outlet property="lblMinMax" destination="bH1-iq-qsZ" id="z14-Ix-tCD"/>
                 <outlet property="lblSubtitle" destination="EQR-gy-cQK" id="rYh-hR-yel"/>

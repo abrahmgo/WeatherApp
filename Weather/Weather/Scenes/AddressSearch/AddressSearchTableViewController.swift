@@ -29,6 +29,7 @@ class AddressSearchTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .black
     }
 
     // MARK: - Table view data source
@@ -42,12 +43,14 @@ class AddressSearchTableViewController: UITableViewController {
         let selectedItem = matchingItems[indexPath.row].placemark
         var cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
         
-        if( !(cell != nil))
-        {
+        if( !(cell != nil)) {
             cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
         }
+        cell?.backgroundColor = .clear
         cell?.textLabel?.text = selectedItem.name
+        cell?.textLabel?.textColor = .white
         cell?.detailTextLabel?.text = selectedItem.country
+        cell?.detailTextLabel?.textColor = .white
         return cell!
     }
     

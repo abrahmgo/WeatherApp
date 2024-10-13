@@ -14,6 +14,7 @@
 		B6A552272CB9D9910085A38C /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A552262CB9D9910085A38C /* UIViewController+Extension.swift */; };
 		B6A553A52CBA2C7A0085A38C /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553A42CBA2C7A0085A38C /* UITableView+Extension.swift */; };
 		B6A553BE2CBB0A8E0085A38C /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553BD2CBB0A8E0085A38C /* Double+Extension.swift */; };
+		B6A553E02CBB49410085A38C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553DF2CBB49410085A38C /* UIView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		B6A552262CB9D9910085A38C /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		B6A553A42CBA2C7A0085A38C /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		B6A553BD2CBB0A8E0085A38C /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		B6A553DF2CBB49410085A38C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				B6A552262CB9D9910085A38C /* UIViewController+Extension.swift */,
 				B6A553A42CBA2C7A0085A38C /* UITableView+Extension.swift */,
 				B6A553BD2CBB0A8E0085A38C /* Double+Extension.swift */,
+				B6A553DF2CBB49410085A38C /* UIView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				B6A553BE2CBB0A8E0085A38C /* Double+Extension.swift in Sources */,
 				B6A552272CB9D9910085A38C /* UIViewController+Extension.swift in Sources */,
 				B6A552102CB9D95F0085A38C /* Utils.docc in Sources */,
+				B6A553E02CBB49410085A38C /* UIView+Extension.swift in Sources */,
 				B6A553A52CBA2C7A0085A38C /* UITableView+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

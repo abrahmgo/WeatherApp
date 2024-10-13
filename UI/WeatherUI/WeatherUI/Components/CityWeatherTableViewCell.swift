@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Utils
 
 public class CityWeatherTableViewCell: UITableViewCell {
 
@@ -14,6 +15,12 @@ public class CityWeatherTableViewCell: UITableViewCell {
     @IBOutlet weak var lblDescription: UILabel!
     @IBOutlet weak var lblTemperature: UILabel!
     @IBOutlet weak var lblMinMax: UILabel!
+    @IBOutlet weak var background: UIView!
+    
+    public override func awakeFromNib() {
+        background.addRoundShadow()
+        backgroundColor = .clear
+    }
     
     public func update(model: CityWeatherViewCellDataType) {
         lblTitle.text = model.title

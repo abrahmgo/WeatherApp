@@ -54,6 +54,8 @@ class ListWeatherViewController: UIViewController {
     }
     
     private func setup() {
+        view.backgroundColor = .black
+        tableView.backgroundColor = .clear
         title = "Clima"
         let locationSearchTable = AddressSearchTableViewController()
         locationSearchTable.delegate = self

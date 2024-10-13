@@ -79,7 +79,7 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
         let address = try await dependencies.getAddress.execute(coordinates: location.coordinate)
         
         let data = CityWeatherViewCellData(title: address.city,
-                                           subtitle: local ? "Mi ubicacion" : "",
+                                           subtitle: local ? "Mi ubicación" : "",
                                            description: weather.information.first?.description ?? "",
                                            temperature: "\(weather.temperature.temp.toInt())º",
                                            minmax: "Maxima: \(weather.temperature.tempMax.toInt())º Minima: \(weather.temperature.tempMin.toInt())º")

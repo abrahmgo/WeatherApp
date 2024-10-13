@@ -24,6 +24,8 @@ class ListWeatherCoordinator {
         
         let viewContoller = UINavigationController(rootViewController: listWeatherViewController)
         UINavigationBar.appearance().prefersLargeTitles = true
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         setRootViewController(viewContoller)
     }
     
