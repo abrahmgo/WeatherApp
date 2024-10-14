@@ -23,3 +23,8 @@
 "searchCity" = "Search city";
 "refresh" = "Updating data";
 "registered" = "Registered";
+"localizationMessage" = "To provide you with a good experience we need access to your location so we can give you accurate weather results.";
+"localizationTitle" = "Location";
+"notificationViewTitle" = "Notifications";
+"notificationMessage" = "Notifications help you to know about the weather in your city and your favorites";
+"notificationBtn" = "Go to climate";

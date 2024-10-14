@@ -33,6 +33,7 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
     private var currentLocation: CLLocation?
     private var cancellable: Set<AnyCancellable> = Set<AnyCancellable>()
     private var haveError = false
+    private var initLocation = false
     
     init(dependencies: ListWeatherDependencies) {
         self.dependencies = dependencies
@@ -47,9 +48,28 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
     
     func setBinds() {
         dependencies.getCurrentLocation.execute()
-            .sink(receiveCompletion: { _ in }) { [weak self] location in
+            .sink(receiveCompletion: { _ in
+                self.initLocation = false
+            }) { [weak self] location in
                 guard let self = self else { return }
+                self.initLocation = true
                 self.setCities(currentLocation: location)
+            }.store(in: &cancellable)
+        
+        dependencies.currentLocationStatus.execute()
+            .sink { [weak self] status in
+                guard let self = self else { return }
+                switch status {
+                case .authorizedAlways, .authorizedWhenInUse:
+                    self.setCurrentCity()
+                default:
+                    Task {
+                        let footerData = FooterViewCellData(text: "Permisos de ubicacion denegados", textColor: .white)
+                        let footerComponent = ListWeatherComponent.footer(data: footerData)
+                        let newComponets = self.components.value + [footerComponent]
+                        self.components.send(newComponets)
+                    }
+                }
             }.store(in: &cancellable)
     }
     
@@ -81,7 +101,7 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
             do {
                 try await dependencies.startLocation.execute(type: .always)
             } catch {
-                
+                try await setLocalWeather()
             }
         }
     }
@@ -154,7 +174,8 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
                                        longitude: currentLocation.coordinate.longitude)
             return weather
         } else {
-            let localWeather = localWeathers[index - 1]
+            let newIndex = currentLocation == nil ? index : index - 1
+            let localWeather = localWeathers[newIndex]
             return localWeather
         }
     }

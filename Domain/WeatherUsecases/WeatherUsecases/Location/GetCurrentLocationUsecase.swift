@@ -22,7 +22,7 @@ public struct GetCurrentLocationUseCase: GetCurrentLocationUseCaseType {
         self.locationService = locationService
     }
     
-    public func execute() -> AnyPublisher<CLLocation, any Error> {
+    public func execute() -> AnyPublisher<CLLocation, Error> {
         return locationService.currentLocation.eraseToAnyPublisher()
     }
 }

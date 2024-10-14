@@ -48,11 +48,11 @@ struct APIConfig: NetworkCoreAPIConfigType {
     static var language: String {
         
         guard let serverInUse = UserDefaults.standard.object(forKey: "LanguageInUse") as? String else {
-            return LanguageBundle.es.rawValue
+            return LanguageBundle.en.rawValue
         }
         
         guard let languageBundle = LanguageBundle(rawValue: serverInUse) else {
-            return LanguageBundle.es.rawValue
+            return LanguageBundle.en.rawValue
         }
         
         return languageBundle.rawValue

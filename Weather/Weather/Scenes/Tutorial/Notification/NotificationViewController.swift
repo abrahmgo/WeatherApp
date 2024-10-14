@@ -7,16 +7,20 @@
 
 import UIKit
 import Utils
+import Localizable
 
 class NotificationViewController: UIViewController {
 
     @IBOutlet weak var btnGoWeather: UIButton!
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblMessage: UILabel!
     
     private let viewModel: NotificationViewModelType
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
+        localize()
     }
 
 
@@ -36,5 +40,11 @@ class NotificationViewController: UIViewController {
     
     @IBAction func goWeather(_ sender: UIButton) {
         ListWeatherCoordinator().start()
+    }
+    
+    func localize() {
+        lblTitle.text = WeatherLanguage.notificationViewTitle
+        lblMessage.text = WeatherLanguage.notificationMessage
+        btnGoWeather.setTitle(WeatherLanguage.notificationBtn, for: .normal)
     }
 }

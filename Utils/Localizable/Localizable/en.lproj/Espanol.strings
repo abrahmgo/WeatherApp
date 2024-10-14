@@ -23,3 +23,8 @@
 "searchCity" = "Buscar ciudad";
 "refresh" = "Actualizando datos";
 "registered" = "Regitrado";
+"localizationMessage" = "Para brindarte una buena experiencia necesitamos acceso a tu ubicación, así te daremos resultados precisos del clima.";
+"localizationTitle" = "Localización";
+"notificationViewTitle" = "Notificaciones";
+"notificationMessage" = "Las notificaciones ayudan a avisar sobre el clima en tu ciudad y tus favoritos.";
+"notificationBtn" = "Ir a clima";

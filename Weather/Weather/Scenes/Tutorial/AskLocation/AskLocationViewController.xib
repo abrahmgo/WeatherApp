@@ -4,12 +4,13 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AskLocationViewController" customModule="Weather" customModuleProvider="target">
             <connections>
+                <outlet property="lblMessage" destination="CNz-vU-Bk7" id="zBp-hY-QRo"/>
+                <outlet property="lblTitle" destination="VF0-vf-DQl" id="He2-Sx-kuV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,22 +19,25 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Localizacion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VF0-vf-DQl">
-                    <rect key="frame" x="129" y="114" width="134" height="30"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Localizacion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VF0-vf-DQl">
+                    <rect key="frame" x="129.66666666666669" y="114" width="133.66666666666669" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="POq-2F-U03"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ubicationIcon" translatesAutoresizingMaskIntoConstraints="NO" id="43m-Pz-rHo">
-                    <rect key="frame" x="76" y="246" width="240" height="128"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ubicationIcon" translatesAutoresizingMaskIntoConstraints="NO" id="43m-Pz-rHo">
+                    <rect key="frame" x="76" y="246" width="240" height="170.66666666666663"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="128" id="Thr-au-Qda"/>
+                        <constraint firstAttribute="height" constant="170.66999999999999" id="Gbq-H7-lKm"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Para brindarte una buena experiencia necesitamos acceso a tu ubicacion, así te daremos resultados precisos del clima." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNz-vU-Bk7">
-                    <rect key="frame" x="19" y="510" width="355" height="138"/>
+                    <rect key="frame" x="20" y="510" width="353" height="142"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="138" id="52c-dO-euq"/>
+                        <constraint firstAttribute="height" constant="142" id="FD4-1x-2ZP"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -41,25 +45,22 @@
                 </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="VF0-vf-DQl" firstAttribute="centerX" secondItem="43m-Pz-rHo" secondAttribute="centerX" id="4g9-tW-tz4"/>
-                <constraint firstItem="43m-Pz-rHo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="76" id="Hra-WR-GJb"/>
-                <constraint firstItem="VF0-vf-DQl" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="LzE-HV-Qf1"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="CNz-vU-Bk7" secondAttribute="bottom" constant="170" id="WFH-zA-mwZ"/>
-                <constraint firstItem="CNz-vU-Bk7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="19" id="aLC-XB-KLU"/>
-                <constraint firstItem="43m-Pz-rHo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="246" id="bqR-nA-CN2"/>
-                <constraint firstItem="VF0-vf-DQl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="55" id="fcd-eR-kTz"/>
-                <constraint firstItem="VF0-vf-DQl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="129" id="nmh-EA-Eoh"/>
-                <constraint firstItem="43m-Pz-rHo" firstAttribute="centerX" secondItem="CNz-vU-Bk7" secondAttribute="centerX" id="sqO-Zi-W9q"/>
+                <constraint firstItem="CNz-vU-Bk7" firstAttribute="top" secondItem="43m-Pz-rHo" secondAttribute="bottom" constant="93.329999999999998" id="2Xz-uf-0rG"/>
+                <constraint firstItem="43m-Pz-rHo" firstAttribute="top" secondItem="VF0-vf-DQl" secondAttribute="bottom" constant="102" id="3aK-Uf-Kdm"/>
+                <constraint firstItem="43m-Pz-rHo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="76" id="Fnu-Dw-opQ"/>
+                <constraint firstItem="VF0-vf-DQl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="55" id="T4P-Tl-aLt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="43m-Pz-rHo" secondAttribute="trailing" constant="77" id="WgB-LA-bbJ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="CNz-vU-Bk7" secondAttribute="bottom" constant="166" id="mV2-nO-apI"/>
+                <constraint firstItem="VF0-vf-DQl" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="oaj-PR-Hh4"/>
+                <constraint firstItem="CNz-vU-Bk7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="pDA-vV-RSk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CNz-vU-Bk7" secondAttribute="trailing" constant="20" id="xMI-jb-QST"/>
             </constraints>
             <point key="canvasLocation" x="139.69465648854961" y="41.549295774647888"/>
         </view>
     </objects>
     <resources>
         <image name="ubicationIcon" width="300" height="170.5"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

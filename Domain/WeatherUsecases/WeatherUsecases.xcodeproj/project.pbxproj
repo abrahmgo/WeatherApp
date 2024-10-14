@@ -27,6 +27,7 @@
 		B6A554472CBD6ED10085A38C /* ScheduleLocalNotificationUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A554462CBD6ED10085A38C /* ScheduleLocalNotificationUsecase.swift */; };
 		B6A5544B2CBD77920085A38C /* UpdateLocalObjectUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5544A2CBD77920085A38C /* UpdateLocalObjectUsecase.swift */; };
 		B6A5544D2CBD8F790085A38C /* RemoveLocalNotificationUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5544C2CBD8F790085A38C /* RemoveLocalNotificationUsecase.swift */; };
+		B6A554922CBDD3490085A38C /* GetCurrentLocationStatusUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A554912CBDD3490085A38C /* GetCurrentLocationStatusUsecase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		B6A554462CBD6ED10085A38C /* ScheduleLocalNotificationUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleLocalNotificationUsecase.swift; sourceTree = "<group>"; };
 		B6A5544A2CBD77920085A38C /* UpdateLocalObjectUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLocalObjectUsecase.swift; sourceTree = "<group>"; };
 		B6A5544C2CBD8F790085A38C /* RemoveLocalNotificationUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveLocalNotificationUsecase.swift; sourceTree = "<group>"; };
+		B6A554912CBDD3490085A38C /* GetCurrentLocationStatusUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentLocationStatusUsecase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				B6A553312CB9E5DF0085A38C /* StarLocationUsecase.swift */,
 				B6A553352CB9E7980085A38C /* GetCurrentLocationUsecase.swift */,
 				B6A553AB2CBA2FD60085A38C /* GetAddressByCoordinatesUseCaseType.swift */,
+				B6A554912CBDD3490085A38C /* GetCurrentLocationStatusUsecase.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				B6A554452CBD6DD20085A38C /* SetAuthorizationUsecase.swift in Sources */,
 				B6A5544B2CBD77920085A38C /* UpdateLocalObjectUsecase.swift in Sources */,
 				B6A554022CBC309A0085A38C /* SaveLocalObjectUsecase.swift in Sources */,
+				B6A554922CBDD3490085A38C /* GetCurrentLocationStatusUsecase.swift in Sources */,
 				B6A5540B2CBC59720085A38C /* DeleteLocalObjectUsecase.swift in Sources */,
 				B6A5523C2CB9DB650085A38C /* WeatherUsecases.docc in Sources */,
 				B6A553F42CBB67070085A38C /* GetWeatherIconUsecase.swift in Sources */,

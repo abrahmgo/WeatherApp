@@ -28,6 +28,7 @@ struct ListWeatherFactory {
         let saveLocalWeather = SaveLocalObjectUsecase(localDB: localDB)
         let getLocalWeather = GetLocalObjectUsecase(localDB: localDB)
         let deleteLocalWeather = DeleteLocalObjectUsecase(localDB: localDB)
+        let currentLocationStatus = GetCurrentLocationStatusUsecase(locationService: locationService)
         
         // MARK: ViewModel
         let dependencies = ListWeatherDependencies(getWeather: getWeather, 
@@ -37,7 +38,8 @@ struct ListWeatherFactory {
                                                    downloadIcon: downloadIcon,
                                                    saveLocalWeather: saveLocalWeather,
                                                    getLocalWeather: getLocalWeather,
-                                                   deleteLocalWeather: deleteLocalWeather)
+                                                   deleteLocalWeather: deleteLocalWeather,
+                                                   currentLocationStatus: currentLocationStatus)
         
         let viewModel = ListWeatherViewModel(dependencies: dependencies)
         

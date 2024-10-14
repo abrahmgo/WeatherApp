@@ -44,4 +44,5 @@ struct ListWeatherDependencies {
     let saveLocalWeather: SaveLocalObjectUsecaseType
     let getLocalWeather: GetLocalObjectUsecaseType
     let deleteLocalWeather: DeleteLocalObjectUsecaseType
+    let currentLocationStatus: GetCurrentLocationStatusUsecaseType
 }

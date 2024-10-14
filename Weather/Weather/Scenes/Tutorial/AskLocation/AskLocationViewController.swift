@@ -7,16 +7,20 @@
 
 import UIKit
 import Utils
+import Localizable
 
 class AskLocationViewController: UIViewController {
 
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblMessage: UILabel!
+    
     private let viewModel: AskLocationViewModelType
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .black
-        // Do any additional setup after loading the view.
+        localize()
     }
 
     @available(*, unavailable)
@@ -27,5 +31,10 @@ class AskLocationViewController: UIViewController {
     init(viewModel: AskLocationViewModelType) {
         self.viewModel = viewModel
         super.init(nibName: AskLocationViewController.typeName, bundle: Bundle(for: type(of: self)))
+    }
+    
+    func localize() {
+        lblTitle.text = WeatherLanguage.localizationTitle
+        lblMessage.text = WeatherLanguage.localizationMessage
     }
 }
