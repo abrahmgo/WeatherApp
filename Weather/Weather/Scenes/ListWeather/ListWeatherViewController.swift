@@ -21,6 +21,7 @@ class ListWeatherViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.register(cellType: CityWeatherTableViewCell.self, bundle: Bundle(for: CityWeatherTableViewCell.self))
+            tableView.register(cellType: FooterTableViewCell.self, bundle: Bundle(for: FooterTableViewCell.self))
             tableView.dataSource = self
             tableView.delegate = self
         }
@@ -121,6 +122,10 @@ extension ListWeatherViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(with: CityWeatherTableViewCell.self, for: indexPath)
             cell.update(model: data)
             return cell
+        case .footer(let data):
+            let cell = tableView.dequeueReusableCell(with: FooterTableViewCell.self, for: indexPath)
+            cell.update(model: data)
+            return cell
         }
     }
 }
@@ -130,11 +135,13 @@ extension ListWeatherViewController: UITableViewDataSource {
 extension ListWeatherViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if !viewModel.outputs.isError() {
+            tableView.deselectRow(at: indexPath, animated: true)
+            let weather = viewModel.outputs.getWeather(index: indexPath.row)
+            let featureUse = viewModel.outputs.featureUse(index: indexPath.row)
+            coordinator.presentWeather(localWeather: weather, featureUse: featureUse)
+        }
         tableView.deselectRow(at: indexPath, animated: true)
-        let weather = viewModel.outputs.getWeather(index: indexPath.row)
-        let featureUse = viewModel.outputs.featureUse(index: indexPath.row)
-        coordinator.presentWeather(localWeather: weather, featureUse: featureUse)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle,

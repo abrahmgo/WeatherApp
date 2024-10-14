@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func doNetwork() {
         NetworkCoreAPI.setup(with: APIConfig.self)
+        LocalizableService.shared = LocalizableService(language: LocalizableLanguage(rawValue: APIConfig.language) ?? .es)
     }
     
     func doAppearence() {

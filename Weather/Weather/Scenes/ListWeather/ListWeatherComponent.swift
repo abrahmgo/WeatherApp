@@ -9,4 +9,5 @@ import WeatherUI
 
 public enum ListWeatherComponent { 
     case city(data: CityWeatherViewCellDataType)
+    case footer(data: FooterViewCellDataType)
 }

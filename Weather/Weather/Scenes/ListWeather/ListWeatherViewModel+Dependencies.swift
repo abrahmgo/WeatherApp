@@ -19,6 +19,7 @@ protocol ListWeatherViewModelOutputs {
     func getWeather(index: Int) -> LocalWeather
     func featureUse(index: Int) -> ShowWeatherUse
     func featureUse(location: CLLocation) -> ShowWeatherUse
+    func isError() -> Bool
 }
 
 protocol ListWeatherViewModelInputs {

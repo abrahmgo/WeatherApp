@@ -17,18 +17,22 @@ public class FooterTableViewCell: UITableViewCell {
     
     public func update(model: FooterViewCellDataType) {
         lblFooter.text = model.text
+        lblFooter.textColor = model.textColor
     }
 }
 
 public protocol FooterViewCellDataType {
     var text: String { get }
+    var textColor: UIColor { get }
 }
 
 public struct FooterViewCellData: FooterViewCellDataType {
     
     public let text: String
+    public let textColor: UIColor
     
-    public init(text: String) {
+    public init(text: String, textColor: UIColor = .black) {
         self.text = text
+        self.textColor = textColor
     }
 }

@@ -32,6 +32,7 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
     private var localWeathers: [LocalWeather] = []
     private var currentLocation: CLLocation?
     private var cancellable: Set<AnyCancellable> = Set<AnyCancellable>()
+    private var haveError = false
     
     init(dependencies: ListWeatherDependencies) {
         self.dependencies = dependencies
@@ -55,15 +56,22 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
     func setCities(currentLocation: CLLocation) {
         Task {
             do {
+                haveError = false
                 self.currentLocation = currentLocation
                 let weather = try await self.getWeather(location: currentLocation)
+                let address = try await self.getAddress(coordinates: currentLocation.coordinate)
                 let component = try await self.getComponent(location: currentLocation,
                                                             weather: weather,
-                                                            local: true)
+                                                            local: true, 
+                                                            address: address)
                 self.components.send([component])
                 try await self.setLocalWeather()
             } catch {
-                
+                haveError = true
+                let footerData = FooterViewCellData(text: "Revisa tu conexion a internet", textColor: .white)
+                let footerComponent = ListWeatherComponent.footer(data: footerData)
+                let localComponent = try await getLocalComponents()
+                self.components.send(localComponent + [footerComponent])
             }
         }
     }
@@ -83,8 +91,9 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
             do {
                 let weather = try await getWeather(location: location)
                 if try await !isPreviusSaved(id: weather.id) {
-                    let component = try await getComponent(location: location, weather: weather)
-                    try await saveLocalWeather(coordinates: location, weather: weather)
+                    let address = try await getAddress(coordinates: location.coordinate)
+                    let component = try await getComponent(location: location, weather: weather, address: address)
+                    try await saveLocalWeather(coordinates: location, weather: weather, address: address)
                     let newComponents = components.value + [component]
                     components.send(newComponents)
                     updateDB()
@@ -95,11 +104,28 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
         }
     }
     
-    func getComponent(location: CLLocation,
-                      weather: Weather,
-                      local: Bool = false) async throws -> ListWeatherComponent {
+    private func getLocalComponents() async throws -> [ListWeatherComponent] {
+        let objects = try await dependencies.getLocalWeather.execute()
+        let components = objects.map({ getLocalComponent(data: $0 )})
+        return components
+    }
+    
+    private func getLocalComponent(data: LocalWeather) -> ListWeatherComponent {
+        let data = CityWeatherViewCellData(id: 0, title: data.city,
+                                           subtitle: "",
+                                           description: "",
+                                           temperature: "",
+                                           minmax: "",
+                                           image: UIImage(systemName: "lock.fill"))
+        let component = ListWeatherComponent.city(data: data)
         
-        let address = try await dependencies.getAddress.execute(coordinates: location.coordinate)
+        return component
+    }
+    
+    private func getComponent(location: CLLocation,
+                              weather: Weather,
+                              local: Bool = false, address: Address) async throws -> ListWeatherComponent {
+        
         locations.append(location)
         
         let imageData = try await dependencies.downloadIcon.execute(imageName: weather.information.first!.icon)
@@ -115,6 +141,10 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
         let component = ListWeatherComponent.city(data: data)
         
         return component
+    }
+    
+    private func getAddress(coordinates: CLLocationCoordinate2D) async throws -> Address {
+        try await dependencies.getAddress.execute(coordinates: coordinates)
     }
     
     func getWeather(index: Int) -> LocalWeather {
@@ -158,12 +188,14 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
     }
     
     private func saveLocalWeather(coordinates: CLLocation,
-                                  weather: Weather) async throws {
+                                  weather: Weather, 
+                                  address: Address) async throws {
         
-        let object = LocalWeather(id: weather.id, 
+        let city = address.city.isEmpty ? address.town : address.city
+        let object = LocalWeather(id: weather.id,
                                   latitude: coordinates.coordinate.latitude,
                                   longitude: coordinates.coordinate.longitude,
-                                  registered: Date())
+                                  registered: Date(), city: city)
         try await dependencies.saveLocalWeather.execute(object: object)
     }
     
@@ -188,8 +220,9 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
         localWeathers = objects
         let components = try await objects.asyncMap({ element in
             let location = CLLocation(latitude: element.latitude, longitude: element.longitude)
+            let address = try await getAddress(coordinates: location.coordinate)
             let weather = try await getWeather(location: location)
-            return try await getComponent(location: location, weather: weather)
+            return try await getComponent(location: location, weather: weather, address: address)
         })
         let newComponents = self.components.value + components
         self.components.send(newComponents)
@@ -223,5 +256,9 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
             let objects = try await dependencies.getLocalWeather.execute()
             localWeathers = objects
         }
+    }
+    
+    func isError() -> Bool {
+        return self.haveError
     }
 }

@@ -55,8 +55,6 @@ struct APIConfig: NetworkCoreAPIConfigType {
             return LanguageBundle.es.rawValue
         }
         
-        LocalizableService.shared = LocalizableService(language: LocalizableLanguage(rawValue: languageBundle.rawValue) ?? .es)
-        
         return languageBundle.rawValue
     }
 }

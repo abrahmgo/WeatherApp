@@ -15,9 +15,9 @@ public struct Weather {
     public let id: Int
     public let timezone: Int
     
-    public init(information: [WeatherInformation], 
-                temperature: WeatherTemperature,
-                name: String, id: Int, timezone: Int) {
+    public init(information: [WeatherInformation] = [],
+                temperature: WeatherTemperature = WeatherTemperature(),
+                name: String = "", id: Int = 0, timezone: Int = 0) {
         self.information = information
         self.temperature = temperature
         self.name = name
@@ -33,7 +33,7 @@ public struct WeatherInformation {
     public let description: String
     public let icon: String
     
-    public init(id: Int, main: String, description: String, icon: String) {
+    public init(id: Int = 0, main: String = "", description: String = "", icon: String = "") {
         self.id = id
         self.main = main
         self.description = description
@@ -52,10 +52,10 @@ public struct WeatherTemperature {
     public let seaLevel: Double
     public let grndLevel: Double
     
-    public init(temp: Double, feelsLike: Double, 
-                tempMin: Double, tempMax: Double,
-                pressure: Double, humidity: Double,
-                seaLevel: Double, grndLevel: Double) {
+    public init(temp: Double = 0, feelsLike: Double = 0,
+                tempMin: Double = 0, tempMax: Double = 0,
+                pressure: Double = 0, humidity: Double = 0,
+                seaLevel: Double = 0, grndLevel: Double = 0) {
         self.temp = temp
         self.feelsLike = feelsLike
         self.tempMin = tempMin
