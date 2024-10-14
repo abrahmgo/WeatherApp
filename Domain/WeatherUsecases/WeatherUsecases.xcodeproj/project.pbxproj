@@ -23,6 +23,9 @@
 		B6A554022CBC309A0085A38C /* SaveLocalObjectUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A554012CBC309A0085A38C /* SaveLocalObjectUsecase.swift */; };
 		B6A554062CBC46BE0085A38C /* GetLocalObjectUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A554052CBC46BE0085A38C /* GetLocalObjectUsecase.swift */; };
 		B6A5540B2CBC59720085A38C /* DeleteLocalObjectUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5540A2CBC59720085A38C /* DeleteLocalObjectUsecase.swift */; };
+		B6A554452CBD6DD20085A38C /* SetAuthorizationUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A554442CBD6DD20085A38C /* SetAuthorizationUsecase.swift */; };
+		B6A554472CBD6ED10085A38C /* ScheduleLocalNotificationUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A554462CBD6ED10085A38C /* ScheduleLocalNotificationUsecase.swift */; };
+		B6A5544B2CBD77920085A38C /* UpdateLocalObjectUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5544A2CBD77920085A38C /* UpdateLocalObjectUsecase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		B6A554012CBC309A0085A38C /* SaveLocalObjectUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveLocalObjectUsecase.swift; sourceTree = "<group>"; };
 		B6A554052CBC46BE0085A38C /* GetLocalObjectUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocalObjectUsecase.swift; sourceTree = "<group>"; };
 		B6A5540A2CBC59720085A38C /* DeleteLocalObjectUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteLocalObjectUsecase.swift; sourceTree = "<group>"; };
+		B6A554442CBD6DD20085A38C /* SetAuthorizationUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetAuthorizationUsecase.swift; sourceTree = "<group>"; };
+		B6A554462CBD6ED10085A38C /* ScheduleLocalNotificationUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleLocalNotificationUsecase.swift; sourceTree = "<group>"; };
+		B6A5544A2CBD77920085A38C /* UpdateLocalObjectUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLocalObjectUsecase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,7 @@
 		B6A552392CB9DB650085A38C /* WeatherUsecases */ = {
 			isa = PBXGroup;
 			children = (
+				B6A554432CBD6DB50085A38C /* LocalNotification */,
 				B6A554002CBC30710085A38C /* WeatherDB */,
 				B6A553742CBA15380085A38C /* Weather */,
 				B6A553302CB9E4A70085A38C /* Location */,
@@ -153,8 +160,18 @@
 				B6A554012CBC309A0085A38C /* SaveLocalObjectUsecase.swift */,
 				B6A5540A2CBC59720085A38C /* DeleteLocalObjectUsecase.swift */,
 				B6A554052CBC46BE0085A38C /* GetLocalObjectUsecase.swift */,
+				B6A5544A2CBD77920085A38C /* UpdateLocalObjectUsecase.swift */,
 			);
 			path = WeatherDB;
+			sourceTree = "<group>";
+		};
+		B6A554432CBD6DB50085A38C /* LocalNotification */ = {
+			isa = PBXGroup;
+			children = (
+				B6A554442CBD6DD20085A38C /* SetAuthorizationUsecase.swift */,
+				B6A554462CBD6ED10085A38C /* ScheduleLocalNotificationUsecase.swift */,
+			);
+			path = LocalNotification;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +285,8 @@
 			files = (
 				B6A553322CB9E5DF0085A38C /* StarLocationUsecase.swift in Sources */,
 				B6A554062CBC46BE0085A38C /* GetLocalObjectUsecase.swift in Sources */,
+				B6A554452CBD6DD20085A38C /* SetAuthorizationUsecase.swift in Sources */,
+				B6A5544B2CBD77920085A38C /* UpdateLocalObjectUsecase.swift in Sources */,
 				B6A554022CBC309A0085A38C /* SaveLocalObjectUsecase.swift in Sources */,
 				B6A5540B2CBC59720085A38C /* DeleteLocalObjectUsecase.swift in Sources */,
 				B6A5523C2CB9DB650085A38C /* WeatherUsecases.docc in Sources */,
@@ -275,6 +294,7 @@
 				B6A553362CB9E7980085A38C /* GetCurrentLocationUsecase.swift in Sources */,
 				B6A553AC2CBA2FD60085A38C /* GetAddressByCoordinatesUseCaseType.swift in Sources */,
 				B6A553762CBA15440085A38C /* GetWeatherUsecase.swift in Sources */,
+				B6A554472CBD6ED10085A38C /* ScheduleLocalNotificationUsecase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

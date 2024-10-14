@@ -12,9 +12,8 @@ struct NotificationFactory {
     
     static func makeNotification(coordinator: NotificationCoordinator) -> NotificationViewController {
         
-        let locationService = WeatherLocalDataSource.location
-        let startLocation = StarLocalizationUseCase(locationService: locationService)
-        let dependencies = NotificationDependencies(startLocation: startLocation)
+        let authNotification = GetLocalNotifcationAuthUsecase()
+        let dependencies = NotificationDependencies(authNotification: authNotification)
         let viewModel = NotificationViewModel(dependencies: dependencies)
         
         // MARK: ViewController

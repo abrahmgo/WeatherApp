@@ -13,10 +13,12 @@ public struct LocalWeather {
     public let id: Int
     public let latitude: Double
     public let longitude: Double
+    public let notification: Bool
     
-    public init(id: Int, latitude: Double, longitude: Double) {
+    public init(id: Int, latitude: Double, longitude: Double, notification: Bool = false) {
         self.id = id
         self.latitude = latitude
         self.longitude = longitude
+        self.notification = notification
     }
 }

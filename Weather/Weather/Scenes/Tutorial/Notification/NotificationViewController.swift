@@ -30,6 +30,10 @@ class NotificationViewController: UIViewController {
         super.init(nibName: NotificationViewController.typeName, bundle: Bundle(for: type(of: self)))
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.inputs.requestAuthNotification()
+    }
+    
     @IBAction func goWeather(_ sender: UIButton) {
         ListWeatherCoordinator().start()
     }

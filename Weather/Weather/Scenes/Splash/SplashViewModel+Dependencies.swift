@@ -6,6 +6,7 @@
 //
 
 import Combine
+import WeatherUsecases
 
 protocol SplashViewModelOutputs {
     
@@ -18,6 +19,10 @@ protocol SplashViewModelInputs {
 protocol SplashViewModelType {
     var outputs: SplashViewModelOutputs { get }
     var inputs: SplashViewModelInputs { get }
+}
+
+struct SplashDependencies {
+    let authNotification: GetLocalNotifcationAuthUsecaseType
 }
 
 enum SplashViewPath {

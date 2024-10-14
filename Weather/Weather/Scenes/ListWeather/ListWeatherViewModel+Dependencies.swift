@@ -9,13 +9,14 @@ import UIKit
 import WeatherUsecases
 import Combine
 import CoreLocation
+import WeatherEntities
 
 protocol ListWeatherViewModelOutputs {
     var components: CurrentValueSubject<[ListWeatherComponent], Never> { get }
     var isLoading: CurrentValueSubject<Bool, Never> { get }
     var error: PassthroughSubject<Error, Never> { get }
     
-    func getLocation(index: Int) -> CLLocation
+    func getWeather(index: Int) -> LocalWeather
     func featureUse(index: Int) -> ShowWeatherUse
     func featureUse(location: CLLocation) -> ShowWeatherUse
 }
@@ -23,6 +24,7 @@ protocol ListWeatherViewModelOutputs {
 protocol ListWeatherViewModelInputs {
     func addNewCity(location: CLLocation)
     func deleteCity(index: Int)
+    func updateDB()
 }
 
 protocol ListWeatherViewModelType {

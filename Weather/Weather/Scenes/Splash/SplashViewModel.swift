@@ -14,7 +14,10 @@ class SplashViewModel: SplashViewModelType, SplashViewModelInputs, SplashViewMod
     var outputs: any SplashViewModelOutputs { return self }
     var inputs: any SplashViewModelInputs { return self }
     
-    init() { 
+    private let dependencies: SplashDependencies
+    
+    init(dependencies: SplashDependencies) {
+        self.dependencies = dependencies
         Task {
             try await Task.sleep(for: .seconds(2))
             decidePath()
@@ -26,7 +29,15 @@ class SplashViewModel: SplashViewModelType, SplashViewModelInputs, SplashViewMod
             goTo.send(.tutorial)
             WeatherUserDefaults.firstLaunch = true
         } else {
-            goTo.send(.app)
+            Task {
+                if !WeatherUserDefaults.requestedNotification {
+                    Task {
+                        WeatherUserDefaults.requestedNotification = true
+                        _ = try await dependencies.authNotification.execute()
+                    }
+                }
+                goTo.send(.app)
+            }
         }
     }
 }

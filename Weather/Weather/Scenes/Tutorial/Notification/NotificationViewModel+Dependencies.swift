@@ -12,6 +12,8 @@ protocol NotificationViewModelOutputs {
 }
 
 protocol NotificationViewModelInputs {
+    
+    func requestAuthNotification()
 }
 
 protocol NotificationViewModelType {
@@ -21,5 +23,5 @@ protocol NotificationViewModelType {
 
 struct NotificationDependencies {
     
-    let startLocation: StarLocalizationUseCaseType
+    let authNotification: GetLocalNotifcationAuthUsecaseType
 }

@@ -8,17 +8,21 @@
 import Combine
 import WeatherUsecases
 import CoreLocation
+import WeatherEntities
 
 protocol ShowWeatherViewModelOutputs {
     var components: CurrentValueSubject<[ShowWeatherComponents], Never> { get }
     var isLoading: CurrentValueSubject<Bool, Never> { get }
     var error: PassthroughSubject<Error, Never> { get }
+    var isNotificationActive: CurrentValueSubject<Bool, Never> { get }
     
     func getCoordinates() -> CLLocation
     func featureUse() -> ShowWeatherUse
 }
 
-protocol ShowWeatherViewModelInputs { }
+protocol ShowWeatherViewModelInputs {
+    func pressNotification()
+}
 
 protocol ShowWeatherViewModelType {
     var outputs: ShowWeatherViewModelOutputs { get }
@@ -27,9 +31,10 @@ protocol ShowWeatherViewModelType {
 
 struct ShowWeatherDependencies {
     
-    let coordinates: CLLocation
+    let localWeather: LocalWeather
     let getAddressByCoordinates: GetAddressByCoordinatesUseCaseType
     let getWeather: GetWeatherUsecaseType
     let featureUse: ShowWeatherUse
     let downloadIcon: GetWeatherIconUsecaseType
+    let updateObject: UpdateLocalObjectUsecaseType
 }

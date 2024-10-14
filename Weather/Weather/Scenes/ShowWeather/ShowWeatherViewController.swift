@@ -17,7 +17,7 @@ protocol ShowWeatherDelegate: AnyObject {
 }
 
 class ShowWeatherViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.register(cellType: IconTableViewCell.self, bundle: Bundle(for: IconTableViewCell.self))
@@ -28,6 +28,8 @@ class ShowWeatherViewController: UIViewController {
         }
     }
     
+    var notificationButton: UIBarButtonItem?
+    
     private let viewModel: ShowWeatherViewModelType
     private var cancellable: Set<AnyCancellable> = Set<AnyCancellable>()
     private var components: [ShowWeatherComponents] = []
@@ -35,7 +37,7 @@ class ShowWeatherViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setup()
     }
     
@@ -62,15 +64,22 @@ class ShowWeatherViewController: UIViewController {
     private func setupBarButtons() {
         let rightButton = UIBarButtonItem(title: "Agregar", image: nil,
                                           target: self, action: #selector(addFavorite))
-        let leftButton = UIBarButtonItem(title: "Cancelar", image: nil,
+        let leftButton = UIBarButtonItem(title: "Listo", image: nil,
                                          target: self, action: #selector(cancel))
+        
+        notificationButton = UIBarButtonItem(image: UIImage(systemName: "bell"),
+                                             style: .plain, target: self, action: #selector(pressNotification))
+        
         let featureUse = viewModel.outputs.featureUse()
         switch featureUse {
         case .add:
             navigationItem.setRightBarButton(rightButton, animated: true)
             navigationItem.setLeftBarButton(leftButton, animated: true)
-        case .location, .read:
+        case .location:
             navigationItem.setLeftBarButton(leftButton, animated: true)
+        case .read:
+            navigationItem.setLeftBarButton(leftButton, animated: true)
+            navigationItem.setRightBarButton(notificationButton, animated: true)
         }
     }
     
@@ -85,12 +94,28 @@ class ShowWeatherViewController: UIViewController {
         dismiss(animated: true)
     }
     
+    @objc func pressNotification() {
+        viewModel.inputs.pressNotification()
+    }
+    
     func setBind() {
         viewModel.outputs.components
             .receive(on: DispatchQueue.main)
             .sink { _ in } receiveValue: { [weak self] components in
                 self?.components = components
                 self?.tableView.reloadData()
+            }.store(in: &cancellable)
+        
+        viewModel.outputs.isNotificationActive
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] value in
+                guard let self = self, viewModel.outputs.featureUse() == .read else { return }
+                let imageName = value ? "bell.fill" : "bell"
+                self.notificationButton = UIBarButtonItem(image: UIImage(systemName: imageName),
+                                                          style: .plain,
+                                                          target: self,
+                                                          action: #selector(self.pressNotification))
+                self.navigationItem.setRightBarButton(self.notificationButton, animated: true)
             }.store(in: &cancellable)
     }
 }

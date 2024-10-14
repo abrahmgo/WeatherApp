@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreLocation
+import WeatherEntities
 
 struct ShowWeatherCoordinator {
     
@@ -14,11 +15,11 @@ struct ShowWeatherCoordinator {
     private var showWeatherViewController: ShowWeatherViewController?
     
     init(navigatonController: UINavigationController,
-         coordinates: CLLocation,
+         localWeather: LocalWeather,
          delegate: ShowWeatherDelegate? = nil,
          featureUse: ShowWeatherUse = .read) {
         self.navigatonController = navigatonController
-        self.showWeatherViewController = ShowWeatherFactory.build(coordinates: coordinates, 
+        self.showWeatherViewController = ShowWeatherFactory.build(localWeather: localWeather, 
                                                                   delegate: delegate,
                                                                   featureUse: featureUse)
     }
@@ -29,6 +30,7 @@ struct ShowWeatherCoordinator {
             return
         }
         let viewController = UINavigationController(rootViewController: showWeatherViewController)
+        viewController.isModalInPresentation = true
         navigatonController.present(viewController, animated: true)
     }
 }

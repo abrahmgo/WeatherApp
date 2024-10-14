@@ -17,4 +17,13 @@ class NotificationViewModel: NotificationViewModelType, NotificationViewModelOut
     init(dependencies: NotificationDependencies) {
         self.dependencies = dependencies
     }
+    
+    func requestAuthNotification() {
+        if !WeatherUserDefaults.requestedNotification {
+            Task {
+                WeatherUserDefaults.requestedNotification = true
+                _ = try await dependencies.authNotification.execute()
+            }
+        }
+    }
 }

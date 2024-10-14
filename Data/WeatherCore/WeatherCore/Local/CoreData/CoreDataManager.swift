@@ -34,6 +34,7 @@ class CoreDataManager: WeatherDBLocalDataSource {
         newStore.setValue(object.id, forKey: "id")
         newStore.setValue(object.latitude, forKey: "latitude")
         newStore.setValue(object.longitude, forKey: "longitude")
+        newStore.setValue(object.longitude, forKey: "notification")
         
         if context.hasChanges {
             try context.save()
@@ -48,28 +49,52 @@ class CoreDataManager: WeatherDBLocalDataSource {
         var list: [WeatherEntities.LocalWeather] = []
         for data in result as! [NSManagedObject] {
             let id = data.value(forKey: "id") as? Int ?? 0
+            print(id)
             let latitude = data.value(forKey: "latitude") as? Double ?? 0
             let longitude = data.value(forKey: "longitude") as? Double ?? 0
-            let newProduct = WeatherEntities.LocalWeather(id: id, latitude: latitude, longitude: longitude)
+            let notification = data.value(forKey: "notification") as? Bool ?? false
+            let newProduct = WeatherEntities.LocalWeather(id: id, latitude: latitude, 
+                                                          longitude: longitude, notification: notification)
             list.append(newProduct)
         }
-        dump(list)
         return list
     }
     
     func deleteContext(id: Int) async throws {
         let context = persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "LocalWeatherEntity")
-        request.predicate = NSPredicate(format: "id == %i", id)
-        print(id)
-        if let results = try context.fetch(request) as? [NSManagedObject]{
-            for object in results {
-                context.delete(object)
-            }
+        let results = try await searchObjects(id: id)
+        guard !results.isEmpty else {
+            return
+        }
+        for object in results {
+            context.delete(object)
         }
         
         if context.hasChanges {
             try context.save()
+        }
+    }
+    
+    func update(id: Int, notification: Bool) async throws {
+        let context = persistentContainer.viewContext
+        let results = try await searchObjects(id: id)
+        guard let first = results.first else {
+            return
+        }
+        first.setValue(notification, forKey: "notification")
+        if context.hasChanges {
+            try context.save()
+        }
+    }
+    
+    private func searchObjects(id: Int) async throws -> [NSManagedObject] {
+        let context = persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "LocalWeatherEntity")
+        request.predicate = NSPredicate(format: "id == %i", id)
+        if let results = try context.fetch(request) as? [NSManagedObject] {
+            return results
+        } else {
+            return []
         }
     }
 }

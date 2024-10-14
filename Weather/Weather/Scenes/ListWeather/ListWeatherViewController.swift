@@ -9,6 +9,7 @@ import UIKit
 import Combine
 import Utils
 import CoreLocation
+import WeatherEntities
 import WeatherUI
 
 class ListWeatherViewController: UIViewController {
@@ -113,9 +114,9 @@ extension ListWeatherViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.deselectRow(at: indexPath, animated: true)
-        let location = viewModel.outputs.getLocation(index: indexPath.row)
+        let weather = viewModel.outputs.getWeather(index: indexPath.row)
         let featureUse = viewModel.outputs.featureUse(index: indexPath.row)
-        coordinator.presentWeather(coordinates: location, featureUse: featureUse)
+        coordinator.presentWeather(localWeather: weather, featureUse: featureUse)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle,
@@ -146,8 +147,9 @@ extension ListWeatherViewController: AddressSearchTableViewDelegate {
         resultSearchController?.dismiss(animated: true)
         resultSearchController?.searchBar.text = nil
         let coordinates = CLLocation(latitude: location.latitude, longitude: location.longitude)
+        let weather = LocalWeather(id: 0, latitude: location.latitude, longitude: location.longitude)
         let featureUse = viewModel.outputs.featureUse(location: coordinates)
-        coordinator.presentWeather(coordinates: coordinates, featureUse: featureUse)
+        coordinator.presentWeather(localWeather: weather, featureUse: featureUse)
     }
 }
 
@@ -158,6 +160,6 @@ extension ListWeatherViewController: ShowWeatherDelegate {
     }
     
     func cancel() {
-        
+        viewModel.inputs.updateDB()
     }
 }

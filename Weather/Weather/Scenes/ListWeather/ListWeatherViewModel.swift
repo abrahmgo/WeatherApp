@@ -28,6 +28,7 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
     // MARK: Private
     private let dependencies: ListWeatherDependencies
     private var locations: [CLLocation] = []
+    private var localWeathers: [LocalWeather] = []
     private var currentLocation: CLLocation?
     private var cancellable: Set<AnyCancellable> = Set<AnyCancellable>()
     
@@ -42,20 +43,24 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
         dependencies.getCurrentLocation.execute()
             .sink(receiveCompletion: { _ in }) { [weak self] location in
                 guard let self = self else { return }
-                Task {
-                    do {
-                        self.currentLocation = location
-                        let weather = try await self.getWeather(location: location)
-                        let component = try await self.getComponent(location: location,
-                                                                    weather: weather,
-                                                                    local: true)
-                        self.components.send([component])
-                        try await self.setLocalWeather()
-                    } catch {
-                        
-                    }
-                }
+                self.setCities(currentLocation: location)
             }.store(in: &cancellable)
+    }
+    
+    func setCities(currentLocation: CLLocation) {
+        Task {
+            do {
+                self.currentLocation = currentLocation
+                let weather = try await self.getWeather(location: currentLocation)
+                let component = try await self.getComponent(location: currentLocation,
+                                                            weather: weather,
+                                                            local: true)
+                self.components.send([component])
+                try await self.setLocalWeather()
+            } catch {
+                
+            }
+        }
     }
     
     func setCurrentCity() {
@@ -77,6 +82,7 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
                     try await saveLocalWeather(coordinates: location, weather: weather)
                     let newComponents = components.value + [component]
                     components.send(newComponents)
+                    updateDB()
                 }
             } catch {
                 
@@ -106,8 +112,16 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
         return component
     }
     
-    func getLocation(index: Int) -> CLLocation {
-        return locations[index]
+    func getWeather(index: Int) -> LocalWeather {
+        if index == 0 || localWeathers.isEmpty, let currentLocation = self.currentLocation {
+            let weather = LocalWeather(id: 0,
+                                       latitude: currentLocation.coordinate.latitude,
+                                       longitude: currentLocation.coordinate.longitude)
+            return weather
+        } else {
+            let localWeather = localWeathers[index - 1]
+            return localWeather
+        }
     }
     
     func deleteCity(index: Int) {
@@ -163,6 +177,7 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
     
     private func setLocalWeather() async throws {
         let objects = try await dependencies.getLocalWeather.execute()
+        localWeathers = objects
         let components = try await objects.asyncMap({ element in
             let location = CLLocation(latitude: element.latitude, longitude: element.longitude)
             let weather = try await getWeather(location: location)
@@ -192,6 +207,13 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
             return .read
         } else {
             return .add
+        }
+    }
+    
+    func updateDB() {
+        Task {
+            let objects = try await dependencies.getLocalWeather.execute()
+            localWeathers = objects
         }
     }
 }

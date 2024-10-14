@@ -12,7 +12,7 @@ import CoreLocation
 import UIKit
 
 class ShowWeatherViewModel: ShowWeatherViewModelType, ShowWeatherViewModelInputs, ShowWeatherViewModelOutputs {
-
+    
     // MARK: Properties
     var outputs: ShowWeatherViewModelOutputs { return self }
     var inputs: ShowWeatherViewModelInputs { return self }
@@ -21,11 +21,13 @@ class ShowWeatherViewModel: ShowWeatherViewModelType, ShowWeatherViewModelInputs
     var components: CurrentValueSubject<[ShowWeatherComponents], Never> = CurrentValueSubject([])
     var isLoading: CurrentValueSubject<Bool, Never> = CurrentValueSubject(false)
     var error: PassthroughSubject<Error, Never> = PassthroughSubject()
+    var isNotificationActive: CurrentValueSubject<Bool, Never> = CurrentValueSubject(false)
     
     
     // MARK: Private
     private let dependencies: ShowWeatherDependencies
     private var cancellable: Set<AnyCancellable> = Set<AnyCancellable>()
+    private var id: Int = 0
     
     public init(dependencies: ShowWeatherDependencies) {
         self.dependencies = dependencies
@@ -36,14 +38,17 @@ class ShowWeatherViewModel: ShowWeatherViewModelType, ShowWeatherViewModelInputs
     private func setComponents() {
         binds()
     }
-
+    
     private func binds() {
         Task {
             do {
-                let address = try await self.dependencies.getAddressByCoordinates.execute(coordinates: dependencies.coordinates.coordinate)
                 
-                let weatherCoordinates = WeatherCoordinates(latitude: dependencies.coordinates.coordinate.latitude,
-                                                            longitude: dependencies.coordinates.coordinate.longitude)
+                let location = CLLocation(latitude: dependencies.localWeather.latitude,
+                                          longitude: dependencies.localWeather.longitude)
+                let address = try await self.dependencies.getAddressByCoordinates.execute(coordinates: location.coordinate)
+                
+                let weatherCoordinates = WeatherCoordinates(latitude: location.coordinate.latitude,
+                                                            longitude: location.coordinate.longitude)
                 let weather = try await self.dependencies.getWeather.execute(coordinates: weatherCoordinates)
                 
                 let title = getTitle()
@@ -86,15 +91,27 @@ class ShowWeatherViewModel: ShowWeatherViewModelType, ShowWeatherViewModelInputs
         case .location:
             return "Mi Ubicación"
         case .read:
+            isNotificationActive.send(dependencies.localWeather.notification)
             return ""
         }
     }
     
     func getCoordinates() -> CLLocation {
-        dependencies.coordinates
+        let location = CLLocation(latitude: dependencies.localWeather.latitude,
+                                  longitude: dependencies.localWeather.longitude)
+        return location
     }
     
     func featureUse() -> ShowWeatherUse {
         dependencies.featureUse
+    }
+    
+    func pressNotification() {
+        let currentValue = isNotificationActive.value
+        Task {
+            isNotificationActive.send(!currentValue)
+            try await dependencies.updateObject.execute(id: self.dependencies.localWeather.id,
+                                                        notification: self.isNotificationActive.value)
+        }
     }
 }

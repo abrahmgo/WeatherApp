@@ -15,6 +15,7 @@ struct WeatherUserDefaults {
     
     enum Keys: String {
         case firstLaunch
+        case requestedNotification
     }
     
     static var firstLaunch: Bool {
@@ -25,6 +26,17 @@ struct WeatherUserDefaults {
         
         get {
             return defaults?.value(forKey: Keys.firstLaunch.rawValue) as? Bool ?? false
+        }
+    }
+    
+    static var requestedNotification: Bool {
+        set {
+            defaults?.set(newValue, forKey: Keys.requestedNotification.rawValue)
+            defaults?.synchronize()
+        }
+        
+        get {
+            return defaults?.value(forKey: Keys.requestedNotification.rawValue) as? Bool ?? false
         }
     }
 }

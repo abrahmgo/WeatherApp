@@ -20,6 +20,7 @@
 		B6A553AA2CBA2F970085A38C /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553A92CBA2F970085A38C /* Address.swift */; };
 		B6A553B82CBAEF2D0085A38C /* WeatherUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553B72CBAEF2D0085A38C /* WeatherUnits.swift */; };
 		B6A553FD2CBC24900085A38C /* LocalWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553FC2CBC24900085A38C /* LocalWeather.swift */; };
+		B6A554492CBD6F130085A38C /* LocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A554482CBD6F130085A38C /* LocalNotification.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		B6A553A92CBA2F970085A38C /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		B6A553B72CBAEF2D0085A38C /* WeatherUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherUnits.swift; sourceTree = "<group>"; };
 		B6A553FC2CBC24900085A38C /* LocalWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalWeather.swift; sourceTree = "<group>"; };
+		B6A554482CBD6F130085A38C /* LocalNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotification.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				B6A5525E2CB9DB820085A38C /* WeatherEntities.h */,
 				B6A5525F2CB9DB820085A38C /* WeatherEntities.docc */,
 				B6A553332CB9E75D0085A38C /* WeatherError.swift */,
+				B6A554482CBD6F130085A38C /* LocalNotification.swift */,
 			);
 			path = WeatherEntities;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				B6A5536D2CBA0EB70085A38C /* WeatherCoordinates.swift in Sources */,
 				B6A553AA2CBA2F970085A38C /* Address.swift in Sources */,
 				B6A553B82CBAEF2D0085A38C /* WeatherUnits.swift in Sources */,
+				B6A554492CBD6F130085A38C /* LocalNotification.swift in Sources */,
 				B6A553342CB9E75D0085A38C /* WeatherError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
