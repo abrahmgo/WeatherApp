@@ -24,7 +24,7 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
     // MARK: Outputs
     var components: CurrentValueSubject<[ListWeatherComponent], Never> = CurrentValueSubject([])
     var isLoading: CurrentValueSubject<Bool, Never> = CurrentValueSubject(false)
-    var error: PassthroughSubject<Error, Never> = PassthroughSubject()
+    var locationError: PassthroughSubject<Error, Never> = PassthroughSubject()
     
     // MARK: Private
     private let dependencies: ListWeatherDependencies
@@ -38,12 +38,12 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
     init(dependencies: ListWeatherDependencies) {
         self.dependencies = dependencies
         
-        initFeature()
+        setCurrentCity()
+        setBinds()
     }
     
     func initFeature() {
         setCurrentCity()
-        setBinds()
     }
     
     func setBinds() {
@@ -63,13 +63,7 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
                 case .authorizedAlways, .authorizedWhenInUse:
                     self.setCurrentCity()
                 default:
-                    Task {
-                        let footerData = FooterViewCellData(text: WeatherLanguage.denyLocation,
-                                                            textColor: .white)
-                        let footerComponent = ListWeatherComponent.footer(data: footerData)
-                        let newComponets = self.components.value + [footerComponent]
-                        self.components.send(newComponets)
-                    }
+                    self.locationError.send(WeatherError.LocationRequestService)
                 }
             }.store(in: &cancellable)
     }
@@ -102,6 +96,10 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
             do {
                 try await dependencies.startLocation.execute(type: .always)
             } catch {
+                self.currentLocation = nil
+                self.components.send([])
+                self.locations.removeAll()
+                self.localWeathers.removeAll()
                 try await setLocalWeather()
             }
         }

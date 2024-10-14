@@ -12,6 +12,16 @@ public extension UIViewController {
     static var typeName: String {
         return String(describing: self)
     }
+    
+        
+    func showAlertMessage(title: String, message: String, titleBtn: String) {
+        
+        let alertMessagePopUpBox = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okButton = UIAlertAction(title: titleBtn, style: .default)
+        
+        alertMessagePopUpBox.addAction(okButton)
+        self.present(alertMessagePopUpBox, animated: true)
+    }
 }
 
 public extension Decodable {

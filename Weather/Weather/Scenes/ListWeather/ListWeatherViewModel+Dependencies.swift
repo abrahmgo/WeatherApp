@@ -14,7 +14,7 @@ import WeatherEntities
 protocol ListWeatherViewModelOutputs {
     var components: CurrentValueSubject<[ListWeatherComponent], Never> { get }
     var isLoading: CurrentValueSubject<Bool, Never> { get }
-    var error: PassthroughSubject<Error, Never> { get }
+    var locationError: PassthroughSubject<Error, Never> { get }
     
     func getWeather(index: Int) -> LocalWeather
     func featureUse(index: Int) -> ShowWeatherUse

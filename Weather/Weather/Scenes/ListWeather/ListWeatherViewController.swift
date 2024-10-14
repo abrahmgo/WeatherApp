@@ -100,6 +100,14 @@ class ListWeatherViewController: UIViewController {
                 self?.refreshControl.endRefreshing()
                 self?.tableView.reloadData()
             }).store(in: &cancellable)
+        
+        viewModel.outputs.locationError
+            .receive(on: DispatchQueue.main)
+            .sink { error in
+                self.showAlertMessage(title: WeatherLanguage.localizationTitle, 
+                                      message: WeatherLanguage.denyLocation,
+                                      titleBtn: WeatherLanguage.btnCancel)
+            }.store(in: &cancellable)
     }
     
     private func localize() { 
