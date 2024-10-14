@@ -96,6 +96,10 @@
                 <outlet property="lblPressure" destination="swm-bw-2zY" id="U2g-vh-RO1"/>
                 <outlet property="lblPressureGround" destination="oS3-K3-4bC" id="QdZ-t6-SHb"/>
                 <outlet property="lblPressureSea" destination="59c-1r-QTo" id="KUt-ZC-EsO"/>
+                <outlet property="lblTitle1" destination="X2U-bI-KNM" id="skt-xZ-f0i"/>
+                <outlet property="lblTitle2" destination="Alh-Dd-ji2" id="Smi-DS-znG"/>
+                <outlet property="lblTitle3" destination="K1n-Uk-NJz" id="vFn-Yg-wtL"/>
+                <outlet property="lblTitle4" destination="Ehj-Su-ILe" id="k3Z-hR-MKZ"/>
             </connections>
             <point key="canvasLocation" x="175.57251908396947" y="69.718309859154928"/>
         </tableViewCell>

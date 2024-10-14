@@ -69,6 +69,10 @@
 		B6A5543E2CBD64AE0085A38C /* NotificationViewModel+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5543D2CBD64AE0085A38C /* NotificationViewModel+Dependencies.swift */; };
 		B6A554402CBD64B80085A38C /* NotificationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5543F2CBD64B80085A38C /* NotificationFactory.swift */; };
 		B6A554422CBD64C00085A38C /* NotificationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A554412CBD64C00085A38C /* NotificationCoordinator.swift */; };
+		B6A554522CBD98370085A38C /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B6A554512CBD98370085A38C /* Settings.bundle */; };
+		B6A554842CBDA3500085A38C /* Localizable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A554832CBDA3500085A38C /* Localizable.framework */; };
+		B6A554852CBDA3500085A38C /* Localizable.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B6A554832CBDA3500085A38C /* Localizable.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B6A5548A2CBDAA990085A38C /* InformationViewCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A554892CBDAA990085A38C /* InformationViewCellData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +102,7 @@
 				B6A553502CBA05D60085A38C /* NetoworkCore.framework in Embed Frameworks */,
 				B6A5522B2CB9D9B30085A38C /* Utils.framework in Embed Frameworks */,
 				B6A553392CB9E8060085A38C /* WeatherUsecases.framework in Embed Frameworks */,
+				B6A554852CBDA3500085A38C /* Localizable.framework in Embed Frameworks */,
 				B6A553A82CBA2CED0085A38C /* WeatherUI.framework in Embed Frameworks */,
 				B6A5533F2CB9E8120085A38C /* WeatherEntities.framework in Embed Frameworks */,
 				B6A553422CB9E8160085A38C /* WeatherDataSource.framework in Embed Frameworks */,
@@ -168,6 +173,9 @@
 		B6A5543D2CBD64AE0085A38C /* NotificationViewModel+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationViewModel+Dependencies.swift"; sourceTree = "<group>"; };
 		B6A5543F2CBD64B80085A38C /* NotificationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationFactory.swift; sourceTree = "<group>"; };
 		B6A554412CBD64C00085A38C /* NotificationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCoordinator.swift; sourceTree = "<group>"; };
+		B6A554512CBD98370085A38C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		B6A554832CBDA3500085A38C /* Localizable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Localizable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6A554892CBDAA990085A38C /* InformationViewCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewCellData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +186,7 @@
 				B6A5534F2CBA05D60085A38C /* NetoworkCore.framework in Frameworks */,
 				B6A5522A2CB9D9B30085A38C /* Utils.framework in Frameworks */,
 				B6A553382CB9E8060085A38C /* WeatherUsecases.framework in Frameworks */,
+				B6A554842CBDA3500085A38C /* Localizable.framework in Frameworks */,
 				B6A553A72CBA2CED0085A38C /* WeatherUI.framework in Frameworks */,
 				B6A5533E2CB9E8120085A38C /* WeatherEntities.framework in Frameworks */,
 				B6A553412CB9E8150085A38C /* WeatherDataSource.framework in Frameworks */,
@@ -269,6 +278,7 @@
 		B6A551DC2CB9D7540085A38C /* ShowWeather */ = {
 			isa = PBXGroup;
 			children = (
+				B6A554882CBDAA8C0085A38C /* ViewData */,
 				B6A551D82CB9D7500085A38C /* ShowWeatherViewController.swift */,
 				B6A551D92CB9D7500085A38C /* ShowWeatherViewController.xib */,
 				B6A553A22CBA2C170085A38C /* ShowWeatherComponents.swift */,
@@ -284,6 +294,7 @@
 		B6A552282CB9D9B30085A38C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B6A554832CBDA3500085A38C /* Localizable.framework */,
 				B6A553A62CBA2CED0085A38C /* WeatherUI.framework */,
 				B6A5534E2CBA05D60085A38C /* NetoworkCore.framework */,
 				B6A553402CB9E8150085A38C /* WeatherDataSource.framework */,
@@ -298,6 +309,7 @@
 		B6A553532CBA061E0085A38C /* AppConfiguration */ = {
 			isa = PBXGroup;
 			children = (
+				B6A5544E2CBD97D60085A38C /* Settings */,
 				B6A553542CBA06280085A38C /* APIConfig.swift */,
 				B6A553562CBA066C0085A38C /* APIBundle.swift */,
 			);
@@ -385,6 +397,22 @@
 				B6A5541A2CBC9DA90085A38C /* NotificationViewController.xib */,
 			);
 			path = Notification;
+			sourceTree = "<group>";
+		};
+		B6A5544E2CBD97D60085A38C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				B6A554512CBD98370085A38C /* Settings.bundle */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		B6A554882CBDAA8C0085A38C /* ViewData */ = {
+			isa = PBXGroup;
+			children = (
+				B6A554892CBDAA990085A38C /* InformationViewCellData.swift */,
+			);
+			path = ViewData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -493,6 +521,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6A554182CBC9D8F0085A38C /* AskLocationViewController.xib in Resources */,
+				B6A554522CBD98370085A38C /* Settings.bundle in Resources */,
 				B6A554232CBD5C210085A38C /* SplashViewController.xib in Resources */,
 				B6A554142CBC9D600085A38C /* TutorialViewController.xib in Resources */,
 				B6A5541C2CBC9DA90085A38C /* NotificationViewController.xib in Resources */,
@@ -530,6 +559,7 @@
 				B6A554172CBC9D8F0085A38C /* AskLocationViewController.swift in Sources */,
 				B6A553CD2CBB14010085A38C /* ListWeatherFactory.swift in Sources */,
 				B6A553CE2CBB14010085A38C /* ListWeatherViewController.swift in Sources */,
+				B6A5548A2CBDAA990085A38C /* InformationViewCellData.swift in Sources */,
 				B6A5540F2CBC90350085A38C /* ShowWeatherUse.swift in Sources */,
 				B6A554362CBD62480085A38C /* AskLocationCoordinator.swift in Sources */,
 				B6A5542B2CBD5E900085A38C /* SplashFactory.swift in Sources */,

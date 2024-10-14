@@ -1,0 +1,24 @@
+/* 
+  English.strings
+  Localizable
+
+  Created by Andrés Bonilla Gómez on 14/10/24.
+  
+*/
+
+"weather" = "Weather";
+"myLocation" = "Current location";
+"maximum" = "Maximum";
+"minimum" = "Minimum";
+"humidity" = "Humidity";
+"pression" = "Atmospheric Pressure";
+"pressionSea" = "To sea level";
+"pressionGround" = "To ground level";
+"notificationTitle" = "Weather";
+"notificationBody" = "Check weather for";
+"btnAdd" = "Add";
+"btnReady" = "Ready";
+"btnCancel" = "Cancelar";
+"btnDelete" = "Delete";
+"searchCity" = "Search city";
+"refresh" = "Updating data";

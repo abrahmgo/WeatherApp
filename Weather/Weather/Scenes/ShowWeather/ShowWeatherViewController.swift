@@ -10,6 +10,7 @@ import Utils
 import WeatherUI
 import Combine
 import CoreLocation
+import Localizable
 
 protocol ShowWeatherDelegate: AnyObject {
     func add(coordinates: CLLocation)
@@ -62,9 +63,9 @@ class ShowWeatherViewController: UIViewController {
     }
     
     private func setupBarButtons() {
-        let rightButton = UIBarButtonItem(title: "Agregar", image: nil,
+        let rightButton = UIBarButtonItem(title: WeatherLanguage.btnAdd, image: nil,
                                           target: self, action: #selector(addFavorite))
-        let leftButton = UIBarButtonItem(title: "Listo", image: nil,
+        let leftButton = UIBarButtonItem(title: WeatherLanguage.btnReady, image: nil,
                                          target: self, action: #selector(cancel))
         
         notificationButton = UIBarButtonItem(image: UIImage(systemName: "bell"),

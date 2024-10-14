@@ -39,6 +39,9 @@
       location = "group:Utils"
       name = "Utils">
       <FileRef
+         location = "group:Localizable/Localizable.xcodeproj">
+      </FileRef>
+      <FileRef
          location = "group:Utils/Utils.xcodeproj">
       </FileRef>
    </Group>

@@ -10,6 +10,7 @@ import WeatherUI
 import WeatherEntities
 import CoreLocation
 import UIKit
+import Localizable
 
 class ShowWeatherViewModel: ShowWeatherViewModelType, ShowWeatherViewModelInputs, ShowWeatherViewModelOutputs {
     
@@ -63,7 +64,7 @@ class ShowWeatherViewModel: ShowWeatherViewModelType, ShowWeatherViewModelInputs
                 
                 let temperatureData = TitleNumberViewCellData(number: "\(weather.temperature.temp.toInt())º",
                                                               title: weather.information.first!.description,
-                                                              subtitle: "min: \(weather.temperature.tempMin.toInt())º max \(weather.temperature.tempMax.toInt())º")
+                                                              subtitle: "\(WeatherLanguage.minimum): \(weather.temperature.tempMin.toInt())º \(WeatherLanguage.maximum) \(weather.temperature.tempMax.toInt())º")
                 let weatherComponent = ShowWeatherComponents.temperature(data: temperatureData)
                 
                 let informationData = InformationViewCellData(humidty: weather.temperature.humidity.toInt(),
@@ -90,7 +91,7 @@ class ShowWeatherViewModel: ShowWeatherViewModelType, ShowWeatherViewModelInputs
         case .add:
             return ""
         case .location:
-            return "Mi Ubicación"
+            return WeatherLanguage.myLocation
         case .read:
             isNotificationActive.send(dependencies.localWeather.notification)
             return ""
@@ -118,7 +119,8 @@ class ShowWeatherViewModel: ShowWeatherViewModelType, ShowWeatherViewModelInputs
             if newCurrentValue {
                 let city = self.address?.city ?? ""
                 let notificationModel = LocalNotification(id: "\(id)",
-                                                          title: "Clima", body: "Revisar clima para " + city ,
+                                                          title: WeatherLanguage.notificationTitle,
+                                                          body: "\(WeatherLanguage.notificationBody) " + city ,
                                                           time: .fast)
                 try await dependencies.setNotification.execute(model: notificationModel)
             } else {

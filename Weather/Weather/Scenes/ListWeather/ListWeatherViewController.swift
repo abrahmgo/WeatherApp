@@ -11,6 +11,7 @@ import Utils
 import CoreLocation
 import WeatherEntities
 import WeatherUI
+import Localizable
 
 class ListWeatherViewController: UIViewController {
     
@@ -59,16 +60,15 @@ class ListWeatherViewController: UIViewController {
     private func setup() {
         view.backgroundColor = .black
         tableView.backgroundColor = .clear
-        title = "Clima"
         let locationSearchTable = AddressSearchTableViewController()
         locationSearchTable.delegate = self
         resultSearchController = UISearchController(searchResultsController: locationSearchTable)
         resultSearchController?.searchResultsUpdater = locationSearchTable
         let searchBar = resultSearchController!.searchBar
         searchBar.sizeToFit()
-        searchBar.placeholder = "Buscar Ciudad"
+        searchBar.placeholder = WeatherLanguage.searchCity
         searchBar.searchBarStyle = .minimal
-        searchBar.setValue("Cancelar", forKey: "cancelButtonText")
+        searchBar.setValue(WeatherLanguage.btnCancel, forKey: "cancelButtonText")
         let textfield = searchBar.searchTextField
         textfield.backgroundColor = .white
         navigationItem.searchController = resultSearchController
@@ -81,7 +81,7 @@ class ListWeatherViewController: UIViewController {
         
         tableView.refreshControl = refreshControl
         refreshControl.tintColor = UIColor(red:0.25, green:0.72, blue:0.85, alpha:1.0)
-        refreshControl.attributedTitle = NSAttributedString(string: "Actualizando información ...",
+        refreshControl.attributedTitle = NSAttributedString(string: WeatherLanguage.refresh,
                                                             attributes: [:])
         refreshControl.addTarget(self, action: #selector(refreshWeatherData(_:)), for: .valueChanged)
     }
@@ -101,7 +101,9 @@ class ListWeatherViewController: UIViewController {
             }).store(in: &cancellable)
     }
     
-    private func localize() { }
+    private func localize() { 
+        title = WeatherLanguage.weather
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -153,7 +155,7 @@ extension ListWeatherViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
-        return "Eliminar"
+        return WeatherLanguage.btnDelete
     }
 }
 

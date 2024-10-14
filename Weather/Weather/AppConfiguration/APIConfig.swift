@@ -6,13 +6,22 @@
 //
 
 import NetoworkCore
+import Localizable
 
 struct APIConfig: NetworkCoreAPIConfigType {
     
     static var baseURL: String {
         #if DEBUG
         
-        return APIBundle.development.server
+        guard let serverInUse = UserDefaults.standard.object(forKey: "ServerInUse") as? String else {
+            return APIBundle.development.server
+        }
+        
+        guard let bundleAPI = APIBundle(rawValue: serverInUse) else {
+            return APIBundle.development.server
+        }
+        
+        return bundleAPI.server
         
         #else
         return APIBundle.production.server
@@ -34,5 +43,20 @@ struct APIConfig: NetworkCoreAPIConfigType {
     
     static var token: String {
         return "8ed946a39d01dfd229eeace4d13a0bd7"
+    }
+    
+    static var language: String {
+        
+        guard let serverInUse = UserDefaults.standard.object(forKey: "LanguageInUse") as? String else {
+            return LanguageBundle.es.rawValue
+        }
+        
+        guard let languageBundle = LanguageBundle(rawValue: serverInUse) else {
+            return LanguageBundle.es.rawValue
+        }
+        
+        LocalizableService.shared = LocalizableService(language: LocalizableLanguage(rawValue: languageBundle.rawValue) ?? .es)
+        
+        return languageBundle.rawValue
     }
 }

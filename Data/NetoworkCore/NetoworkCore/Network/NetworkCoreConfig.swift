@@ -12,6 +12,7 @@ public protocol NetworkCoreAPIConfigType {
     static var useSampleData: Bool { get }
     static var additionalHeaders: [String: String] { get }
     static var token: String { get }
+    static var language: String { get }
 }
 
 public extension NetworkCoreAPIConfigType {
@@ -39,7 +40,8 @@ public final class NetworkCoreAPIConfig {
         } else {
             self.networkService = NetworkService(baseURL: config.baseURL, 
                                                  headers: config.additionalHeaders,
-                                                 token: config.token)
+                                                 token: config.token,
+                                                 language: config.language)
         }
     }
 }

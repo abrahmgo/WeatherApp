@@ -22,3 +22,7 @@ enum APIBundle: String {
     }
 }
 
+enum LanguageBundle: String {
+    case es
+    case en
+}

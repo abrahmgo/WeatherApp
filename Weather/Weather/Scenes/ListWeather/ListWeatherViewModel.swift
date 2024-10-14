@@ -10,6 +10,7 @@ import WeatherEntities
 import CoreLocation
 import WeatherUI
 import UIKit
+import Localizable
 
 class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs, ListWeatherViewModelOutputs {
 
@@ -106,10 +107,10 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
         
         let title = address.city.isEmpty ? address.town : address.city
         let data = CityWeatherViewCellData(id: weather.id, title: title,
-                                           subtitle: local ? "Mi ubicación" : address.country,
+                                           subtitle: local ? WeatherLanguage.myLocation : address.country,
                                            description: weather.information.first?.description ?? "",
                                            temperature: "\(weather.temperature.temp.toInt())º",
-                                           minmax: "Maxima: \(weather.temperature.tempMax.toInt())º Minima: \(weather.temperature.tempMin.toInt())º", 
+                                           minmax: "\(WeatherLanguage.maximum): \(weather.temperature.tempMax.toInt())º \(WeatherLanguage.minimum): \(weather.temperature.tempMin.toInt())º", 
                                            image: image)
         let component = ListWeatherComponent.city(data: data)
         

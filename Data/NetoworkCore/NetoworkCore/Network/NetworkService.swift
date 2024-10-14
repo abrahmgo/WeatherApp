@@ -18,12 +18,15 @@ struct NetworkService: NetworkServiceType {
     private let session: URLSession
     private let token: String
     private let baseURL: String
+    private let language: String
     
     init(timeoutForRequest: TimeInterval = 20.0,
          baseURL: String,
          headers: [String: String] = [:],
-         token: String) {
+         token: String,
+         language: String) {
         self.token = token
+        self.language = language
         self.baseURL = baseURL
         self.configuration = URLSessionConfiguration.default
         self.configuration.timeoutIntervalForRequest = timeoutForRequest
@@ -88,7 +91,7 @@ struct NetworkService: NetworkServiceType {
             newBaseURL =  baseURL + target.path
             var urlComponents = URLComponents(string: newBaseURL)
             let tokenQueryItem = [URLQueryItem(name: "appid", value: token),
-                                  URLQueryItem(name: "lang", value: "es")]
+                                  URLQueryItem(name: "lang", value: language)]
             let queryItems = target.queryParams?.map({ (key, value) in
                 return URLQueryItem(name: key, value: String(describing: value) )
             })

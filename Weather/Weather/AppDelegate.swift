@@ -8,6 +8,7 @@
 import UIKit
 import NetoworkCore
 import CoreLocation
+import Localizable
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

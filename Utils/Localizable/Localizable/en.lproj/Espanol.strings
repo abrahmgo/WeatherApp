@@ -1,0 +1,24 @@
+/* 
+  Mexico.strings
+  Localizable
+
+  Created by Andrés Bonilla Gómez on 14/10/24.
+  
+*/
+
+"weather" = "Clima";
+"myLocation" = "Mi ubicación";
+"maximum" = "Máximo";
+"minimum" = "Mínima";
+"humidity" = "Humedad";
+"pression" = "Presión atmosférica";
+"pressionSea" = "A nivel del mar";
+"pressionGround" = "A nivel de tierra";
+"notificationTitle" = "Clima";
+"notificationBody" = "Revisar clima para";
+"btnAdd" = "Agregar";
+"btnReady" = "Listo";
+"btnCancel" = "Cancelar";
+"btnDelete" = "Eliminar";
+"searchCity" = "Buscar ciudad";
+"refresh" = "Actualizando datos";
