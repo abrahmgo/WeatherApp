@@ -28,3 +28,4 @@
 "notificationViewTitle" = "Notifications";
 "notificationMessage" = "Notifications help you to know about the weather in your city and your favorites";
 "notificationBtn" = "Go to climate";
+"denyLocation" = "Location permission denied";

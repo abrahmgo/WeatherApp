@@ -30,4 +30,5 @@ public struct WeatherLanguage {
     public static let notificationViewTitle = LocalizableService.shared.get(key: "notificationViewTitle")
     public static let notificationMessage = LocalizableService.shared.get(key: "notificationMessage")
     public static let notificationBtn = LocalizableService.shared.get(key: "notificationBtn")
+    public static let denyLocation = LocalizableService.shared.get(key: "denyLocation")
 }

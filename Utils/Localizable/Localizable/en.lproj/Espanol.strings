@@ -28,3 +28,4 @@
 "notificationViewTitle" = "Notificaciones";
 "notificationMessage" = "Las notificaciones ayudan a avisar sobre el clima en tu ciudad y tus favoritos.";
 "notificationBtn" = "Ir a clima";
+"denyLocation" = "Permisos de ubicaciíón denegados";

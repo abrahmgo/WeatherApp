@@ -64,7 +64,8 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
                     self.setCurrentCity()
                 default:
                     Task {
-                        let footerData = FooterViewCellData(text: "Permisos de ubicacion denegados", textColor: .white)
+                        let footerData = FooterViewCellData(text: WeatherLanguage.denyLocation,
+                                                            textColor: .white)
                         let footerComponent = ListWeatherComponent.footer(data: footerData)
                         let newComponets = self.components.value + [footerComponent]
                         self.components.send(newComponets)
