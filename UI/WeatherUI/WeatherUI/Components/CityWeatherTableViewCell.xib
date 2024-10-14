@@ -32,8 +32,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nublado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i77-e9-pYO">
-                                <rect key="frame" x="5" y="83" width="64.333333333333329" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nublado" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i77-e9-pYO">
+                                <rect key="frame" x="5" y="83" width="64.333333333333329" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -68,11 +68,11 @@
                             <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="EQR-gy-cQK" secondAttribute="trailing" constant="332" id="U3w-k1-7QZ"/>
                             <constraint firstItem="umc-K9-kdJ" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Wti-eX-J5g" secondAttribute="trailing" constant="107" id="YhN-KY-v5f"/>
                             <constraint firstItem="7dM-df-saH" firstAttribute="top" secondItem="yWE-Ej-sVX" secondAttribute="top" id="ZEa-C5-MUA"/>
-                            <constraint firstItem="bH1-iq-qsZ" firstAttribute="leading" relation="lessThanOrEqual" secondItem="i77-e9-pYO" secondAttribute="trailing" constant="161.66999999999999" id="as0-cR-Y12"/>
+                            <constraint firstItem="bH1-iq-qsZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="i77-e9-pYO" secondAttribute="trailing" constant="10" id="as0-cR-Y12"/>
                             <constraint firstAttribute="trailing" secondItem="7dM-df-saH" secondAttribute="trailing" constant="5" id="fIb-UY-lUx"/>
                             <constraint firstItem="bH1-iq-qsZ" firstAttribute="top" secondItem="umc-K9-kdJ" secondAttribute="bottom" constant="29" id="gi1-q7-E9G"/>
                             <constraint firstItem="Wti-eX-J5g" firstAttribute="top" secondItem="yWE-Ej-sVX" secondAttribute="top" id="hqI-M4-qbi"/>
-                            <constraint firstAttribute="bottom" secondItem="i77-e9-pYO" secondAttribute="bottom" constant="3" id="izT-KR-56K"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="i77-e9-pYO" secondAttribute="bottom" constant="3" id="izT-KR-56K"/>
                             <constraint firstItem="EQR-gy-cQK" firstAttribute="leading" secondItem="yWE-Ej-sVX" secondAttribute="leading" constant="5" id="lH5-er-4WU"/>
                             <constraint firstItem="i77-e9-pYO" firstAttribute="leading" secondItem="yWE-Ej-sVX" secondAttribute="leading" constant="5" id="pcr-ou-d3P"/>
                             <constraint firstItem="umc-K9-kdJ" firstAttribute="top" secondItem="yWE-Ej-sVX" secondAttribute="top" id="rR9-U6-hcE"/>
@@ -85,7 +85,7 @@
                     <constraint firstItem="yWE-Ej-sVX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="57D-aW-waM"/>
                     <constraint firstItem="yWE-Ej-sVX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="8YW-Ba-C4s"/>
                     <constraint firstAttribute="trailing" secondItem="yWE-Ej-sVX" secondAttribute="trailing" constant="10" id="BHn-e2-8da"/>
-                    <constraint firstAttribute="bottom" secondItem="yWE-Ej-sVX" secondAttribute="bottom" constant="5" id="ESz-cK-SXa"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="yWE-Ej-sVX" secondAttribute="bottom" constant="5" id="ESz-cK-SXa"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

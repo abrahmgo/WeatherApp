@@ -18,20 +18,23 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Localizacion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VF0-vf-DQl">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Localizacion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VF0-vf-DQl">
                     <rect key="frame" x="129" y="114" width="134" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ubicationIcon" translatesAutoresizingMaskIntoConstraints="NO" id="43m-Pz-rHo">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ubicationIcon" translatesAutoresizingMaskIntoConstraints="NO" id="43m-Pz-rHo">
                     <rect key="frame" x="76" y="246" width="240" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="128" id="Thr-au-Qda"/>
+                    </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Para brindarte una buena experiencia necesitamos acceso a tu ubicacion, así te daremos resultados precisos del clima." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNz-vU-Bk7">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Para brindarte una buena experiencia necesitamos acceso a tu ubicacion, así te daremos resultados precisos del clima." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNz-vU-Bk7">
                     <rect key="frame" x="19" y="510" width="355" height="138"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="138" id="52c-dO-euq"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -39,6 +42,17 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="VF0-vf-DQl" firstAttribute="centerX" secondItem="43m-Pz-rHo" secondAttribute="centerX" id="4g9-tW-tz4"/>
+                <constraint firstItem="43m-Pz-rHo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="76" id="Hra-WR-GJb"/>
+                <constraint firstItem="VF0-vf-DQl" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="LzE-HV-Qf1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="CNz-vU-Bk7" secondAttribute="bottom" constant="170" id="WFH-zA-mwZ"/>
+                <constraint firstItem="CNz-vU-Bk7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="19" id="aLC-XB-KLU"/>
+                <constraint firstItem="43m-Pz-rHo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="246" id="bqR-nA-CN2"/>
+                <constraint firstItem="VF0-vf-DQl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="55" id="fcd-eR-kTz"/>
+                <constraint firstItem="VF0-vf-DQl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="129" id="nmh-EA-Eoh"/>
+                <constraint firstItem="43m-Pz-rHo" firstAttribute="centerX" secondItem="CNz-vU-Bk7" secondAttribute="centerX" id="sqO-Zi-W9q"/>
+            </constraints>
             <point key="canvasLocation" x="139.69465648854961" y="41.549295774647888"/>
         </view>
     </objects>
