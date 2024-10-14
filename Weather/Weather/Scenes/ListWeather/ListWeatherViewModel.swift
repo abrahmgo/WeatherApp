@@ -146,6 +146,8 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
         
         Task {
             try await deleteLocalWeather(id: id)
+            let objects = try await dependencies.getLocalWeather.execute()
+            localWeathers = objects
             components.send(newComponents)
         }
     }
