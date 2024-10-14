@@ -45,6 +45,7 @@
 		B6A553D72CBB1D510085A38C /* AddressSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553D52CBB1D510085A38C /* AddressSearchTableViewController.swift */; };
 		B6A553D82CBB1D510085A38C /* AddressSearchTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6A553D62CBB1D510085A38C /* AddressSearchTableViewController.xib */; };
 		B6A553DA2CBB34260085A38C /* ShowWeatherCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553D92CBB34260085A38C /* ShowWeatherCoordinator.swift */; };
+		B6A5540F2CBC90350085A38C /* ShowWeatherUse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5540E2CBC90350085A38C /* ShowWeatherUse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,7 @@
 		B6A553D52CBB1D510085A38C /* AddressSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchTableViewController.swift; sourceTree = "<group>"; };
 		B6A553D62CBB1D510085A38C /* AddressSearchTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressSearchTableViewController.xib; sourceTree = "<group>"; };
 		B6A553D92CBB34260085A38C /* ShowWeatherCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowWeatherCoordinator.swift; sourceTree = "<group>"; };
+		B6A5540E2CBC90350085A38C /* ShowWeatherUse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowWeatherUse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +224,7 @@
 				B6A551D92CB9D7500085A38C /* ShowWeatherViewController.xib */,
 				B6A553A22CBA2C170085A38C /* ShowWeatherComponents.swift */,
 				B6A553AD2CBADE350085A38C /* ShowWeatherViewModel.swift */,
+				B6A5540E2CBC90350085A38C /* ShowWeatherUse.swift */,
 				B6A553AF2CBADEB60085A38C /* CurrentLocationViewModel+Dependencies.swift */,
 				B6A553B12CBAE0FD0085A38C /* ShowWeatherFactory.swift */,
 				B6A553D92CBB34260085A38C /* ShowWeatherCoordinator.swift */,
@@ -412,6 +415,7 @@
 				B6A553CC2CBB14010085A38C /* ListWeatherCoordinator.swift in Sources */,
 				B6A553CD2CBB14010085A38C /* ListWeatherFactory.swift in Sources */,
 				B6A553CE2CBB14010085A38C /* ListWeatherViewController.swift in Sources */,
+				B6A5540F2CBC90350085A38C /* ShowWeatherUse.swift in Sources */,
 				B6A553CF2CBB14010085A38C /* ListWeatherComponent.swift in Sources */,
 				B6A553D02CBB14010085A38C /* ListWeatherViewModel+Dependencies.swift in Sources */,
 				B6A553D12CBB14010085A38C /* ListWeatherViewModel.swift in Sources */,

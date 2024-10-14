@@ -46,8 +46,10 @@ class ShowWeatherViewModel: ShowWeatherViewModelType, ShowWeatherViewModelInputs
                                                             longitude: dependencies.coordinates.coordinate.longitude)
                 let weather = try await self.dependencies.getWeather.execute(coordinates: weatherCoordinates)
                 
-                let titleData = TitleTableViewCellData(title: dependencies.isCurrentLocation ? "Mi Ubicacion" : "",
-                                                       subtitle: address.city + " " + address.state)
+                let title = getTitle()
+                let subtitle = address.city.isEmpty ? address.town : address.city
+                let titleData = TitleTableViewCellData(title: title,
+                                                       subtitle: subtitle + " " + address.state)
                 let titleComponent = ShowWeatherComponents.headerTitle(data: titleData)
                 
                 let spaceData = SpaceViewCellData(height: 15)
@@ -77,11 +79,22 @@ class ShowWeatherViewModel: ShowWeatherViewModelType, ShowWeatherViewModelInputs
         }
     }
     
+    private func getTitle() -> String {
+        switch dependencies.featureUse {
+        case .add:
+            return ""
+        case .location:
+            return "Mi Ubicación"
+        case .read:
+            return ""
+        }
+    }
+    
     func getCoordinates() -> CLLocation {
         dependencies.coordinates
     }
     
-    func isCurrentLocation() -> Bool {
-        dependencies.isCurrentLocation
+    func featureUse() -> ShowWeatherUse {
+        dependencies.featureUse
     }
 }

@@ -56,17 +56,22 @@ class ShowWeatherViewController: UIViewController {
         setBind()
         tableView.backgroundColor = .clear
         view.layer.contents = #imageLiteral(resourceName: "weatherBackground").cgImage
-        guard !viewModel.outputs.isCurrentLocation() else {
-            return
-        }
-        
+        setupBarButtons()
+    }
+    
+    private func setupBarButtons() {
         let rightButton = UIBarButtonItem(title: "Agregar", image: nil,
                                           target: self, action: #selector(addFavorite))
-        navigationItem.setRightBarButton(rightButton, animated: true)
-        
         let leftButton = UIBarButtonItem(title: "Cancelar", image: nil,
-                                          target: self, action: #selector(cancel))
-        navigationItem.setLeftBarButton(leftButton, animated: true)
+                                         target: self, action: #selector(cancel))
+        let featureUse = viewModel.outputs.featureUse()
+        switch featureUse {
+        case .add:
+            navigationItem.setRightBarButton(rightButton, animated: true)
+            navigationItem.setLeftBarButton(leftButton, animated: true)
+        case .location, .read:
+            navigationItem.setLeftBarButton(leftButton, animated: true)
+        }
     }
     
     @objc func addFavorite() {

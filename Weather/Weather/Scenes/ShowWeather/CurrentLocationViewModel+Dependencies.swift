@@ -15,7 +15,7 @@ protocol ShowWeatherViewModelOutputs {
     var error: PassthroughSubject<Error, Never> { get }
     
     func getCoordinates() -> CLLocation
-    func isCurrentLocation() -> Bool
+    func featureUse() -> ShowWeatherUse
 }
 
 protocol ShowWeatherViewModelInputs { }
@@ -30,6 +30,6 @@ struct ShowWeatherDependencies {
     let coordinates: CLLocation
     let getAddressByCoordinates: GetAddressByCoordinatesUseCaseType
     let getWeather: GetWeatherUsecaseType
-    let isCurrentLocation: Bool
+    let featureUse: ShowWeatherUse
     let downloadIcon: GetWeatherIconUsecaseType
 }

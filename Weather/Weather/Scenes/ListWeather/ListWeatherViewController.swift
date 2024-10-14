@@ -114,7 +114,8 @@ extension ListWeatherViewController: UITableViewDelegate {
         
         tableView.deselectRow(at: indexPath, animated: true)
         let location = viewModel.outputs.getLocation(index: indexPath.row)
-        coordinator.presentWeather(coordinates: location, isCurrentLocation: true)
+        let featureUse = viewModel.outputs.featureUse(index: indexPath.row)
+        coordinator.presentWeather(coordinates: location, featureUse: featureUse)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle,
@@ -125,10 +126,11 @@ extension ListWeatherViewController: UITableViewDelegate {
     }
     
     public func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        let isLocal = viewModel.outputs.isCurrentLocation(index: indexPath.row)
-        if isLocal {
+        let isLocal = viewModel.outputs.featureUse(index: indexPath.row)
+        switch isLocal {
+        case .location:
             return .none
-        } else {
+        default:
             return .delete
         }
     }
@@ -143,8 +145,9 @@ extension ListWeatherViewController: AddressSearchTableViewDelegate {
     func selectLocation(location: CLLocationCoordinate2D) {
         resultSearchController?.dismiss(animated: true)
         resultSearchController?.searchBar.text = nil
-        let coordinates =  CLLocation(latitude: location.latitude, longitude: location.longitude)
-        coordinator.presentWeather(coordinates: coordinates)
+        let coordinates = CLLocation(latitude: location.latitude, longitude: location.longitude)
+        let featureUse = viewModel.outputs.featureUse(location: coordinates)
+        coordinator.presentWeather(coordinates: coordinates, featureUse: featureUse)
     }
 }
 

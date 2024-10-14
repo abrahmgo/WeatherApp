@@ -28,7 +28,7 @@ class CoreDataManager: WeatherDBLocalDataSource {
     
     func saveContext(object: WeatherEntities.LocalWeather) async throws {
         let context = persistentContainer.viewContext
-        
+        dump(object)
         let entity = NSEntityDescription.entity(forEntityName: "LocalWeatherEntity", in: context)
         let newStore = NSManagedObject(entity: entity!, insertInto: context)
         newStore.setValue(object.id, forKey: "id")
@@ -53,6 +53,7 @@ class CoreDataManager: WeatherDBLocalDataSource {
             let newProduct = WeatherEntities.LocalWeather(id: id, latitude: latitude, longitude: longitude)
             list.append(newProduct)
         }
+        dump(list)
         return list
     }
     
@@ -60,7 +61,7 @@ class CoreDataManager: WeatherDBLocalDataSource {
         let context = persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "LocalWeatherEntity")
         request.predicate = NSPredicate(format: "id == %i", id)
-        
+        print(id)
         if let results = try context.fetch(request) as? [NSManagedObject]{
             for object in results {
                 context.delete(object)

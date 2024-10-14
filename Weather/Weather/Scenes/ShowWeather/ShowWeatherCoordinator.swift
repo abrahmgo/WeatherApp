@@ -16,11 +16,11 @@ struct ShowWeatherCoordinator {
     init(navigatonController: UINavigationController,
          coordinates: CLLocation,
          delegate: ShowWeatherDelegate? = nil,
-         isCurrentLocation: Bool = false) {
+         featureUse: ShowWeatherUse = .read) {
         self.navigatonController = navigatonController
         self.showWeatherViewController = ShowWeatherFactory.build(coordinates: coordinates, 
                                                                   delegate: delegate,
-                                                                  isCurrentLocation: isCurrentLocation)
+                                                                  featureUse: featureUse)
     }
     
     func present() {

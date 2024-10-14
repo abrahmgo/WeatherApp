@@ -72,10 +72,12 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
         Task {
             do {
                 let weather = try await getWeather(location: location)
-                let component = try await getComponent(location: location, weather: weather)
-                try await saveLocalWeather(coordinates: location, weather: weather)
-                let newComponents = components.value + [component]
-                components.send(newComponents)
+                if try await !isPreviusSaved(id: weather.id) {
+                    let component = try await getComponent(location: location, weather: weather)
+                    try await saveLocalWeather(coordinates: location, weather: weather)
+                    let newComponents = components.value + [component]
+                    components.send(newComponents)
+                }
             } catch {
                 
             }
@@ -92,8 +94,9 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
         let imageData = try await dependencies.downloadIcon.execute(imageName: weather.information.first!.icon)
         let image = UIImage(data: imageData)
         
-        let data = CityWeatherViewCellData(id: weather.id, title: address.city,
-                                           subtitle: local ? "Mi ubicación" : "",
+        let title = address.city.isEmpty ? address.town : address.city
+        let data = CityWeatherViewCellData(id: weather.id, title: title,
+                                           subtitle: local ? "Mi ubicación" : address.country,
                                            description: weather.information.first?.description ?? "",
                                            temperature: "\(weather.temperature.temp.toInt())º",
                                            minmax: "Maxima: \(weather.temperature.tempMax.toInt())º Minima: \(weather.temperature.tempMin.toInt())º", 
@@ -105,13 +108,6 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
     
     func getLocation(index: Int) -> CLLocation {
         return locations[index]
-    }
-    
-    func isCurrentLocation(index: Int) -> Bool {
-        guard let currentLocation = currentLocation else {
-            return false
-        }
-        return locations[index] == currentLocation
     }
     
     func deleteCity(index: Int) {
@@ -134,10 +130,9 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
             }
         })
         
-        components.send(newComponents)
-        
         Task {
             try await deleteLocalWeather(id: id)
+            components.send(newComponents)
         }
     }
     
@@ -156,6 +151,16 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
         try await dependencies.deleteLocalWeather.execute(object: object)
     }
     
+    private func getLocalWeather() async throws -> [LocalWeather] {
+        let objects = try await dependencies.getLocalWeather.execute()
+        return objects
+    }
+    
+    private func isPreviusSaved(id: Int) async throws -> Bool {
+        let objects = try await getLocalWeather()
+        return (objects.first(where: {$0.id == id}) != nil)
+    }
+    
     private func setLocalWeather() async throws {
         let objects = try await dependencies.getLocalWeather.execute()
         let components = try await objects.asyncMap({ element in
@@ -172,5 +177,21 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
                                              longitude: location.coordinate.longitude)
         let weather = try await dependencies.getWeather.execute(coordinates: coordinates)
         return weather
+    }
+    
+    func featureUse(index: Int) -> ShowWeatherUse {
+        guard let currentLocation = currentLocation else {
+            return .read
+        }
+        return locations[index] == currentLocation ? .location : .read
+    }
+    
+    func featureUse(location: CLLocation) -> ShowWeatherUse {
+        let foundLocal = locations.first(where: {$0.coordinate.latitude == location.coordinate.latitude})
+        if foundLocal != nil {
+            return .read
+        } else {
+            return .add
+        }
     }
 }

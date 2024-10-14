@@ -14,7 +14,7 @@ struct ShowWeatherFactory {
     
     static func build(coordinates: CLLocation,
                       delegate: ShowWeatherDelegate? = nil,
-                      isCurrentLocation: Bool = false) -> ShowWeatherViewController {
+                      featureUse: ShowWeatherUse = .read) -> ShowWeatherViewController {
         
         let weatherService = WeatherRemoteDataSource.weather
         let iconService = WeatherRemoteDataSource.icon
@@ -26,7 +26,7 @@ struct ShowWeatherFactory {
         let dependencies = ShowWeatherDependencies(coordinates: coordinates,
                                                    getAddressByCoordinates: getAddressByCoordinates,
                                                    getWeather: getWeather, 
-                                                   isCurrentLocation: isCurrentLocation,
+                                                   featureUse: featureUse,
                                                    downloadIcon: downloadIcon)
         let viewModel = ShowWeatherViewModel(dependencies: dependencies)
         let view = ShowWeatherViewController(viewModel: viewModel, delegate: delegate)

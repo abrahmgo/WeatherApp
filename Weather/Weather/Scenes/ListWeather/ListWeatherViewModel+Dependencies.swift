@@ -15,8 +15,9 @@ protocol ListWeatherViewModelOutputs {
     var isLoading: CurrentValueSubject<Bool, Never> { get }
     var error: PassthroughSubject<Error, Never> { get }
     
-    func getLocation(index: Int) -> CLLocation 
-    func isCurrentLocation(index: Int) -> Bool
+    func getLocation(index: Int) -> CLLocation
+    func featureUse(index: Int) -> ShowWeatherUse
+    func featureUse(location: CLLocation) -> ShowWeatherUse
 }
 
 protocol ListWeatherViewModelInputs {
