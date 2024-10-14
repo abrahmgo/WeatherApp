@@ -35,6 +35,7 @@ class CoreDataManager: WeatherDBLocalDataSource {
         newStore.setValue(object.latitude, forKey: "latitude")
         newStore.setValue(object.longitude, forKey: "longitude")
         newStore.setValue(object.longitude, forKey: "notification")
+        newStore.setValue(object.registered, forKey: "registered")
         
         if context.hasChanges {
             try context.save()
@@ -49,12 +50,13 @@ class CoreDataManager: WeatherDBLocalDataSource {
         var list: [WeatherEntities.LocalWeather] = []
         for data in result as! [NSManagedObject] {
             let id = data.value(forKey: "id") as? Int ?? 0
-            print(id)
             let latitude = data.value(forKey: "latitude") as? Double ?? 0
             let longitude = data.value(forKey: "longitude") as? Double ?? 0
             let notification = data.value(forKey: "notification") as? Bool ?? false
-            let newProduct = WeatherEntities.LocalWeather(id: id, latitude: latitude, 
-                                                          longitude: longitude, notification: notification)
+            let registered = data.value(forKey: "registered") as? Date ?? Date()
+            let newProduct = WeatherEntities.LocalWeather(id: id, latitude: latitude,
+                                                          longitude: longitude, notification: notification,
+                                                          registered: registered)
             list.append(newProduct)
         }
         return list

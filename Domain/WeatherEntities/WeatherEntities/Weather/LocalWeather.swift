@@ -14,11 +14,17 @@ public struct LocalWeather {
     public let latitude: Double
     public let longitude: Double
     public let notification: Bool
+    public let registered: Date
     
-    public init(id: Int, latitude: Double, longitude: Double, notification: Bool = false) {
+    public init(id: Int, 
+                latitude: Double,
+                longitude: Double,
+                notification: Bool = false,
+                registered: Date = Date()) {
         self.id = id
         self.latitude = latitude
         self.longitude = longitude
         self.notification = notification
+        self.registered = registered
     }
 }

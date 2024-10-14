@@ -13,4 +13,5 @@ enum ShowWeatherComponents {
     case information(data: InformationViewCellDataType)
     case space(data: SpaceViewCellDataType)
     case icon(data: IconViewCellData)
+    case footer(data: FooterViewCellDataType)
 }

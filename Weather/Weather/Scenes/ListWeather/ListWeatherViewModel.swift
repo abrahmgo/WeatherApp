@@ -162,7 +162,8 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
         
         let object = LocalWeather(id: weather.id, 
                                   latitude: coordinates.coordinate.latitude,
-                                  longitude: coordinates.coordinate.longitude)
+                                  longitude: coordinates.coordinate.longitude,
+                                  registered: Date())
         try await dependencies.saveLocalWeather.execute(object: object)
     }
     

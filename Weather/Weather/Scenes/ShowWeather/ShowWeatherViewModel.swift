@@ -11,6 +11,7 @@ import WeatherEntities
 import CoreLocation
 import UIKit
 import Localizable
+import Utils
 
 class ShowWeatherViewModel: ShowWeatherViewModelType, ShowWeatherViewModelInputs, ShowWeatherViewModelOutputs {
     
@@ -73,13 +74,18 @@ class ShowWeatherViewModel: ShowWeatherViewModelType, ShowWeatherViewModelInputs
                                                               pressureGround: weather.temperature.grndLevel.toInt())
                 let informationComponent = ShowWeatherComponents.information(data: informationData)
                 
+                let footerText = "\(WeatherLanguage.registered) \(dependencies.localWeather.registered.toSring(format: .completeYearMonthDaySlash))"
+                let footerData = FooterViewCellData(text: footerText)
+                let footerComponent = ShowWeatherComponents.footer(data: footerData)
+                
+                
                 let icon = try await self.dependencies.downloadIcon.execute(imageName: weather.information.first!.icon)
                 let image = UIImage(data: icon)
                 let iconData = IconViewCellData(image: image)
                 let iconComponent = ShowWeatherComponents.icon(data: iconData)
                 self.components.send([iconComponent, spaceComponent, titleComponent,
                                       spaceComponent, weatherComponent,
-                                      spaceComponent, informationComponent])
+                                      spaceComponent, informationComponent, footerComponent])
             } catch {
                 
             }

@@ -16,14 +16,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="424" height="62"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1l-E5-2zG">
-                        <rect key="frame" x="10" y="5" width="404" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1l-E5-2zG">
+                        <rect key="frame" x="10" y="5" width="404" height="20.333333333333332"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksW-hH-dXU">
-                        <rect key="frame" x="10" y="36" width="404" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksW-hH-dXU">
+                        <rect key="frame" x="10" y="35.333333333333336" width="404" height="20.333333333333336"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -33,7 +33,7 @@
                     <constraint firstAttribute="trailing" secondItem="u1l-E5-2zG" secondAttribute="trailing" constant="10" id="4j3-AG-gia"/>
                     <constraint firstItem="u1l-E5-2zG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="AYp-yg-sf5"/>
                     <constraint firstItem="ksW-hH-dXU" firstAttribute="top" secondItem="u1l-E5-2zG" secondAttribute="bottom" constant="10" id="LnY-Gb-pvf"/>
-                    <constraint firstAttribute="bottom" secondItem="ksW-hH-dXU" secondAttribute="bottom" constant="5" id="VbU-EY-bO6"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ksW-hH-dXU" secondAttribute="bottom" constant="5" id="VbU-EY-bO6"/>
                     <constraint firstItem="u1l-E5-2zG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="miC-PD-bJQ"/>
                     <constraint firstAttribute="trailing" secondItem="ksW-hH-dXU" secondAttribute="trailing" constant="10" id="pK7-zw-ckf"/>
                     <constraint firstItem="ksW-hH-dXU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="zba-Jw-KUc"/>

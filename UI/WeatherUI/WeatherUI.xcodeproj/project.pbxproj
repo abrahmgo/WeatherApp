@@ -25,6 +25,8 @@
 		B6A553E42CBB49980085A38C /* Utils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B6A553E22CBB49980085A38C /* Utils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B6A553E82CBB637A0085A38C /* IconTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6A553E72CBB637A0085A38C /* IconTableViewCell.xib */; };
 		B6A553E92CBB637A0085A38C /* IconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A553E62CBB637A0085A38C /* IconTableViewCell.swift */; };
+		B6A5548F2CBDB3390085A38C /* FooterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6A5548E2CBDB3390085A38C /* FooterTableViewCell.xib */; };
+		B6A554902CBDB3390085A38C /* FooterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5548D2CBDB3390085A38C /* FooterTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		B6A553E22CBB49980085A38C /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6A553E62CBB637A0085A38C /* IconTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTableViewCell.swift; sourceTree = "<group>"; };
 		B6A553E72CBB637A0085A38C /* IconTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IconTableViewCell.xib; sourceTree = "<group>"; };
+		B6A5548D2CBDB3390085A38C /* FooterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterTableViewCell.swift; sourceTree = "<group>"; };
+		B6A5548E2CBDB3390085A38C /* FooterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +148,8 @@
 				B6A553DC2CBB387F0085A38C /* CityWeatherTableViewCell.xib */,
 				B6A553E62CBB637A0085A38C /* IconTableViewCell.swift */,
 				B6A553E72CBB637A0085A38C /* IconTableViewCell.xib */,
+				B6A5548D2CBDB3390085A38C /* FooterTableViewCell.swift */,
+				B6A5548E2CBDB3390085A38C /* FooterTableViewCell.xib */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -252,6 +258,7 @@
 				B6A553A02CBA29F90085A38C /* TitleTableViewCell.xib in Resources */,
 				B6A553DD2CBB387F0085A38C /* CityWeatherTableViewCell.xib in Resources */,
 				B6A553E82CBB637A0085A38C /* IconTableViewCell.xib in Resources */,
+				B6A5548F2CBDB3390085A38C /* FooterTableViewCell.xib in Resources */,
 				B6A553B52CBAE5900085A38C /* TitleNumberTableViewCell.xib in Resources */,
 				B6A553C12CBB0E810085A38C /* SpaceTableViewCell.xib in Resources */,
 				B6A553BB2CBB03030085A38C /* InformationTableViewCell.xib in Resources */,
@@ -278,6 +285,7 @@
 				B6A553882CBA294D0085A38C /* WeatherUI.docc in Sources */,
 				B6A553C22CBB0E810085A38C /* SpaceTableViewCell.swift in Sources */,
 				B6A553BC2CBB03030085A38C /* InformationTableViewCell.swift in Sources */,
+				B6A554902CBDB3390085A38C /* FooterTableViewCell.swift in Sources */,
 				B6A553B62CBAE5900085A38C /* TitleNumberTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

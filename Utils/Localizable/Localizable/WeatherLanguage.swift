@@ -24,4 +24,5 @@ public struct WeatherLanguage {
     public static let refresh = LocalizableService.shared.get(key: "refresh")
     public static let searchCity = LocalizableService.shared.get(key: "searchCity")
     public static let weather = LocalizableService.shared.get(key: "weather")
+    public static let registered = LocalizableService.shared.get(key: "registered")
 }

@@ -26,6 +26,7 @@ class ShowWeatherViewController: UIViewController {
             tableView.register(cellType: TitleNumberTableViewCell.self, bundle: Bundle(for: TitleNumberTableViewCell.self))
             tableView.register(cellType: InformationTableViewCell.self, bundle: Bundle(for: InformationTableViewCell.self))
             tableView.register(cellType: SpaceTableViewCell.self, bundle: Bundle(for: SpaceTableViewCell.self))
+            tableView.register(cellType: FooterTableViewCell.self, bundle: Bundle(for: FooterTableViewCell.self))
         }
     }
     
@@ -56,6 +57,7 @@ class ShowWeatherViewController: UIViewController {
     
     public func setup() {
         tableView.dataSource = self
+        tableView.delegate = self
         setBind()
         tableView.backgroundColor = .clear
         view.layer.contents = #imageLiteral(resourceName: "weatherBackground").cgImage
@@ -150,6 +152,17 @@ extension ShowWeatherViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(with: IconTableViewCell.self, for: indexPath)
             cell.update(model: data)
             return cell
+        case .footer(let data):
+            let cell = tableView.dequeueReusableCell(with: FooterTableViewCell.self, for: indexPath)
+            cell.update(model: data)
+            return cell
         }
+    }
+}
+
+extension ShowWeatherViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
