@@ -50,8 +50,8 @@
 		B6A554142CBC9D600085A38C /* TutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6A554122CBC9D600085A38C /* TutorialViewController.xib */; };
 		B6A554172CBC9D8F0085A38C /* AskLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A554152CBC9D8F0085A38C /* AskLocationViewController.swift */; };
 		B6A554182CBC9D8F0085A38C /* AskLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6A554162CBC9D8F0085A38C /* AskLocationViewController.xib */; };
-		B6A5541B2CBC9DA90085A38C /* DescribeFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A554192CBC9DA90085A38C /* DescribeFeatureViewController.swift */; };
-		B6A5541C2CBC9DA90085A38C /* DescribeFeatureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6A5541A2CBC9DA90085A38C /* DescribeFeatureViewController.xib */; };
+		B6A5541B2CBC9DA90085A38C /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A554192CBC9DA90085A38C /* NotificationViewController.swift */; };
+		B6A5541C2CBC9DA90085A38C /* NotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6A5541A2CBC9DA90085A38C /* NotificationViewController.xib */; };
 		B6A5541E2CBD5BCB0085A38C /* WeatherUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5541D2CBD5BCB0085A38C /* WeatherUserDefaults.swift */; };
 		B6A554222CBD5C210085A38C /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A554202CBD5C210085A38C /* SplashViewController.swift */; };
 		B6A554232CBD5C210085A38C /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6A554212CBD5C210085A38C /* SplashViewController.xib */; };
@@ -61,6 +61,14 @@
 		B6A5542B2CBD5E900085A38C /* SplashFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5542A2CBD5E900085A38C /* SplashFactory.swift */; };
 		B6A554302CBD60BF0085A38C /* TutorialFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5542F2CBD60BF0085A38C /* TutorialFactory.swift */; };
 		B6A554322CBD60C70085A38C /* TutorialCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A554312CBD60C70085A38C /* TutorialCoordinator.swift */; };
+		B6A554342CBD623C0085A38C /* AskLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A554332CBD623C0085A38C /* AskLocationViewModel.swift */; };
+		B6A554362CBD62480085A38C /* AskLocationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A554352CBD62480085A38C /* AskLocationCoordinator.swift */; };
+		B6A554382CBD62530085A38C /* AskLocationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A554372CBD62530085A38C /* AskLocationFactory.swift */; };
+		B6A5543A2CBD62700085A38C /* AskLocationViewModel+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A554392CBD62700085A38C /* AskLocationViewModel+Dependencies.swift */; };
+		B6A5543C2CBD64A70085A38C /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5543B2CBD64A70085A38C /* NotificationViewModel.swift */; };
+		B6A5543E2CBD64AE0085A38C /* NotificationViewModel+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5543D2CBD64AE0085A38C /* NotificationViewModel+Dependencies.swift */; };
+		B6A554402CBD64B80085A38C /* NotificationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5543F2CBD64B80085A38C /* NotificationFactory.swift */; };
+		B6A554422CBD64C00085A38C /* NotificationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A554412CBD64C00085A38C /* NotificationCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,8 +149,8 @@
 		B6A554122CBC9D600085A38C /* TutorialViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorialViewController.xib; sourceTree = "<group>"; };
 		B6A554152CBC9D8F0085A38C /* AskLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskLocationViewController.swift; sourceTree = "<group>"; };
 		B6A554162CBC9D8F0085A38C /* AskLocationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AskLocationViewController.xib; sourceTree = "<group>"; };
-		B6A554192CBC9DA90085A38C /* DescribeFeatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescribeFeatureViewController.swift; sourceTree = "<group>"; };
-		B6A5541A2CBC9DA90085A38C /* DescribeFeatureViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescribeFeatureViewController.xib; sourceTree = "<group>"; };
+		B6A554192CBC9DA90085A38C /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		B6A5541A2CBC9DA90085A38C /* NotificationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationViewController.xib; sourceTree = "<group>"; };
 		B6A5541D2CBD5BCB0085A38C /* WeatherUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherUserDefaults.swift; sourceTree = "<group>"; };
 		B6A554202CBD5C210085A38C /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		B6A554212CBD5C210085A38C /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
@@ -152,6 +160,14 @@
 		B6A5542A2CBD5E900085A38C /* SplashFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashFactory.swift; sourceTree = "<group>"; };
 		B6A5542F2CBD60BF0085A38C /* TutorialFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialFactory.swift; sourceTree = "<group>"; };
 		B6A554312CBD60C70085A38C /* TutorialCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialCoordinator.swift; sourceTree = "<group>"; };
+		B6A554332CBD623C0085A38C /* AskLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskLocationViewModel.swift; sourceTree = "<group>"; };
+		B6A554352CBD62480085A38C /* AskLocationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskLocationCoordinator.swift; sourceTree = "<group>"; };
+		B6A554372CBD62530085A38C /* AskLocationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskLocationFactory.swift; sourceTree = "<group>"; };
+		B6A554392CBD62700085A38C /* AskLocationViewModel+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AskLocationViewModel+Dependencies.swift"; sourceTree = "<group>"; };
+		B6A5543B2CBD64A70085A38C /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
+		B6A5543D2CBD64AE0085A38C /* NotificationViewModel+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationViewModel+Dependencies.swift"; sourceTree = "<group>"; };
+		B6A5543F2CBD64B80085A38C /* NotificationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationFactory.swift; sourceTree = "<group>"; };
+		B6A554412CBD64C00085A38C /* NotificationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -350,6 +366,10 @@
 			children = (
 				B6A554152CBC9D8F0085A38C /* AskLocationViewController.swift */,
 				B6A554162CBC9D8F0085A38C /* AskLocationViewController.xib */,
+				B6A554332CBD623C0085A38C /* AskLocationViewModel.swift */,
+				B6A554392CBD62700085A38C /* AskLocationViewModel+Dependencies.swift */,
+				B6A554352CBD62480085A38C /* AskLocationCoordinator.swift */,
+				B6A554372CBD62530085A38C /* AskLocationFactory.swift */,
 			);
 			path = AskLocation;
 			sourceTree = "<group>";
@@ -357,8 +377,12 @@
 		B6A5542E2CBD609C0085A38C /* Notification */ = {
 			isa = PBXGroup;
 			children = (
-				B6A554192CBC9DA90085A38C /* DescribeFeatureViewController.swift */,
-				B6A5541A2CBC9DA90085A38C /* DescribeFeatureViewController.xib */,
+				B6A554192CBC9DA90085A38C /* NotificationViewController.swift */,
+				B6A5543B2CBD64A70085A38C /* NotificationViewModel.swift */,
+				B6A5543D2CBD64AE0085A38C /* NotificationViewModel+Dependencies.swift */,
+				B6A5543F2CBD64B80085A38C /* NotificationFactory.swift */,
+				B6A554412CBD64C00085A38C /* NotificationCoordinator.swift */,
+				B6A5541A2CBC9DA90085A38C /* NotificationViewController.xib */,
 			);
 			path = Notification;
 			sourceTree = "<group>";
@@ -471,7 +495,7 @@
 				B6A554182CBC9D8F0085A38C /* AskLocationViewController.xib in Resources */,
 				B6A554232CBD5C210085A38C /* SplashViewController.xib in Resources */,
 				B6A554142CBC9D600085A38C /* TutorialViewController.xib in Resources */,
-				B6A5541C2CBC9DA90085A38C /* DescribeFeatureViewController.xib in Resources */,
+				B6A5541C2CBC9DA90085A38C /* NotificationViewController.xib in Resources */,
 				B6A551DB2CB9D7500085A38C /* ShowWeatherViewController.xib in Resources */,
 				B6A553D32CBB14010085A38C /* ListWeatherViewController.xib in Resources */,
 				B6A553D82CBB1D510085A38C /* AddressSearchTableViewController.xib in Resources */,
@@ -502,12 +526,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6A553CC2CBB14010085A38C /* ListWeatherCoordinator.swift in Sources */,
+				B6A554382CBD62530085A38C /* AskLocationFactory.swift in Sources */,
 				B6A554172CBC9D8F0085A38C /* AskLocationViewController.swift in Sources */,
 				B6A553CD2CBB14010085A38C /* ListWeatherFactory.swift in Sources */,
 				B6A553CE2CBB14010085A38C /* ListWeatherViewController.swift in Sources */,
 				B6A5540F2CBC90350085A38C /* ShowWeatherUse.swift in Sources */,
+				B6A554362CBD62480085A38C /* AskLocationCoordinator.swift in Sources */,
 				B6A5542B2CBD5E900085A38C /* SplashFactory.swift in Sources */,
 				B6A553CF2CBB14010085A38C /* ListWeatherComponent.swift in Sources */,
+				B6A554342CBD623C0085A38C /* AskLocationViewModel.swift in Sources */,
 				B6A5541E2CBD5BCB0085A38C /* WeatherUserDefaults.swift in Sources */,
 				B6A553D02CBB14010085A38C /* ListWeatherViewModel+Dependencies.swift in Sources */,
 				B6A553D12CBB14010085A38C /* ListWeatherViewModel.swift in Sources */,
@@ -517,13 +544,18 @@
 				B6A554132CBC9D600085A38C /* TutorialViewController.swift in Sources */,
 				B6A551DA2CB9D7500085A38C /* ShowWeatherViewController.swift in Sources */,
 				B6A553B22CBAE0FD0085A38C /* ShowWeatherFactory.swift in Sources */,
+				B6A554422CBD64C00085A38C /* NotificationCoordinator.swift in Sources */,
+				B6A554402CBD64B80085A38C /* NotificationFactory.swift in Sources */,
 				B6A553A32CBA2C170085A38C /* ShowWeatherComponents.swift in Sources */,
+				B6A5543E2CBD64AE0085A38C /* NotificationViewModel+Dependencies.swift in Sources */,
 				B6A553DA2CBB34260085A38C /* ShowWeatherCoordinator.swift in Sources */,
 				B6A554292CBD5E240085A38C /* SplashCoordinator.swift in Sources */,
 				B6A553572CBA066C0085A38C /* APIBundle.swift in Sources */,
+				B6A5543C2CBD64A70085A38C /* NotificationViewModel.swift in Sources */,
 				B6A554322CBD60C70085A38C /* TutorialCoordinator.swift in Sources */,
+				B6A5543A2CBD62700085A38C /* AskLocationViewModel+Dependencies.swift in Sources */,
 				B6A553552CBA06280085A38C /* APIConfig.swift in Sources */,
-				B6A5541B2CBC9DA90085A38C /* DescribeFeatureViewController.swift in Sources */,
+				B6A5541B2CBC9DA90085A38C /* NotificationViewController.swift in Sources */,
 				B6A553AE2CBADE350085A38C /* ShowWeatherViewModel.swift in Sources */,
 				B6A554302CBD60BF0085A38C /* TutorialFactory.swift in Sources */,
 				B6A554252CBD5C350085A38C /* SplashViewModel.swift in Sources */,

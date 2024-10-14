@@ -8,13 +8,15 @@
 import UIKit
 import Utils
 
-class DescribeFeatureViewController: UIViewController {
+class NotificationViewController: UIViewController {
 
     @IBOutlet weak var btnGoWeather: UIButton!
+    
+    private let viewModel: NotificationViewModelType
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
-        // Do any additional setup after loading the view.
     }
 
 
@@ -23,8 +25,9 @@ class DescribeFeatureViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init() {
-        super.init(nibName: DescribeFeatureViewController.typeName, bundle: Bundle(for: type(of: self)))
+    init(viewModel: NotificationViewModelType) {
+        self.viewModel = viewModel
+        super.init(nibName: NotificationViewController.typeName, bundle: Bundle(for: type(of: self)))
     }
     
     @IBAction func goWeather(_ sender: UIButton) {

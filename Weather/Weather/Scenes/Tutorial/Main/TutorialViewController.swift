@@ -13,8 +13,8 @@ class TutorialViewController: UIPageViewController {
     
     fileprivate lazy var pages: [UIViewController] = {
         return [
-            AskLocationViewController(),
-            DescribeFeatureViewController()
+            AskLocationCoordinator().get(),
+            NotificationCoordinator().get()
         ]
     }()
     

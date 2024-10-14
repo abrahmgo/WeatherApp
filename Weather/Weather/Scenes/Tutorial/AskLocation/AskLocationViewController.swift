@@ -10,6 +10,8 @@ import Utils
 
 class AskLocationViewController: UIViewController {
 
+    private let viewModel: AskLocationViewModelType
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,7 +24,8 @@ class AskLocationViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init() {
+    init(viewModel: AskLocationViewModelType) {
+        self.viewModel = viewModel
         super.init(nibName: AskLocationViewController.typeName, bundle: Bundle(for: type(of: self)))
     }
 }
