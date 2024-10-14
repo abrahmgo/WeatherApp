@@ -16,5 +16,17 @@ class AskLocationViewModel: AskLocationViewModelType, AskLocationViewModelOutput
     
     init(dependencies: AskLocationDependencies) {
         self.dependencies = dependencies
+        
+        setCurrentCity()
+    }
+    
+    func setCurrentCity() {
+        Task {
+            do {
+                try await dependencies.startLocation.execute(type: .always)
+            } catch {
+                
+            }
+        }
     }
 }
