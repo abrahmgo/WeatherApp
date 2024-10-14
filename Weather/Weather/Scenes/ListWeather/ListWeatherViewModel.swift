@@ -35,6 +35,10 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
     init(dependencies: ListWeatherDependencies) {
         self.dependencies = dependencies
         
+        initFeature()
+    }
+    
+    func initFeature() {
         setCurrentCity()
         setBinds()
     }

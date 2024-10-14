@@ -15,6 +15,7 @@ import WeatherUI
 class ListWeatherViewController: UIViewController {
     
     var resultSearchController: UISearchController? = nil
+    private let refreshControl = UIRefreshControl()
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {
@@ -50,6 +51,7 @@ class ListWeatherViewController: UIViewController {
         super.viewDidLoad()
         
         setup()
+        setupRefresh()
         setupBindings()
         localize()
     }
@@ -75,12 +77,26 @@ class ListWeatherViewController: UIViewController {
         definesPresentationContext = true
     }
     
+    private func setupRefresh() {
+        
+        tableView.refreshControl = refreshControl
+        refreshControl.tintColor = UIColor(red:0.25, green:0.72, blue:0.85, alpha:1.0)
+        refreshControl.attributedTitle = NSAttributedString(string: "Actualizando información ...",
+                                                            attributes: [:])
+        refreshControl.addTarget(self, action: #selector(refreshWeatherData(_:)), for: .valueChanged)
+    }
+    
+    @objc private func refreshWeatherData(_ sender: Any) {
+        viewModel.inputs.initFeature()
+    }
+    
     private func setupBindings() {
         
         viewModel.outputs.components
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] components in
                 self?.components = components
+                self?.refreshControl.endRefreshing()
                 self?.tableView.reloadData()
             }).store(in: &cancellable)
     }
