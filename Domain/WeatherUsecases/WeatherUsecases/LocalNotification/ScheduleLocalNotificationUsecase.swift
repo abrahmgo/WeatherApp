@@ -22,9 +22,9 @@ public struct ScheduleLocalNotificationUsecase: ScheduleLocalNotificationUsecase
         content.body = model.body
         content.sound = .default
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: model.time.rawValue, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: model.time.rawValue, repeats: model.repeat)
+        let request = UNNotificationRequest(identifier: model.id, content: content, trigger: trigger)
         
-        let request = UNNotificationRequest(identifier: "reminderNotification", content: content, trigger: trigger)
         
         return try await withCheckedThrowingContinuation { continuation in
             UNUserNotificationCenter.current().add(request) { error in

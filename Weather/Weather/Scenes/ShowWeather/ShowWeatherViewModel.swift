@@ -28,6 +28,7 @@ class ShowWeatherViewModel: ShowWeatherViewModelType, ShowWeatherViewModelInputs
     private let dependencies: ShowWeatherDependencies
     private var cancellable: Set<AnyCancellable> = Set<AnyCancellable>()
     private var id: Int = 0
+    private var address: Address?
     
     public init(dependencies: ShowWeatherDependencies) {
         self.dependencies = dependencies
@@ -46,7 +47,7 @@ class ShowWeatherViewModel: ShowWeatherViewModelType, ShowWeatherViewModelInputs
                 let location = CLLocation(latitude: dependencies.localWeather.latitude,
                                           longitude: dependencies.localWeather.longitude)
                 let address = try await self.dependencies.getAddressByCoordinates.execute(coordinates: location.coordinate)
-                
+                self.address = address
                 let weatherCoordinates = WeatherCoordinates(latitude: location.coordinate.latitude,
                                                             longitude: location.coordinate.longitude)
                 let weather = try await self.dependencies.getWeather.execute(coordinates: weatherCoordinates)
@@ -110,8 +111,19 @@ class ShowWeatherViewModel: ShowWeatherViewModelType, ShowWeatherViewModelInputs
         let currentValue = isNotificationActive.value
         Task {
             isNotificationActive.send(!currentValue)
+            let id = self.dependencies.localWeather.id
             try await dependencies.updateObject.execute(id: self.dependencies.localWeather.id,
                                                         notification: self.isNotificationActive.value)
+            let newCurrentValue = isNotificationActive.value
+            if newCurrentValue {
+                let city = self.address?.city ?? ""
+                let notificationModel = LocalNotification(id: "\(id)",
+                                                          title: "Clima", body: "Revisar clima para " + city ,
+                                                          time: .fast)
+                try await dependencies.setNotification.execute(model: notificationModel)
+            } else {
+                try await dependencies.removeNotification.execute(id: "\(id)")
+            }
         }
     }
 }

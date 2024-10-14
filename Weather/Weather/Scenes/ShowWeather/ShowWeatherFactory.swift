@@ -24,13 +24,17 @@ struct ShowWeatherFactory {
         let getWeather = GetWeatherUsecase(remoteDataSource: weatherService)
         let updateObject = UpdateLocalObjectUsecase(localDB: localDB)
         let downloadIcon = GetWeatherIconUsecase(remoteDataSource: iconService)
+        let setNotification = ScheduleLocalNotificationUsecase()
+        let removeNotification = RemoveLocalNotificationUsecase()
         
         let dependencies = ShowWeatherDependencies(localWeather: localWeather,
                                                    getAddressByCoordinates: getAddressByCoordinates,
                                                    getWeather: getWeather, 
                                                    featureUse: featureUse,
                                                    downloadIcon: downloadIcon, 
-                                                   updateObject: updateObject)
+                                                   updateObject: updateObject,
+                                                   setNotification: setNotification, 
+                                                   removeNotification: removeNotification)
         let viewModel = ShowWeatherViewModel(dependencies: dependencies)
         let view = ShowWeatherViewController(viewModel: viewModel, delegate: delegate)
         return view

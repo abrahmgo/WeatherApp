@@ -37,4 +37,6 @@ struct ShowWeatherDependencies {
     let featureUse: ShowWeatherUse
     let downloadIcon: GetWeatherIconUsecaseType
     let updateObject: UpdateLocalObjectUsecaseType
+    let setNotification: ScheduleLocalNotificationUsecaseType
+    let removeNotification: RemoveLocalNotificationUsecaseType
 }

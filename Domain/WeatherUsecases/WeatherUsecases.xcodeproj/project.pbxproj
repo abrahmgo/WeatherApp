@@ -26,6 +26,7 @@
 		B6A554452CBD6DD20085A38C /* SetAuthorizationUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A554442CBD6DD20085A38C /* SetAuthorizationUsecase.swift */; };
 		B6A554472CBD6ED10085A38C /* ScheduleLocalNotificationUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A554462CBD6ED10085A38C /* ScheduleLocalNotificationUsecase.swift */; };
 		B6A5544B2CBD77920085A38C /* UpdateLocalObjectUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5544A2CBD77920085A38C /* UpdateLocalObjectUsecase.swift */; };
+		B6A5544D2CBD8F790085A38C /* RemoveLocalNotificationUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5544C2CBD8F790085A38C /* RemoveLocalNotificationUsecase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		B6A554442CBD6DD20085A38C /* SetAuthorizationUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetAuthorizationUsecase.swift; sourceTree = "<group>"; };
 		B6A554462CBD6ED10085A38C /* ScheduleLocalNotificationUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleLocalNotificationUsecase.swift; sourceTree = "<group>"; };
 		B6A5544A2CBD77920085A38C /* UpdateLocalObjectUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLocalObjectUsecase.swift; sourceTree = "<group>"; };
+		B6A5544C2CBD8F790085A38C /* RemoveLocalNotificationUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveLocalNotificationUsecase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				B6A554442CBD6DD20085A38C /* SetAuthorizationUsecase.swift */,
+				B6A5544C2CBD8F790085A38C /* RemoveLocalNotificationUsecase.swift */,
 				B6A554462CBD6ED10085A38C /* ScheduleLocalNotificationUsecase.swift */,
 			);
 			path = LocalNotification;
@@ -292,6 +295,7 @@
 				B6A5523C2CB9DB650085A38C /* WeatherUsecases.docc in Sources */,
 				B6A553F42CBB67070085A38C /* GetWeatherIconUsecase.swift in Sources */,
 				B6A553362CB9E7980085A38C /* GetCurrentLocationUsecase.swift in Sources */,
+				B6A5544D2CBD8F790085A38C /* RemoveLocalNotificationUsecase.swift in Sources */,
 				B6A553AC2CBA2FD60085A38C /* GetAddressByCoordinatesUseCaseType.swift in Sources */,
 				B6A553762CBA15440085A38C /* GetWeatherUsecase.swift in Sources */,
 				B6A554472CBD6ED10085A38C /* ScheduleLocalNotificationUsecase.swift in Sources */,
