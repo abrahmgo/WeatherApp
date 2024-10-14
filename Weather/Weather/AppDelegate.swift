@@ -18,14 +18,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         doNetwork()
         window = UIWindow()
-//        let coordinates = WeatherCoordinates(latitude: 19.617107, longitude: -99.086664)
-//        let coordinates = CLLocation(latitude: 19.617107, longitude: -99.086664)
-        ListWeatherCoordinator().start()
+        doAppearence()
+        SplashCoordinator().start()
         
         return true
     }
     
     func doNetwork() {
         NetworkCoreAPI.setup(with: APIConfig.self)
+    }
+    
+    func doAppearence() {
+        UINavigationBar.appearance().prefersLargeTitles = true
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
+        let proxy = UIPageControl.appearance()
+        proxy.pageIndicatorTintColor = UIColor.lightGray.withAlphaComponent(0.6)
+        proxy.currentPageIndicatorTintColor = .white
+        proxy.backgroundColor = .black
     }
 }
