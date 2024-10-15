@@ -92,6 +92,11 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
     func setCurrentCity() {
         Task {
             do {
+                self.initLocation = false
+                self.currentLocation = nil
+                self.components.send([])
+                self.locations.removeAll()
+                self.localWeathers.removeAll()
                 try await dependencies.startLocation.execute(type: .always)
                 self.initLocation = true
             } catch {
@@ -181,6 +186,7 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
     
     func deleteCity(index: Int) {
         let object = components.value[index]
+        locations.remove(at: index)
         guard case(.city(let data)) = object,
            let dataObject = data as? CityWeatherViewCellData else {
             return
