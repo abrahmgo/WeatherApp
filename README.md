@@ -48,6 +48,8 @@ public enum LocalNotificationTime: Double {
   
 Go to settings app, select Weather app, change language
 
+**NOTE** Don't forget to restart the app to apply the changes.
+
 <img width="447" alt="Captura de pantalla 2024-10-14 a la(s) 6 38 17 p m" src="https://github.com/user-attachments/assets/2434b1b5-9b37-4175-83ac-cd5923f66f40">
 
 ## Demo
@@ -164,6 +166,10 @@ Example for api
 - Feature for image cache, as this way app can save image and it doesn't need to download again
 - Feature to configure some user preferences, por example set time for notifications
 - Implement a snapshot testing for UI
+- Add swiftlint, to improve best practices
+- Add CI to check test coverage and the integration app
+- Add script to remove APP setting when it go to PROD
+- Add cocoakeys or similar framework to hide tokens of our APIs or third party frameworks
 
 ## Architecture
 
