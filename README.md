@@ -65,7 +65,8 @@ Go to settings app, select Weather app, change language
 
 To run tests, choose weather app, go to test section and run it
 
-<img width="1424" alt="Captura de pantalla 2024-10-15 a la(s) 11 53 32 a m" src="https://github.com/user-attachments/assets/6117f191-16eb-4a73-a9e2-3365b7943001">
+
+<img width="1139" alt="Captura de pantalla 2024-10-15 a la(s) 12 22 35 p m" src="https://github.com/user-attachments/assets/4a5f73fd-373d-4d46-b60c-13e8dd4424f1">
 
 
 
