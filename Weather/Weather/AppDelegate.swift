@@ -34,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().prefersLargeTitles = true
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().barTintColor = .clear
         
         let proxy = UIPageControl.appearance()
         proxy.pageIndicatorTintColor = UIColor.lightGray.withAlphaComponent(0.6)
