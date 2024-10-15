@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B60AFAF42CBEE7DC000E8B18 /* LocalizableESTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AFAF32CBEE7DC000E8B18 /* LocalizableESTests.swift */; };
 		B6A554622CBDA0420085A38C /* Localizable.docc in Sources */ = {isa = PBXBuildFile; fileRef = B6A554612CBDA0420085A38C /* Localizable.docc */; };
 		B6A554682CBDA0430085A38C /* Localizable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A5545D2CBDA0420085A38C /* Localizable.framework */; };
-		B6A5546D2CBDA0430085A38C /* LocalizableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5546C2CBDA0430085A38C /* LocalizableTests.swift */; };
+		B6A5546D2CBDA0430085A38C /* LocalizableENTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5546C2CBDA0430085A38C /* LocalizableENTests.swift */; };
 		B6A5546E2CBDA0430085A38C /* Localizable.h in Headers */ = {isa = PBXBuildFile; fileRef = B6A554602CBDA0420085A38C /* Localizable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B6A5547B2CBDA0CE0085A38C /* Espanol.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6A554792CBDA0CE0085A38C /* Espanol.strings */; };
 		B6A5547E2CBDA0EC0085A38C /* English.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6A5547C2CBDA0EC0085A38C /* English.strings */; };
@@ -29,11 +30,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B60AFAF32CBEE7DC000E8B18 /* LocalizableESTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableESTests.swift; sourceTree = "<group>"; };
 		B6A5545D2CBDA0420085A38C /* Localizable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Localizable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6A554602CBDA0420085A38C /* Localizable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Localizable.h; sourceTree = "<group>"; };
 		B6A554612CBDA0420085A38C /* Localizable.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Localizable.docc; sourceTree = "<group>"; };
 		B6A554672CBDA0430085A38C /* LocalizableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocalizableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B6A5546C2CBDA0430085A38C /* LocalizableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableTests.swift; sourceTree = "<group>"; };
+		B6A5546C2CBDA0430085A38C /* LocalizableENTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableENTests.swift; sourceTree = "<group>"; };
 		B6A5547A2CBDA0CE0085A38C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Espanol.strings; sourceTree = "<group>"; };
 		B6A5547D2CBDA0EC0085A38C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/English.strings; sourceTree = "<group>"; };
 		B6A5547F2CBDA1D40085A38C /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -95,7 +97,8 @@
 		B6A5546B2CBDA0430085A38C /* LocalizableTests */ = {
 			isa = PBXGroup;
 			children = (
-				B6A5546C2CBDA0430085A38C /* LocalizableTests.swift */,
+				B6A5546C2CBDA0430085A38C /* LocalizableENTests.swift */,
+				B60AFAF32CBEE7DC000E8B18 /* LocalizableESTests.swift */,
 			);
 			path = LocalizableTests;
 			sourceTree = "<group>";
@@ -222,7 +225,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6A5546D2CBDA0430085A38C /* LocalizableTests.swift in Sources */,
+				B60AFAF42CBEE7DC000E8B18 /* LocalizableESTests.swift in Sources */,
+				B6A5546D2CBDA0430085A38C /* LocalizableENTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

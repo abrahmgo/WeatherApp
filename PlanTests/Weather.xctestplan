@@ -45,6 +45,13 @@
         "identifier" : "B6A552882CB9DC4D0085A38C",
         "name" : "WeatherCoreTests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/Utils\/Localizable\/Localizable.xcodeproj",
+        "identifier" : "B6A554662CBDA0430085A38C",
+        "name" : "LocalizableTests"
+      }
     }
   ],
   "version" : 1
