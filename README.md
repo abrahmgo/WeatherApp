@@ -160,6 +160,7 @@ Example for api
 ## Things to improve
 
 - Framework dedicated to test, for create mocks or stubs
+- Frame for searching places, more accurate
 - Feature to disable all cities notifications
 - Feature to go app settings to enable localation or notification when they are desactivated
 - API dedicated with more information, with an image to describe weather
