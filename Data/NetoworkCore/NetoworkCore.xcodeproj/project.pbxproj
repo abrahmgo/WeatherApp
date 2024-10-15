@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B60AFAAD2CBDFD48000E8B18 /* NetworkCoreSampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AFAAC2CBDFD48000E8B18 /* NetworkCoreSampleData.swift */; };
 		B6A552A82CB9DC6A0085A38C /* NetoworkCore.docc in Sources */ = {isa = PBXBuildFile; fileRef = B6A552A72CB9DC6A0085A38C /* NetoworkCore.docc */; };
 		B6A552AE2CB9DC6A0085A38C /* NetoworkCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A552A32CB9DC6A0085A38C /* NetoworkCore.framework */; };
 		B6A552B32CB9DC6A0085A38C /* NetoworkCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A552B22CB9DC6A0085A38C /* NetoworkCoreTests.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B60AFAAC2CBDFD48000E8B18 /* NetworkCoreSampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCoreSampleData.swift; sourceTree = "<group>"; };
 		B6A552A32CB9DC6A0085A38C /* NetoworkCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetoworkCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6A552A62CB9DC6A0085A38C /* NetoworkCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetoworkCore.h; sourceTree = "<group>"; };
 		B6A552A72CB9DC6A0085A38C /* NetoworkCore.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = NetoworkCore.docc; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				B6A553482CB9FEAB0085A38C /* NetworkTargetType.swift */,
 				B6A5534A2CBA017D0085A38C /* NetworkError.swift */,
 				B6A5534C2CBA03A10085A38C /* MockNetworkService.swift */,
+				B60AFAAC2CBDFD48000E8B18 /* NetworkCoreSampleData.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				B6A553492CB9FEAB0085A38C /* NetworkTargetType.swift in Sources */,
 				B6A553472CB9FE820085A38C /* NetworkService.swift in Sources */,
 				B6A553452CB9FE3D0085A38C /* NetworkCoreConfig.swift in Sources */,
+				B60AFAAD2CBDFD48000E8B18 /* NetworkCoreSampleData.swift in Sources */,
 				B6A5534B2CBA017D0085A38C /* NetworkError.swift in Sources */,
 				B6A553522CBA05F70085A38C /* NetworkCoreAPI.swift in Sources */,
 			);

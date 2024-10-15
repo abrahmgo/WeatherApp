@@ -84,10 +84,7 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
                 try await self.setLocalWeather()
             } catch {
                 haveError = true
-                let footerData = FooterViewCellData(text: "Revisa tu conexion a internet", textColor: .white)
-                let footerComponent = ListWeatherComponent.footer(data: footerData)
-                let localComponent = try await getLocalComponents()
-                self.components.send(localComponent + [footerComponent])
+                self.locationError.send(WeatherError.LocationRequestService)
             }
         }
     }

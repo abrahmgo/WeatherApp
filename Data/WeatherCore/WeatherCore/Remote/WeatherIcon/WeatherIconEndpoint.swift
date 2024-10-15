@@ -6,6 +6,7 @@
 //
 
 import NetoworkCore
+import UIKit
 
 struct WeatherIconEndpoint: NetworkTargetType {
     
@@ -37,5 +38,10 @@ struct WeatherIconEndpoint: NetworkTargetType {
     
     var headers: [String : String]? {
         return nil
+    }
+    
+    var sampleData: Data? {
+        let image = UIImage(systemName: "scribble")
+        return image?.pngData()
     }
 }

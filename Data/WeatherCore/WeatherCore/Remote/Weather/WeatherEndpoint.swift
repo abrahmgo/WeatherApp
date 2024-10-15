@@ -36,4 +36,11 @@ struct WeatherEndpoint: NetworkTargetType {
     }
     
     var headers: [String : String]?
+    
+    var sampleData: Data? {
+        let bundle = WeatherRemoteDataSource.bundle
+        let sampleData = NetworkCoreSampleData(bundle: bundle)
+        
+        return sampleData.getData(for: "WeatherAPIExample")
+    }
 }

@@ -10,6 +10,10 @@ import NetoworkCore
 
 public struct WeatherRemoteDataSource {
     
+    static var bundle: Bundle? {
+        return Bundle(identifier: "com.andres.WeatherCore")
+    }
+    
     public static var weather: WeatherDataSource.WeatherRemoteDataSource {
         return WeatherAPI(service: NetworkCoreAPIConfig.shared.networkService)
     }

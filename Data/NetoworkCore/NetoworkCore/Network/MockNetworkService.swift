@@ -29,6 +29,7 @@ struct MockNetworkService: NetworkServiceType {
     }
     
     func request(target: NetworkTargetType) async throws -> Data {
-        return Data()
+        print("Mock: \(target.url()) 🎁")
+        return target.sampleData ?? Data()
     }
 }

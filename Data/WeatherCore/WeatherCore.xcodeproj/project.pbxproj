@@ -41,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B60AFAAB2CBDFC2F000E8B18 /* WeatherAPIExample.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WeatherAPIExample.json; sourceTree = "<group>"; };
 		B6A5527F2CB9DC4D0085A38C /* WeatherCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WeatherCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6A552822CB9DC4D0085A38C /* WeatherCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherCore.h; sourceTree = "<group>"; };
 		B6A552832CB9DC4D0085A38C /* WeatherCore.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = WeatherCore.docc; sourceTree = "<group>"; };
@@ -155,6 +156,7 @@
 				B6A553722CBA12D60085A38C /* WeatherResponseModel+Mapper.swift */,
 				B6A553622CBA0C7E0085A38C /* WeatherResponseModel.swift */,
 				B6A553642CBA0E0A0085A38C /* WeatherAPI.swift */,
+				B60AFAAB2CBDFC2F000E8B18 /* WeatherAPIExample.json */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
