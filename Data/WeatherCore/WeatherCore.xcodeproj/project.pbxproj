@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B60AFAD22CBED03B000E8B18 /* LocalNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AFAD12CBED03B000E8B18 /* LocalNotificationService.swift */; };
+		B60AFAE62CBED939000E8B18 /* GeocoderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AFAE52CBED939000E8B18 /* GeocoderService.swift */; };
+		B60AFAED2CBEDC34000E8B18 /* WeatherAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AFAEC2CBEDC34000E8B18 /* WeatherAPITests.swift */; };
+		B60AFAEF2CBEDCA1000E8B18 /* APIConfigMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AFAEE2CBEDCA1000E8B18 /* APIConfigMock.swift */; };
+		B60AFAF02CBEDEEC000E8B18 /* WeatherAPIExample.json in Resources */ = {isa = PBXBuildFile; fileRef = B60AFAAB2CBDFC2F000E8B18 /* WeatherAPIExample.json */; };
+		B60AFAF22CBEDF83000E8B18 /* WeatherIconAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AFAF12CBEDF83000E8B18 /* WeatherIconAPITests.swift */; };
 		B6A552842CB9DC4D0085A38C /* WeatherCore.docc in Sources */ = {isa = PBXBuildFile; fileRef = B6A552832CB9DC4D0085A38C /* WeatherCore.docc */; };
 		B6A5528A2CB9DC4D0085A38C /* WeatherCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A5527F2CB9DC4D0085A38C /* WeatherCore.framework */; };
 		B6A5528F2CB9DC4D0085A38C /* WeatherCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5528E2CB9DC4D0085A38C /* WeatherCoreTests.swift */; };
@@ -42,6 +48,11 @@
 
 /* Begin PBXFileReference section */
 		B60AFAAB2CBDFC2F000E8B18 /* WeatherAPIExample.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WeatherAPIExample.json; sourceTree = "<group>"; };
+		B60AFAD12CBED03B000E8B18 /* LocalNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationService.swift; sourceTree = "<group>"; };
+		B60AFAE52CBED939000E8B18 /* GeocoderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocoderService.swift; sourceTree = "<group>"; };
+		B60AFAEC2CBEDC34000E8B18 /* WeatherAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPITests.swift; sourceTree = "<group>"; };
+		B60AFAEE2CBEDCA1000E8B18 /* APIConfigMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfigMock.swift; sourceTree = "<group>"; };
+		B60AFAF12CBEDF83000E8B18 /* WeatherIconAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherIconAPITests.swift; sourceTree = "<group>"; };
 		B6A5527F2CB9DC4D0085A38C /* WeatherCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WeatherCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6A552822CB9DC4D0085A38C /* WeatherCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherCore.h; sourceTree = "<group>"; };
 		B6A552832CB9DC4D0085A38C /* WeatherCore.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = WeatherCore.docc; sourceTree = "<group>"; };
@@ -89,6 +100,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B60AFAD02CBED02D000E8B18 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				B60AFAD12CBED03B000E8B18 /* LocalNotificationService.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		B60AFAE42CBED92E000E8B18 /* Geocoder */ = {
+			isa = PBXGroup;
+			children = (
+				B60AFAE52CBED939000E8B18 /* GeocoderService.swift */,
+			);
+			path = Geocoder;
+			sourceTree = "<group>";
+		};
+		B60AFAEB2CBEDC0B000E8B18 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				B60AFAEC2CBEDC34000E8B18 /* WeatherAPITests.swift */,
+				B60AFAF12CBEDF83000E8B18 /* WeatherIconAPITests.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
 		B6A552752CB9DC4D0085A38C = {
 			isa = PBXGroup;
 			children = (
@@ -124,7 +160,9 @@
 		B6A5528D2CB9DC4D0085A38C /* WeatherCoreTests */ = {
 			isa = PBXGroup;
 			children = (
+				B60AFAEB2CBEDC0B000E8B18 /* Weather */,
 				B6A5528E2CB9DC4D0085A38C /* WeatherCoreTests.swift */,
+				B60AFAEE2CBEDCA1000E8B18 /* APIConfigMock.swift */,
 			);
 			path = WeatherCoreTests;
 			sourceTree = "<group>";
@@ -183,6 +221,8 @@
 		B6A553F52CBC227D0085A38C /* Local */ = {
 			isa = PBXGroup;
 			children = (
+				B60AFAE42CBED92E000E8B18 /* Geocoder */,
+				B60AFAD02CBED02D000E8B18 /* Notification */,
 				B6A553F62CBC22E30085A38C /* CoreData */,
 				B6A553122CB9DF640085A38C /* Location */,
 			);
@@ -290,6 +330,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B60AFAF02CBEDEEC000E8B18 /* WeatherAPIExample.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,10 +357,12 @@
 				B6A553EE2CBB658C0085A38C /* WeatherIconRequestModel.swift in Sources */,
 				B6A553212CB9E4160085A38C /* WeatherLocalDataSource.swift in Sources */,
 				B6A553F82CBC22F20085A38C /* CoreDataManager.swift in Sources */,
+				B60AFAE62CBED939000E8B18 /* GeocoderService.swift in Sources */,
 				B6A553782CBA18750085A38C /* WeatherRemoteDataSource.swift in Sources */,
 				B6A552842CB9DC4D0085A38C /* WeatherCore.docc in Sources */,
 				B6A553EC2CBB651A0085A38C /* WeatherIconEndpoint.swift in Sources */,
 				B6A553F02CBB65FF0085A38C /* WeatherIconAPI.swift in Sources */,
+				B60AFAD22CBED03B000E8B18 /* LocalNotificationService.swift in Sources */,
 				B6A553612CBA0C210085A38C /* WeatherRequestModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,6 +372,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6A5528F2CB9DC4D0085A38C /* WeatherCoreTests.swift in Sources */,
+				B60AFAED2CBEDC34000E8B18 /* WeatherAPITests.swift in Sources */,
+				B60AFAF22CBEDF83000E8B18 /* WeatherIconAPITests.swift in Sources */,
+				B60AFAEF2CBEDCA1000E8B18 /* APIConfigMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

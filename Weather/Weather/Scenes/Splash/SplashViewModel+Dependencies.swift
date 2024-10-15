@@ -22,7 +22,7 @@ protocol SplashViewModelType {
 }
 
 struct SplashDependencies {
-    let authNotification: GetLocalNotifcationAuthUsecaseType
+    let authNotification: RequestAuthLocalNotificationUsecaseType
 }
 
 enum SplashViewPath {

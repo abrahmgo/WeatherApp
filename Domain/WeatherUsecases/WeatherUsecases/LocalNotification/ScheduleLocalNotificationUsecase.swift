@@ -7,6 +7,7 @@
 
 import WeatherEntities
 import UserNotifications
+import WeatherDataSource
 
 public protocol ScheduleLocalNotificationUsecaseType {
     func execute(model: LocalNotification) async throws
@@ -14,26 +15,13 @@ public protocol ScheduleLocalNotificationUsecaseType {
 
 public struct ScheduleLocalNotificationUsecase: ScheduleLocalNotificationUsecaseType {
     
-    public init() { }
+    private let localNotification: NotificationServiceLocalDataSource
+    
+    public init(localNotification: NotificationServiceLocalDataSource) {
+        self.localNotification = localNotification
+    }
     
     public func execute(model: LocalNotification) async throws {
-        let content = UNMutableNotificationContent()
-        content.title = model.title
-        content.body = model.body
-        content.sound = .default
-        
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: model.time.rawValue, repeats: model.repeat)
-        let request = UNNotificationRequest(identifier: model.id, content: content, trigger: trigger)
-        
-        
-        return try await withCheckedThrowingContinuation { continuation in
-            UNUserNotificationCenter.current().add(request) { error in
-                if let error = error {
-                    continuation.resume(throwing: error)
-                } else {
-                    continuation.resume(returning: ())
-                }
-            }
-        }
+        try await localNotification.schedule(model: model)
     }
 }

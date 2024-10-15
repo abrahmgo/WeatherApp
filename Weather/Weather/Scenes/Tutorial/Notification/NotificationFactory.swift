@@ -12,7 +12,9 @@ struct NotificationFactory {
     
     static func makeNotification(coordinator: NotificationCoordinator) -> NotificationViewController {
         
-        let authNotification = GetLocalNotifcationAuthUsecase()
+        let notificationService = WeatherLocalDataSource.notification
+        
+        let authNotification = RequestAuthLocalNotificationUsecase(localNotification: notificationService)
         let dependencies = NotificationDependencies(authNotification: authNotification)
         let viewModel = NotificationViewModel(dependencies: dependencies)
         

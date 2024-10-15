@@ -5,7 +5,7 @@
 //  Created by Andrés Bonilla Gómez on 14/10/24.
 //
 
-import UserNotifications
+import WeatherDataSource
 
 public protocol RemoveLocalNotificationUsecaseType {
     func execute(id: String) async throws
@@ -13,11 +13,13 @@ public protocol RemoveLocalNotificationUsecaseType {
 
 public struct RemoveLocalNotificationUsecase: RemoveLocalNotificationUsecaseType {
     
-    public init() { }
+    private let localNotification: NotificationServiceLocalDataSource
+    
+    public init(localNotification: NotificationServiceLocalDataSource) {
+        self.localNotification = localNotification
+    }
     
     public func execute(id: String) async throws {
-        return try await withCheckedThrowingContinuation { continuation in
-            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [id])
-        }
+        try await localNotification.remove(id: id)
     }
 }

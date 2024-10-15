@@ -16,4 +16,12 @@ public struct WeatherLocalDataSource {
     public static var database: WeatherDBLocalDataSource {
         return CoreDataManager.shared
     }
+    
+    public static var notification: NotificationServiceLocalDataSource {
+        return LocalNotificationService()
+    }
+    
+    public static var geocoder: GeocoderLocalDataSource {
+        return GeocoderService()
+    }
 }

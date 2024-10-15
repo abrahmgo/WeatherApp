@@ -48,7 +48,7 @@ class ShowWeatherViewModel: ShowWeatherViewModelType, ShowWeatherViewModelInputs
                 
                 let location = CLLocation(latitude: dependencies.localWeather.latitude,
                                           longitude: dependencies.localWeather.longitude)
-                let address = try await self.dependencies.getAddressByCoordinates.execute(coordinates: location.coordinate)
+                let address = try await self.dependencies.getAddressByCoordinates.execute(coordinates: location)
                 self.address = address
                 let weatherCoordinates = WeatherCoordinates(latitude: location.coordinate.latitude,
                                                             longitude: location.coordinate.longitude)

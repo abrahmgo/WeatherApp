@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B60AFACF2CBECF9A000E8B18 /* NotificationServiceLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AFACE2CBECF9A000E8B18 /* NotificationServiceLocalDataSource.swift */; };
+		B60AFAE22CBED8B7000E8B18 /* GeocoderLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AFAE12CBED8B7000E8B18 /* GeocoderLocalDataSource.swift */; };
 		B6A552F52CB9DDD00085A38C /* WeatherDataSource.docc in Sources */ = {isa = PBXBuildFile; fileRef = B6A552F42CB9DDD00085A38C /* WeatherDataSource.docc */; };
 		B6A552FB2CB9DDD00085A38C /* WeatherDataSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A552F02CB9DDD00085A38C /* WeatherDataSource.framework */; };
 		B6A553002CB9DDD00085A38C /* WeatherDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A552FF2CB9DDD00085A38C /* WeatherDataSourceTests.swift */; };
@@ -29,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B60AFACE2CBECF9A000E8B18 /* NotificationServiceLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationServiceLocalDataSource.swift; sourceTree = "<group>"; };
+		B60AFAE12CBED8B7000E8B18 /* GeocoderLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocoderLocalDataSource.swift; sourceTree = "<group>"; };
 		B6A552F02CB9DDD00085A38C /* WeatherDataSource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WeatherDataSource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6A552F32CB9DDD00085A38C /* WeatherDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherDataSource.h; sourceTree = "<group>"; };
 		B6A552F42CB9DDD00085A38C /* WeatherDataSource.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = WeatherDataSource.docc; sourceTree = "<group>"; };
@@ -88,6 +92,8 @@
 				B6A552F32CB9DDD00085A38C /* WeatherDataSource.h */,
 				B6A552F42CB9DDD00085A38C /* WeatherDataSource.docc */,
 				B6A553FE2CBC25100085A38C /* WeatherDBLocalDataSource.swift */,
+				B60AFACE2CBECF9A000E8B18 /* NotificationServiceLocalDataSource.swift */,
+				B60AFAE12CBED8B7000E8B18 /* GeocoderLocalDataSource.swift */,
 			);
 			path = WeatherDataSource;
 			sourceTree = "<group>";
@@ -237,8 +243,10 @@
 				B6A553F22CBB661B0085A38C /* WeatherIconRemoteDataSource.swift in Sources */,
 				B6A553682CBA0E3B0085A38C /* WeatherRemoteDataSource.swift in Sources */,
 				B6A552F52CB9DDD00085A38C /* WeatherDataSource.docc in Sources */,
+				B60AFACF2CBECF9A000E8B18 /* NotificationServiceLocalDataSource.swift in Sources */,
 				B6A5530C2CB9DE1A0085A38C /* LocationRemoteDataSource.swift in Sources */,
 				B6A553FF2CBC25100085A38C /* WeatherDBLocalDataSource.swift in Sources */,
+				B60AFAE22CBED8B7000E8B18 /* GeocoderLocalDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

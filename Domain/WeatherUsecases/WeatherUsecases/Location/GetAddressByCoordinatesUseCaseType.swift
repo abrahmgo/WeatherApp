@@ -7,30 +7,21 @@
 
 import WeatherEntities
 import CoreLocation
+import WeatherDataSource
 
 public protocol GetAddressByCoordinatesUseCaseType {
-    func execute(coordinates: CLLocationCoordinate2D) async throws -> Address
+    func execute(coordinates: CLLocation) async throws -> Address
 }
 
 public struct GetAddressByCoordinatesUseCase: GetAddressByCoordinatesUseCaseType {
     
-    private let geoCoder = CLGeocoder()
+    private let geocoderService: GeocoderLocalDataSource
     
-    public init() { }
+    public init(geocoderService: GeocoderLocalDataSource) {
+        self.geocoderService = geocoderService
+    }
     
-    public func execute(coordinates: CLLocationCoordinate2D) async throws -> Address {
-        let location = CLLocation(latitude: coordinates.latitude, longitude: coordinates.longitude)
-        return try await withCheckedThrowingContinuation { continuation in
-            geoCoder.reverseGeocodeLocation(location) { placemark, error in
-                if let error = error {
-                    continuation.resume(throwing: error)
-                } else if let address = placemark?.first {
-                    let address = Address(place: address)
-                    continuation.resume(returning: address)
-                } else {
-                    continuation.resume(throwing: LocationError.notAddressFound)
-                }
-            }
-        }
+    public func execute(coordinates: CLLocation) async throws -> Address {
+        return try await geocoderService.execute(coordinates: coordinates)
     }
 }

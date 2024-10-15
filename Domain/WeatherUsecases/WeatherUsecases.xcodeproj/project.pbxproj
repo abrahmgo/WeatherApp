@@ -16,6 +16,14 @@
 		B60AFAC92CBE13DC000E8B18 /* DeleteLocalObjectUsecaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AFAC82CBE13DC000E8B18 /* DeleteLocalObjectUsecaseTests.swift */; };
 		B60AFACB2CBE13EC000E8B18 /* SaveLocalObjectUsecaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AFACA2CBE13EC000E8B18 /* SaveLocalObjectUsecaseTests.swift */; };
 		B60AFACD2CBE13F8000E8B18 /* UpdateLocalObjectUsecaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AFACC2CBE13F8000E8B18 /* UpdateLocalObjectUsecaseTests.swift */; };
+		B60AFAD52CBED328000E8B18 /* LocalNotificationServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AFAD42CBED328000E8B18 /* LocalNotificationServiceMock.swift */; };
+		B60AFAD72CBED36A000E8B18 /* RequestAuthLocalNotificationUsecaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AFAD62CBED36A000E8B18 /* RequestAuthLocalNotificationUsecaseTests.swift */; };
+		B60AFAD92CBED40A000E8B18 /* RemoveLocalNotificationUsecaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AFAD82CBED40A000E8B18 /* RemoveLocalNotificationUsecaseTests.swift */; };
+		B60AFADB2CBED44C000E8B18 /* ScheduleLocalNotificationUsecaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AFADA2CBED44C000E8B18 /* ScheduleLocalNotificationUsecaseTests.swift */; };
+		B60AFADE2CBED76A000E8B18 /* LocationServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AFADD2CBED76A000E8B18 /* LocationServiceMock.swift */; };
+		B60AFAE02CBED77D000E8B18 /* StarLocalizationUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AFADF2CBED77D000E8B18 /* StarLocalizationUseCaseTests.swift */; };
+		B60AFAE82CBED9FA000E8B18 /* GeocoderServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AFAE72CBED9FA000E8B18 /* GeocoderServiceMock.swift */; };
+		B60AFAEA2CBEDA3E000E8B18 /* GetAddressByCoordinatesUsecaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AFAE92CBEDA3E000E8B18 /* GetAddressByCoordinatesUsecaseTests.swift */; };
 		B6A5523C2CB9DB650085A38C /* WeatherUsecases.docc in Sources */ = {isa = PBXBuildFile; fileRef = B6A5523B2CB9DB650085A38C /* WeatherUsecases.docc */; };
 		B6A552422CB9DB650085A38C /* WeatherUsecases.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A552372CB9DB650085A38C /* WeatherUsecases.framework */; };
 		B6A552482CB9DB650085A38C /* WeatherUsecases.h in Headers */ = {isa = PBXBuildFile; fileRef = B6A5523A2CB9DB650085A38C /* WeatherUsecases.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -31,7 +39,7 @@
 		B6A554022CBC309A0085A38C /* SaveLocalObjectUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A554012CBC309A0085A38C /* SaveLocalObjectUsecase.swift */; };
 		B6A554062CBC46BE0085A38C /* GetLocalObjectUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A554052CBC46BE0085A38C /* GetLocalObjectUsecase.swift */; };
 		B6A5540B2CBC59720085A38C /* DeleteLocalObjectUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5540A2CBC59720085A38C /* DeleteLocalObjectUsecase.swift */; };
-		B6A554452CBD6DD20085A38C /* SetAuthorizationUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A554442CBD6DD20085A38C /* SetAuthorizationUsecase.swift */; };
+		B6A554452CBD6DD20085A38C /* RequestAuthLocalNotificationUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A554442CBD6DD20085A38C /* RequestAuthLocalNotificationUsecase.swift */; };
 		B6A554472CBD6ED10085A38C /* ScheduleLocalNotificationUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A554462CBD6ED10085A38C /* ScheduleLocalNotificationUsecase.swift */; };
 		B6A5544B2CBD77920085A38C /* UpdateLocalObjectUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5544A2CBD77920085A38C /* UpdateLocalObjectUsecase.swift */; };
 		B6A5544D2CBD8F790085A38C /* RemoveLocalNotificationUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5544C2CBD8F790085A38C /* RemoveLocalNotificationUsecase.swift */; };
@@ -58,6 +66,14 @@
 		B60AFAC82CBE13DC000E8B18 /* DeleteLocalObjectUsecaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteLocalObjectUsecaseTests.swift; sourceTree = "<group>"; };
 		B60AFACA2CBE13EC000E8B18 /* SaveLocalObjectUsecaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveLocalObjectUsecaseTests.swift; sourceTree = "<group>"; };
 		B60AFACC2CBE13F8000E8B18 /* UpdateLocalObjectUsecaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLocalObjectUsecaseTests.swift; sourceTree = "<group>"; };
+		B60AFAD42CBED328000E8B18 /* LocalNotificationServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationServiceMock.swift; sourceTree = "<group>"; };
+		B60AFAD62CBED36A000E8B18 /* RequestAuthLocalNotificationUsecaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAuthLocalNotificationUsecaseTests.swift; sourceTree = "<group>"; };
+		B60AFAD82CBED40A000E8B18 /* RemoveLocalNotificationUsecaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveLocalNotificationUsecaseTests.swift; sourceTree = "<group>"; };
+		B60AFADA2CBED44C000E8B18 /* ScheduleLocalNotificationUsecaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleLocalNotificationUsecaseTests.swift; sourceTree = "<group>"; };
+		B60AFADD2CBED76A000E8B18 /* LocationServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceMock.swift; sourceTree = "<group>"; };
+		B60AFADF2CBED77D000E8B18 /* StarLocalizationUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarLocalizationUseCaseTests.swift; sourceTree = "<group>"; };
+		B60AFAE72CBED9FA000E8B18 /* GeocoderServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocoderServiceMock.swift; sourceTree = "<group>"; };
+		B60AFAE92CBEDA3E000E8B18 /* GetAddressByCoordinatesUsecaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAddressByCoordinatesUsecaseTests.swift; sourceTree = "<group>"; };
 		B6A552372CB9DB650085A38C /* WeatherUsecases.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WeatherUsecases.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6A5523A2CB9DB650085A38C /* WeatherUsecases.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherUsecases.h; sourceTree = "<group>"; };
 		B6A5523B2CB9DB650085A38C /* WeatherUsecases.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = WeatherUsecases.docc; sourceTree = "<group>"; };
@@ -74,7 +90,7 @@
 		B6A554012CBC309A0085A38C /* SaveLocalObjectUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveLocalObjectUsecase.swift; sourceTree = "<group>"; };
 		B6A554052CBC46BE0085A38C /* GetLocalObjectUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocalObjectUsecase.swift; sourceTree = "<group>"; };
 		B6A5540A2CBC59720085A38C /* DeleteLocalObjectUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteLocalObjectUsecase.swift; sourceTree = "<group>"; };
-		B6A554442CBD6DD20085A38C /* SetAuthorizationUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetAuthorizationUsecase.swift; sourceTree = "<group>"; };
+		B6A554442CBD6DD20085A38C /* RequestAuthLocalNotificationUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAuthLocalNotificationUsecase.swift; sourceTree = "<group>"; };
 		B6A554462CBD6ED10085A38C /* ScheduleLocalNotificationUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleLocalNotificationUsecase.swift; sourceTree = "<group>"; };
 		B6A5544A2CBD77920085A38C /* UpdateLocalObjectUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLocalObjectUsecase.swift; sourceTree = "<group>"; };
 		B6A5544C2CBD8F790085A38C /* RemoveLocalNotificationUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveLocalNotificationUsecase.swift; sourceTree = "<group>"; };
@@ -127,6 +143,28 @@
 			path = WeatherDB;
 			sourceTree = "<group>";
 		};
+		B60AFAD32CBED31C000E8B18 /* LocalNotification */ = {
+			isa = PBXGroup;
+			children = (
+				B60AFAD42CBED328000E8B18 /* LocalNotificationServiceMock.swift */,
+				B60AFAD62CBED36A000E8B18 /* RequestAuthLocalNotificationUsecaseTests.swift */,
+				B60AFAD82CBED40A000E8B18 /* RemoveLocalNotificationUsecaseTests.swift */,
+				B60AFADA2CBED44C000E8B18 /* ScheduleLocalNotificationUsecaseTests.swift */,
+			);
+			path = LocalNotification;
+			sourceTree = "<group>";
+		};
+		B60AFADC2CBED753000E8B18 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				B60AFADD2CBED76A000E8B18 /* LocationServiceMock.swift */,
+				B60AFADF2CBED77D000E8B18 /* StarLocalizationUseCaseTests.swift */,
+				B60AFAE72CBED9FA000E8B18 /* GeocoderServiceMock.swift */,
+				B60AFAE92CBEDA3E000E8B18 /* GetAddressByCoordinatesUsecaseTests.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 		B6A5522D2CB9DB650085A38C = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +200,8 @@
 		B6A552452CB9DB650085A38C /* WeatherUsecasesTests */ = {
 			isa = PBXGroup;
 			children = (
+				B60AFADC2CBED753000E8B18 /* Location */,
+				B60AFAD32CBED31C000E8B18 /* LocalNotification */,
 				B60AFAC32CBE118F000E8B18 /* WeatherDB */,
 				B60AFAAE2CBE03D3000E8B18 /* Weather */,
 			);
@@ -213,7 +253,7 @@
 		B6A554432CBD6DB50085A38C /* LocalNotification */ = {
 			isa = PBXGroup;
 			children = (
-				B6A554442CBD6DD20085A38C /* SetAuthorizationUsecase.swift */,
+				B6A554442CBD6DD20085A38C /* RequestAuthLocalNotificationUsecase.swift */,
 				B6A5544C2CBD8F790085A38C /* RemoveLocalNotificationUsecase.swift */,
 				B6A554462CBD6ED10085A38C /* ScheduleLocalNotificationUsecase.swift */,
 			);
@@ -331,7 +371,7 @@
 			files = (
 				B6A553322CB9E5DF0085A38C /* StarLocationUsecase.swift in Sources */,
 				B6A554062CBC46BE0085A38C /* GetLocalObjectUsecase.swift in Sources */,
-				B6A554452CBD6DD20085A38C /* SetAuthorizationUsecase.swift in Sources */,
+				B6A554452CBD6DD20085A38C /* RequestAuthLocalNotificationUsecase.swift in Sources */,
 				B6A5544B2CBD77920085A38C /* UpdateLocalObjectUsecase.swift in Sources */,
 				B6A554022CBC309A0085A38C /* SaveLocalObjectUsecase.swift in Sources */,
 				B6A554922CBDD3490085A38C /* GetCurrentLocationStatusUsecase.swift in Sources */,
@@ -350,12 +390,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B60AFAD92CBED40A000E8B18 /* RemoveLocalNotificationUsecaseTests.swift in Sources */,
 				B60AFAC72CBE128B000E8B18 /* GetLocalObjectUsecaseTests.swift in Sources */,
+				B60AFADE2CBED76A000E8B18 /* LocationServiceMock.swift in Sources */,
 				B60AFAC92CBE13DC000E8B18 /* DeleteLocalObjectUsecaseTests.swift in Sources */,
 				B60AFAC52CBE119B000E8B18 /* WeatherDBLocalDataSourceMock.swift in Sources */,
+				B60AFAEA2CBEDA3E000E8B18 /* GetAddressByCoordinatesUsecaseTests.swift in Sources */,
 				B60AFACB2CBE13EC000E8B18 /* SaveLocalObjectUsecaseTests.swift in Sources */,
+				B60AFAE02CBED77D000E8B18 /* StarLocalizationUseCaseTests.swift in Sources */,
+				B60AFAE82CBED9FA000E8B18 /* GeocoderServiceMock.swift in Sources */,
 				B60AFACD2CBE13F8000E8B18 /* UpdateLocalObjectUsecaseTests.swift in Sources */,
+				B60AFAD72CBED36A000E8B18 /* RequestAuthLocalNotificationUsecaseTests.swift in Sources */,
+				B60AFADB2CBED44C000E8B18 /* ScheduleLocalNotificationUsecaseTests.swift in Sources */,
 				B60AFABE2CBE0F32000E8B18 /* GetWeatherUsecaseTests.swift in Sources */,
+				B60AFAD52CBED328000E8B18 /* LocalNotificationServiceMock.swift in Sources */,
 				B60AFAC02CBE1069000E8B18 /* GetWeatherIconTests.swift in Sources */,
 				B60AFAC22CBE10B0000E8B18 /* WeatherIconRemoteDataSourceMock.swift in Sources */,
 				B60AFABC2CBE0D47000E8B18 /* WeatherRemoteDataSourceMock.swift in Sources */,

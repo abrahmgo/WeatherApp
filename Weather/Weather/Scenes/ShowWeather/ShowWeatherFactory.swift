@@ -19,13 +19,15 @@ struct ShowWeatherFactory {
         let weatherService = WeatherRemoteDataSource.weather
         let iconService = WeatherRemoteDataSource.icon
         let localDB = WeatherLocalDataSource.database
+        let notificationService = WeatherLocalDataSource.notification
+        let geocoderSerivce = WeatherLocalDataSource.geocoder
         
-        let getAddressByCoordinates = GetAddressByCoordinatesUseCase()
+        let getAddressByCoordinates = GetAddressByCoordinatesUseCase(geocoderService: geocoderSerivce)
         let getWeather = GetWeatherUsecase(remoteDataSource: weatherService)
         let updateObject = UpdateLocalObjectUsecase(localDB: localDB)
         let downloadIcon = GetWeatherIconUsecase(remoteDataSource: iconService)
-        let setNotification = ScheduleLocalNotificationUsecase()
-        let removeNotification = RemoveLocalNotificationUsecase()
+        let setNotification = ScheduleLocalNotificationUsecase(localNotification: notificationService)
+        let removeNotification = RemoveLocalNotificationUsecase(localNotification: notificationService)
         
         let dependencies = ShowWeatherDependencies(localWeather: localWeather,
                                                    getAddressByCoordinates: getAddressByCoordinates,

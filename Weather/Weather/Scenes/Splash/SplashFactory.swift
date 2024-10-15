@@ -6,12 +6,14 @@
 //
 
 import WeatherUsecases
+import WeatherCore
 
 struct SplashFactory {
     
     static func makeSplash(coordinator: SplashCoordinator) -> SplashViewController {
         
-        let authNotification = GetLocalNotifcationAuthUsecase()
+        let notificationService = WeatherLocalDataSource.notification
+        let authNotification = RequestAuthLocalNotificationUsecase(localNotification: notificationService)
         let dependencies = SplashDependencies(authNotification: authNotification)
         let viewModel = SplashViewModel(dependencies: dependencies)
         

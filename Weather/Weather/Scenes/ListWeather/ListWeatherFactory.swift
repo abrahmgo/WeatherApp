@@ -17,13 +17,14 @@ struct ListWeatherFactory {
         let locationService = WeatherLocalDataSource.location
         let iconService = WeatherRemoteDataSource.icon
         let localDB = WeatherLocalDataSource.database
+        let geocoderSerivce = WeatherLocalDataSource.geocoder
         
         // MARK: Usecases
         
         let startLocation = StarLocalizationUseCase(locationService: locationService)
         let getCurrentLocation = GetCurrentLocationUseCase(locationService: locationService)
         let getWeather = GetWeatherUsecase(remoteDataSource: weatherService)
-        let getAddress = GetAddressByCoordinatesUseCase()
+        let getAddress = GetAddressByCoordinatesUseCase(geocoderService: geocoderSerivce)
         let downloadIcon = GetWeatherIconUsecase(remoteDataSource: iconService)
         let saveLocalWeather = SaveLocalObjectUsecase(localDB: localDB)
         let getLocalWeather = GetLocalObjectUsecase(localDB: localDB)

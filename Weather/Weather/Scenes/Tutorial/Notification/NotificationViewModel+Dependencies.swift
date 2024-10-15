@@ -23,5 +23,5 @@ protocol NotificationViewModelType {
 
 struct NotificationDependencies {
     
-    let authNotification: GetLocalNotifcationAuthUsecaseType
+    let authNotification: RequestAuthLocalNotificationUsecaseType
 }

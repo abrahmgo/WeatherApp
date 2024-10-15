@@ -75,7 +75,7 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
                 haveError = false
                 self.currentLocation = currentLocation
                 let weather = try await self.getWeather(location: currentLocation)
-                let address = try await self.getAddress(coordinates: currentLocation.coordinate)
+                let address = try await self.getAddress(coordinates: currentLocation)
                 let component = try await self.getComponent(location: currentLocation,
                                                             weather: weather,
                                                             local: true, 
@@ -110,7 +110,7 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
             do {
                 let weather = try await getWeather(location: location)
                 if try await !isPreviusSaved(id: weather.id) {
-                    let address = try await getAddress(coordinates: location.coordinate)
+                    let address = try await getAddress(coordinates: location)
                     let component = try await getComponent(location: location, weather: weather, address: address)
                     try await saveLocalWeather(coordinates: location, weather: weather, address: address)
                     let newComponents = components.value + [component]
@@ -162,7 +162,7 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
         return component
     }
     
-    private func getAddress(coordinates: CLLocationCoordinate2D) async throws -> Address {
+    private func getAddress(coordinates: CLLocation) async throws -> Address {
         try await dependencies.getAddress.execute(coordinates: coordinates)
     }
     
@@ -240,7 +240,7 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
         localWeathers = objects
         let components = try await objects.asyncMap({ element in
             let location = CLLocation(latitude: element.latitude, longitude: element.longitude)
-            let address = try await getAddress(coordinates: location.coordinate)
+            let address = try await getAddress(coordinates: location)
             let weather = try await getWeather(location: location)
             return try await getComponent(location: location, weather: weather, address: address)
         })

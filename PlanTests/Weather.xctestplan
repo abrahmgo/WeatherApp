@@ -1,0 +1,51 @@
+{
+  "configurations" : [
+    {
+      "id" : "C6EC73B6-433A-4786-A8F6-CBAF4A5CB5BF",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Weather.xcodeproj",
+      "identifier" : "B6A551A32CB9CFA50085A38C",
+      "name" : "Weather"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Weather.xcodeproj",
+        "identifier" : "B6A551B92CB9CFA70085A38C",
+        "name" : "WeatherTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Weather.xcodeproj",
+        "identifier" : "B6A551C32CB9CFA70085A38C",
+        "name" : "WeatherUITests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/Domain\/WeatherUsecases\/WeatherUsecases.xcodeproj",
+        "identifier" : "B6A552402CB9DB650085A38C",
+        "name" : "WeatherUsecasesTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/Data\/WeatherCore\/WeatherCore.xcodeproj",
+        "identifier" : "B6A552882CB9DC4D0085A38C",
+        "name" : "WeatherCoreTests"
+      }
+    }
+  ],
+  "version" : 1
+}
