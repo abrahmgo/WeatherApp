@@ -6,6 +6,16 @@
 
 Weather app, this application is a demo that takes several swift topics, such as location, notification, apis, core data among others.
 
+## Before to start
+
+Go to ```APIConfig``` file and **set token property with your own value**
+
+```swift
+    static var token: String {
+        return "534535346456fdg3dfer345fe435"
+    }
+```
+
 ## Features
 
 - Weather for current location

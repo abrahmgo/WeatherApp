@@ -7,9 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B60AFABC2CBE0D47000E8B18 /* WeatherRemoteDataSourceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AFABB2CBE0D47000E8B18 /* WeatherRemoteDataSourceMock.swift */; };
+		B60AFABE2CBE0F32000E8B18 /* GetWeatherUsecaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AFABD2CBE0F32000E8B18 /* GetWeatherUsecaseTests.swift */; };
+		B60AFAC02CBE1069000E8B18 /* GetWeatherIconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AFABF2CBE1069000E8B18 /* GetWeatherIconTests.swift */; };
+		B60AFAC22CBE10B0000E8B18 /* WeatherIconRemoteDataSourceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AFAC12CBE10B0000E8B18 /* WeatherIconRemoteDataSourceMock.swift */; };
+		B60AFAC52CBE119B000E8B18 /* WeatherDBLocalDataSourceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AFAC42CBE119B000E8B18 /* WeatherDBLocalDataSourceMock.swift */; };
+		B60AFAC72CBE128B000E8B18 /* GetLocalObjectUsecaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AFAC62CBE128B000E8B18 /* GetLocalObjectUsecaseTests.swift */; };
+		B60AFAC92CBE13DC000E8B18 /* DeleteLocalObjectUsecaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AFAC82CBE13DC000E8B18 /* DeleteLocalObjectUsecaseTests.swift */; };
+		B60AFACB2CBE13EC000E8B18 /* SaveLocalObjectUsecaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AFACA2CBE13EC000E8B18 /* SaveLocalObjectUsecaseTests.swift */; };
+		B60AFACD2CBE13F8000E8B18 /* UpdateLocalObjectUsecaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AFACC2CBE13F8000E8B18 /* UpdateLocalObjectUsecaseTests.swift */; };
 		B6A5523C2CB9DB650085A38C /* WeatherUsecases.docc in Sources */ = {isa = PBXBuildFile; fileRef = B6A5523B2CB9DB650085A38C /* WeatherUsecases.docc */; };
 		B6A552422CB9DB650085A38C /* WeatherUsecases.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A552372CB9DB650085A38C /* WeatherUsecases.framework */; };
-		B6A552472CB9DB650085A38C /* WeatherUsecasesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A552462CB9DB650085A38C /* WeatherUsecasesTests.swift */; };
 		B6A552482CB9DB650085A38C /* WeatherUsecases.h in Headers */ = {isa = PBXBuildFile; fileRef = B6A5523A2CB9DB650085A38C /* WeatherUsecases.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B6A553242CB9E4800085A38C /* WeatherDataSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A553232CB9E4800085A38C /* WeatherDataSource.framework */; };
 		B6A553282CB9E4860085A38C /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A553272CB9E4860085A38C /* Utils.framework */; };
@@ -41,11 +49,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B60AFABB2CBE0D47000E8B18 /* WeatherRemoteDataSourceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRemoteDataSourceMock.swift; sourceTree = "<group>"; };
+		B60AFABD2CBE0F32000E8B18 /* GetWeatherUsecaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWeatherUsecaseTests.swift; sourceTree = "<group>"; };
+		B60AFABF2CBE1069000E8B18 /* GetWeatherIconTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWeatherIconTests.swift; sourceTree = "<group>"; };
+		B60AFAC12CBE10B0000E8B18 /* WeatherIconRemoteDataSourceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherIconRemoteDataSourceMock.swift; sourceTree = "<group>"; };
+		B60AFAC42CBE119B000E8B18 /* WeatherDBLocalDataSourceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDBLocalDataSourceMock.swift; sourceTree = "<group>"; };
+		B60AFAC62CBE128B000E8B18 /* GetLocalObjectUsecaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocalObjectUsecaseTests.swift; sourceTree = "<group>"; };
+		B60AFAC82CBE13DC000E8B18 /* DeleteLocalObjectUsecaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteLocalObjectUsecaseTests.swift; sourceTree = "<group>"; };
+		B60AFACA2CBE13EC000E8B18 /* SaveLocalObjectUsecaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveLocalObjectUsecaseTests.swift; sourceTree = "<group>"; };
+		B60AFACC2CBE13F8000E8B18 /* UpdateLocalObjectUsecaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLocalObjectUsecaseTests.swift; sourceTree = "<group>"; };
 		B6A552372CB9DB650085A38C /* WeatherUsecases.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WeatherUsecases.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6A5523A2CB9DB650085A38C /* WeatherUsecases.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherUsecases.h; sourceTree = "<group>"; };
 		B6A5523B2CB9DB650085A38C /* WeatherUsecases.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = WeatherUsecases.docc; sourceTree = "<group>"; };
 		B6A552412CB9DB650085A38C /* WeatherUsecasesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherUsecasesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B6A552462CB9DB650085A38C /* WeatherUsecasesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherUsecasesTests.swift; sourceTree = "<group>"; };
 		B6A553232CB9E4800085A38C /* WeatherDataSource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WeatherDataSource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6A553272CB9E4860085A38C /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6A5532A2CB9E48B0085A38C /* WeatherEntities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WeatherEntities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +104,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B60AFAAE2CBE03D3000E8B18 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				B60AFABB2CBE0D47000E8B18 /* WeatherRemoteDataSourceMock.swift */,
+				B60AFABD2CBE0F32000E8B18 /* GetWeatherUsecaseTests.swift */,
+				B60AFABF2CBE1069000E8B18 /* GetWeatherIconTests.swift */,
+				B60AFAC12CBE10B0000E8B18 /* WeatherIconRemoteDataSourceMock.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		B60AFAC32CBE118F000E8B18 /* WeatherDB */ = {
+			isa = PBXGroup;
+			children = (
+				B60AFAC42CBE119B000E8B18 /* WeatherDBLocalDataSourceMock.swift */,
+				B60AFAC62CBE128B000E8B18 /* GetLocalObjectUsecaseTests.swift */,
+				B60AFAC82CBE13DC000E8B18 /* DeleteLocalObjectUsecaseTests.swift */,
+				B60AFACA2CBE13EC000E8B18 /* SaveLocalObjectUsecaseTests.swift */,
+				B60AFACC2CBE13F8000E8B18 /* UpdateLocalObjectUsecaseTests.swift */,
+			);
+			path = WeatherDB;
+			sourceTree = "<group>";
+		};
 		B6A5522D2CB9DB650085A38C = {
 			isa = PBXGroup;
 			children = (
@@ -123,7 +162,8 @@
 		B6A552452CB9DB650085A38C /* WeatherUsecasesTests */ = {
 			isa = PBXGroup;
 			children = (
-				B6A552462CB9DB650085A38C /* WeatherUsecasesTests.swift */,
+				B60AFAC32CBE118F000E8B18 /* WeatherDB */,
+				B60AFAAE2CBE03D3000E8B18 /* Weather */,
 			);
 			path = WeatherUsecasesTests;
 			sourceTree = "<group>";
@@ -310,7 +350,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6A552472CB9DB650085A38C /* WeatherUsecasesTests.swift in Sources */,
+				B60AFAC72CBE128B000E8B18 /* GetLocalObjectUsecaseTests.swift in Sources */,
+				B60AFAC92CBE13DC000E8B18 /* DeleteLocalObjectUsecaseTests.swift in Sources */,
+				B60AFAC52CBE119B000E8B18 /* WeatherDBLocalDataSourceMock.swift in Sources */,
+				B60AFACB2CBE13EC000E8B18 /* SaveLocalObjectUsecaseTests.swift in Sources */,
+				B60AFACD2CBE13F8000E8B18 /* UpdateLocalObjectUsecaseTests.swift in Sources */,
+				B60AFABE2CBE0F32000E8B18 /* GetWeatherUsecaseTests.swift in Sources */,
+				B60AFAC02CBE1069000E8B18 /* GetWeatherIconTests.swift in Sources */,
+				B60AFAC22CBE10B0000E8B18 /* WeatherIconRemoteDataSourceMock.swift in Sources */,
+				B60AFABC2CBE0D47000E8B18 /* WeatherRemoteDataSourceMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
