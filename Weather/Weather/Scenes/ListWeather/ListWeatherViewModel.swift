@@ -52,7 +52,6 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
                 self.initLocation = false
             }) { [weak self] location in
                 guard let self = self else { return }
-                self.initLocation = true
                 self.setCities(currentLocation: location)
             }.store(in: &cancellable)
         
@@ -61,7 +60,9 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
                 guard let self = self else { return }
                 switch status {
                 case .authorizedAlways, .authorizedWhenInUse:
-                    self.setCurrentCity()
+                    if !self.initLocation {
+                        self.setCurrentCity()
+                    }
                 default:
                     self.locationError.send(WeatherError.LocationRequestService)
                 }
@@ -95,7 +96,9 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
         Task {
             do {
                 try await dependencies.startLocation.execute(type: .always)
+                self.initLocation = true
             } catch {
+                self.initLocation = false
                 self.currentLocation = nil
                 self.components.send([])
                 self.locations.removeAll()
@@ -256,10 +259,10 @@ class ListWeatherViewModel: ListWeatherViewModelType, ListWeatherViewModelInputs
     }
     
     func featureUse(index: Int) -> ShowWeatherUse {
-        guard let currentLocation = currentLocation else {
+        guard let currentLocation = currentLocation?.coordinate.latitude else {
             return .read
         }
-        return locations[index] == currentLocation ? .location : .read
+        return locations[index].coordinate.latitude == currentLocation ? .location : .read
     }
     
     func featureUse(location: CLLocation) -> ShowWeatherUse {
